@@ -163,48 +163,47 @@ function playNextParagraph() {
     if (voices.length > 0) {
         let preferredVoice = null;
 
-        // Comprehensive list of common TTS names to infer gender
-        const femaleNames = ['veena', 'lekha', 'samantha', 'victoria', 'karen', 'tessa', 'moira', 'serena', 'nicole', 'ava', 'allison', 'susan', 'zira', 'amy', 'hazel', 'fiona', 'neerja', 'majka', 'siri', 'kathy', 'google us english', 'google uk english female', 'catherine', 'grandma', 'alice'];
-        const maleNames = ['rishi', 'alex', 'daniel', 'fred', 'oliver', 'tom', 'george', 'david', 'mark', 'ravi', 'brian', 'arthur', 'aaron', 'bruce', 'google uk english male', 'grandpa', 'martin', 'floyd'];
+        // Console debug line:
+        console.log(`Kahani TTS Engine | Total Voices: ${voices.length} | Searching for: ${currentVoiceAccent} / ${currentVoiceGender}`);
+
+        const femaleRegex = /(female|veena|lekha|samantha|victoria|karen|tessa|moira|serena|nicole|ava|allison|susan|zira|amy|hazel|fiona|neerja|majka|siri|kathy|catherine|alice|grandma)/i;
+        const maleRegex = /(male|rishi|alex|daniel|fred|oliver|tom|george|david|mark|ravi|brian|arthur|aaron|bruce|martin|floyd|grandpa)/i;
 
         // 1. Filter explicitly by Gender First
         let genderVoices = voices;
         if (currentVoiceGender === 'female') {
-            genderVoices = voices.filter(v =>
-                v.name.toLowerCase().includes('female') ||
-                (v.voiceURI && v.voiceURI.toLowerCase().includes('female')) ||
-                femaleNames.some(name => v.name.toLowerCase().includes(name))
-            );
-            // If strictly filtering yields no voices, exclude all known male voices
+            genderVoices = voices.filter(v => femaleRegex.test(v.name) || (v.voiceURI && femaleRegex.test(v.voiceURI)));
             if (genderVoices.length === 0) {
-                genderVoices = voices.filter(v => !maleNames.some(name => v.name.toLowerCase().includes(name)) && !v.name.toLowerCase().includes('male'));
+                // Failsafe: drop everything that sounds male
+                genderVoices = voices.filter(v => !maleRegex.test(v.name));
             }
         } else if (currentVoiceGender === 'male') {
-            genderVoices = voices.filter(v =>
-                v.name.toLowerCase().includes('male') ||
-                (v.voiceURI && v.voiceURI.toLowerCase().includes('male')) ||
-                maleNames.some(name => v.name.toLowerCase().includes(name))
-            );
+            genderVoices = voices.filter(v => maleRegex.test(v.name) || (v.voiceURI && maleRegex.test(v.voiceURI)));
             if (genderVoices.length === 0) {
-                genderVoices = voices.filter(v => !femaleNames.some(name => v.name.toLowerCase().includes(name)) && !v.name.toLowerCase().includes('female'));
+                // Failsafe: drop everything that sounds female
+                genderVoices = voices.filter(v => !femaleRegex.test(v.name));
             }
         }
 
-        // Failsafe
         if (genderVoices.length === 0) genderVoices = voices;
 
         // 2. Filter the gendered pool by Accent
         let accentVoices = genderVoices.filter(v => v.lang.includes(currentVoiceAccent));
 
         if (accentVoices.length === 0) {
-            // Drop accent requirement, just find English in correct gender
+            console.log(`Kahani TTS Engine | Custom Accent ${currentVoiceAccent} not found for this gender. Falling back to 'en'.`);
             accentVoices = genderVoices.filter(v => v.lang.includes('en'));
         }
 
         // 3. Select final voice
         preferredVoice = accentVoices[0] || genderVoices[0];
 
-        if (preferredVoice) utterance.voice = preferredVoice;
+        if (preferredVoice) {
+            console.log(`Kahani TTS Engine | SELECTED VOICE: ${preferredVoice.name} (${preferredVoice.lang})`);
+            utterance.voice = preferredVoice;
+        } else {
+            console.warn("Kahani TTS Engine | Could not select a voice!");
+        }
     }
 
     const speedSelect = document.getElementById('audio-speed');
