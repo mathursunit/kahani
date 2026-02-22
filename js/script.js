@@ -49,24 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- Audio Reading Logic ---
-let synth = window.speechSynthesis;
 let ambientAudioCtx = null;
 let ambientOscillators = [];
+let masterGainNode = null;
 let isPlaying = false;
-let currentUtterance = null;
-let paragraphQueue = [];
-let currentParagraphIndex = 0;
-let currentVoiceAccent = 'en-US';
-let currentVoiceGender = 'female';
-let isRestarting = false;
-
-// Warm-up Speech Synthesis to guarantee voices load on Mac/Chrome
-if (window.speechSynthesis) {
-    window.speechSynthesis.getVoices();
-    window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.getVoices();
-    };
-}
+let audioElements = [];
+let currentAudioPartIndex = 0;
+let currentAudioObj = null;
 
 function createAmbientSound() {
     if (!ambientAudioCtx) {
@@ -77,9 +66,10 @@ function createAmbientSound() {
     }
 
     // Create a low drone - suited for tension/drama
-    const masterGain = ambientAudioCtx.createGain();
-    masterGain.gain.value = 0.03; // Keep it quiet and ambient
-    masterGain.connect(ambientAudioCtx.destination);
+    masterGainNode = ambientAudioCtx.createGain();
+    masterGainNode.gain.setValueAtTime(0, ambientAudioCtx.currentTime);
+    masterGainNode.gain.linearRampToValueAtTime(0.06, ambientAudioCtx.currentTime + 3);
+    masterGainNode.connect(ambientAudioCtx.destination);
 
     const freqs = [55, 110, 165]; // Low A notes
     freqs.forEach(freq => {
@@ -95,7 +85,7 @@ function createAmbientSound() {
         lfo.connect(lfoGain);
         lfoGain.connect(osc.frequency);
 
-        osc.connect(masterGain);
+        osc.connect(masterGainNode);
         osc.start();
         lfo.start();
 
@@ -104,25 +94,35 @@ function createAmbientSound() {
 }
 
 function stopAmbientSound() {
-    ambientOscillators.forEach(nodes => {
-        nodes.osc.stop();
-        nodes.lfo.stop();
-        nodes.osc.disconnect();
-        nodes.lfo.disconnect();
-    });
-    ambientOscillators = [];
+    if (masterGainNode && ambientAudioCtx) {
+        masterGainNode.gain.linearRampToValueAtTime(0, ambientAudioCtx.currentTime + 1);
+        setTimeout(() => {
+            ambientOscillators.forEach(nodes => {
+                try {
+                    nodes.osc.stop();
+                    nodes.lfo.stop();
+                    nodes.osc.disconnect();
+                    nodes.lfo.disconnect();
+                } catch (e) { }
+            });
+            ambientOscillators = [];
+            masterGainNode = null;
+        }, 1200);
+    }
 }
 
 function stopAudioReading() {
-    isRestarting = false;
-    if (synth) synth.cancel();
+    if (currentAudioObj) {
+        currentAudioObj.pause();
+        currentAudioObj.currentTime = 0;
+        currentAudioObj = null;
+    }
     stopAmbientSound();
     isPlaying = false;
-    currentUtterance = null;
+    currentAudioPartIndex = 0;
 
     const modalBody = document.getElementById('modal-body');
     if (modalBody) modalBody.classList.remove('reading-mode');
-    document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
 
     const audioBtn = document.getElementById('audio-btn');
     if (audioBtn) {
@@ -137,103 +137,29 @@ function stopAudioReading() {
     }
 }
 
-function playNextParagraph() {
-    if (!isPlaying || currentParagraphIndex >= paragraphQueue.length) {
+function playNextAudioPart() {
+    if (!isPlaying || currentAudioPartIndex >= audioElements.length) {
         stopAudioReading();
         return;
     }
 
-    document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
+    currentAudioObj = audioElements[currentAudioPartIndex];
 
-    const currentEl = paragraphQueue[currentParagraphIndex];
-    currentEl.classList.add('reading-active');
+    // Add custom dynamic delays for story specific drama pacing
+    let delay = 300;
+    if (currentAudioPartIndex === 2) delay = 1500;
+    if (currentAudioPartIndex === 3) delay = 800;
+    if (currentAudioPartIndex === 8) delay = 1200;
 
-    // Scroll element smoothly into view
-    currentEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+        if (!isPlaying) return; // User stopped it during delay
 
-    // Clean text for speaking (handling the Dropcap 'I t' separation)
-    let textToSpeak = currentEl.innerText || currentEl.textContent;
-    textToSpeak = textToSpeak.replace(/^([A-Z])\s+([a-z])/, '$1$2');
-
-    const utterance = new SpeechSynthesisUtterance(textToSpeak);
-
-    const voices = synth.getVoices();
-
-    // Ensure we don't pick opposite gender
-    if (voices.length > 0) {
-        let preferredVoice = null;
-
-        // Console debug line:
-        console.log(`Kahani TTS Engine | Total Voices: ${voices.length} | Searching for: ${currentVoiceAccent} / ${currentVoiceGender}`);
-
-        const femaleRegex = /(female|veena|lekha|samantha|victoria|karen|tessa|moira|serena|nicole|ava|allison|susan|zira|amy|hazel|fiona|neerja|majka|siri|kathy|catherine|alice|grandma)/i;
-        const maleRegex = /(male|rishi|alex|daniel|fred|oliver|tom|george|david|mark|ravi|brian|arthur|aaron|bruce|martin|floyd|grandpa)/i;
-
-        // 1. Filter explicitly by Gender First
-        let genderVoices = voices;
-        if (currentVoiceGender === 'female') {
-            genderVoices = voices.filter(v => femaleRegex.test(v.name) || (v.voiceURI && femaleRegex.test(v.voiceURI)));
-            if (genderVoices.length === 0) {
-                // Failsafe: drop everything that sounds male
-                genderVoices = voices.filter(v => !maleRegex.test(v.name));
-            }
-        } else if (currentVoiceGender === 'male') {
-            genderVoices = voices.filter(v => maleRegex.test(v.name) || (v.voiceURI && maleRegex.test(v.voiceURI)));
-            if (genderVoices.length === 0) {
-                // Failsafe: drop everything that sounds female
-                genderVoices = voices.filter(v => !femaleRegex.test(v.name));
-            }
-        }
-
-        if (genderVoices.length === 0) genderVoices = voices;
-
-        // 2. Filter the gendered pool by Accent
-        let accentVoices = genderVoices.filter(v => v.lang.includes(currentVoiceAccent));
-
-        if (accentVoices.length === 0) {
-            console.log(`Kahani TTS Engine | Custom Accent ${currentVoiceAccent} not found for this gender. Falling back to 'en'.`);
-            accentVoices = genderVoices.filter(v => v.lang.includes('en'));
-        }
-
-        // 3. Select final voice
-        preferredVoice = accentVoices[0] || genderVoices[0];
-
-        if (preferredVoice) {
-            console.log(`Kahani TTS Engine | SELECTED VOICE: ${preferredVoice.name} (${preferredVoice.lang})`);
-            utterance.voice = preferredVoice;
-        } else {
-            console.warn("Kahani TTS Engine | Could not select a voice!");
-        }
-    }
-
-    const speedSelect = document.getElementById('audio-speed');
-    const userSpeed = speedSelect ? parseFloat(speedSelect.value) : 0.9;
-
-    utterance.rate = userSpeed;
-    utterance.pitch = 0.9;
-
-    utterance.onend = () => {
-        if (!isRestarting) {
-            currentParagraphIndex++;
-            playNextParagraph();
-        } else {
-            isRestarting = false;
-            playNextParagraph();
-        }
-    };
-
-    utterance.onerror = (e) => {
-        if (isRestarting) {
-            isRestarting = false;
-            playNextParagraph();
-            return;
-        }
-        console.error("Speech error", e);
-        stopAudioReading();
-    };
-
-    currentUtterance = utterance;
-    synth.speak(utterance);
+        currentAudioObj.play().catch(e => console.error(e));
+        currentAudioObj.onended = () => {
+            currentAudioPartIndex++;
+            playNextAudioPart();
+        };
+    }, delay);
 }
 
 function startAudioReading() {
@@ -252,17 +178,12 @@ function startAudioReading() {
         `;
     }
 
+    // Enter a cinematic reading mode
     document.getElementById('modal-body').classList.add('reading-mode');
 
-    // Collect paragraphs and headers
-    paragraphQueue = Array.from(document.getElementById('modal-body').querySelectorAll('p, h3'));
-    currentParagraphIndex = 0;
-
     createAmbientSound();
-
-    // Call playNextParagraph immediately to satisfy browser user-gesture requirements
-    // Do not use setTimeout here as browsers will block TTS
-    playNextParagraph();
+    currentAudioPartIndex = 0;
+    playNextAudioPart();
 }
 
 // Story Modal Logic
@@ -278,35 +199,28 @@ function openStory(templateId) {
     document.getElementById('modal-title').innerText = rawContent.getAttribute('data-title') || '';
     document.getElementById('modal-tag').innerText = rawContent.getAttribute('data-tag') || '';
 
-    // Set voice configuration for the current story
-    currentVoiceAccent = rawContent.getAttribute('data-voice-accent') || 'en-US';
-    currentVoiceGender = rawContent.getAttribute('data-voice-gender') || 'female';
-
     // Set body content
     document.getElementById('modal-body').innerHTML = rawContent.innerHTML;
 
-    // Handle Audio button visibility and event attachment
+    // Handle Audio Drama Logic
     const audioBtn = document.getElementById('audio-btn');
     const audioSpeedBtn = document.getElementById('audio-speed');
 
+    // Hide speed button as it breaks pre-recorded timing
+    if (audioSpeedBtn) audioSpeedBtn.style.display = 'none';
+
     if (audioBtn) {
-        if (rawContent.getAttribute('data-audio') === 'true') {
+        const dramaLinks = rawContent.getAttribute('data-audio-drama');
+        if (dramaLinks) {
             audioBtn.style.display = 'flex';
-            if (audioSpeedBtn) {
-                audioSpeedBtn.style.display = 'flex';
-                audioSpeedBtn.onchange = () => {
-                    if (isPlaying) {
-                        isRestarting = true;
-                        synth.cancel();
-                        setTimeout(() => {
-                            if (isRestarting) {
-                                isRestarting = false;
-                                playNextParagraph();
-                            }
-                        }, 100);
-                    }
-                };
-            }
+
+            // Preload tracks
+            audioElements = dramaLinks.split(',').map(src => {
+                const a = new Audio(src);
+                a.preload = 'auto';
+                return a;
+            });
+
             stopAudioReading(); // reset state
             audioBtn.onclick = () => {
                 if (isPlaying) {
@@ -317,7 +231,6 @@ function openStory(templateId) {
             };
         } else {
             audioBtn.style.display = 'none';
-            if (audioSpeedBtn) audioSpeedBtn.style.display = 'none';
             stopAudioReading();
         }
     }
