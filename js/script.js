@@ -217,10 +217,9 @@ function startAudioReading() {
 
     createAmbientSound();
 
-    // Slight delay before voice
-    setTimeout(() => {
-        playNextParagraph();
-    }, 800);
+    // Call playNextParagraph immediately to satisfy browser user-gesture requirements
+    // Do not use setTimeout here as browsers will block TTS
+    playNextParagraph();
 }
 
 // Story Modal Logic
