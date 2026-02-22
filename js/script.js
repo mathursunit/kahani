@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
+        anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
+            if (targetId === '#') return;
+
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
@@ -47,3 +47,47 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Story Modal Logic
+function openStory(templateId) {
+    const template = document.getElementById(templateId);
+    if (!template) return;
+
+    // Extract content from template content
+    const rawContent = template.content ? template.content.querySelector('div') : template.querySelector('div');
+    if (!rawContent) return;
+
+    // Set header information
+    document.getElementById('modal-title').innerText = rawContent.getAttribute('data-title') || '';
+    document.getElementById('modal-tag').innerText = rawContent.getAttribute('data-tag') || '';
+
+    // Set body content
+    document.getElementById('modal-body').innerHTML = rawContent.innerHTML;
+
+    // Show modal and prevent background scroll
+    document.getElementById('story-modal').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+
+    // Scroll modal to top
+    const scrollArea = document.getElementById('kindle-scroll-area');
+    if (scrollArea) scrollArea.scrollTop = 0;
+}
+
+// Close Modal Events
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.js-modal-close').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.getElementById('story-modal').classList.remove('is-open');
+            document.body.style.overflow = '';
+        });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            document.getElementById('story-modal').classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+    });
+});
+

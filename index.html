@@ -7,10 +7,12 @@
     <title>Kahani - Stories of Resilience</title>
     <meta name="description"
         content="Heart warming short stories about people reclaiming their lives after facing hate, deceit, and overcoming the odds.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Google AdSense Script (Replace with your actual ca-pub ID) -->
+    <!-- Google AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3485234986579832"
         crossorigin="anonymous"></script>
 </head>
@@ -20,33 +22,24 @@
         <div class="nav-content">
             <h1 class="logo">Kahani.</h1>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
                 <li><a href="#stories">Stories</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-bg" style="background-image: url('assets/images/hero.png');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content fade-in-up">
-            <h2>Reclaiming the Light</h2>
-            <p>Heart warming stories of ordinary people who faced hate, deceit, and darkness—and found their way back to
-                humanity.</p>
-            <a href="#stories" class="btn-primary">Explore Stories</a>
-        </div>
-    </header>
+    <!-- Main Content Area with Header integration -->
+    <main id="stories" class="main-content">
+        <!-- New Modest Pages Header -->
+        <header class="page-header fade-in">
+            <h1 class="page-title">Reclaiming the Light</h1>
+            <p class="page-subtitle">Heart warming stories of ordinary people who faced hate, deceit, and darkness—and
+                found their way back to humanity.</p>
+        </header>
 
-    <main id="stories">
-        <section class="section">
-            <div class="section-header fade-in">
-                <h2>Featured Stories</h2>
-                <div class="accent-line"></div>
-            </div>
-
+        <section class="section pt-0">
             <div class="stories-grid">
-                <article class="story-card fade-in-up">
+                <article class="story-card fade-in-up" onclick="openStory('story-1')">
                     <div class="card-image-wrapper">
                         <img src="assets/images/thumbnail1.png" alt="Hands planting a sapling" loading="lazy">
                         <div class="card-overlay">
@@ -58,12 +51,11 @@
                         <h3>Roots in the Ash</h3>
                         <p>After a devastating betrayal, Elara learns to rebuild her life from the ground up, planting
                             seeds of hope in the very place her dreams burned down.</p>
-                        <a href="stories/roots-in-the-ash.html" class="read-more">Read Story <span
-                                class="arrow">→</span></a>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up delay-1">
+                <article class="story-card fade-in-up delay-1" onclick="openStory('story-2')">
                     <div class="card-image-wrapper placeholder-gradient-1">
                         <div class="card-overlay">
                             <span class="read-time">8 min read</span>
@@ -74,11 +66,11 @@
                         <h3>The Echo of Kindness</h3>
                         <p>When faced with a sudden act of hate, a community rallies together to drown out the noise
                             with overwhelming compassion and understanding.</p>
-                        <a href="#" class="read-more">Read Story <span class="arrow">→</span></a>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up delay-2">
+                <article class="story-card fade-in-up delay-2" onclick="openStory('story-3')">
                     <div class="card-image-wrapper placeholder-gradient-2">
                         <div class="card-overlay">
                             <span class="read-time">6 min read</span>
@@ -89,7 +81,7 @@
                         <h3>Shattering the Illusion</h3>
                         <p>Trapped in a web of deceit crafted by those closest to him, Marcus embarks on a journey of
                             self-discovery to find the ultimate truth.</p>
-                        <a href="#" class="read-more">Read Story <span class="arrow">→</span></a>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
             </div>
@@ -122,6 +114,139 @@
             <p>&copy; 2026 Kahani Project. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Kindle-like Reading Modal -->
+    <div id="story-modal" class="kindle-modal" aria-hidden="true">
+        <div class="kindle-modal-overlay js-modal-close" aria-label="Close modal background"></div>
+        <div class="kindle-modal-container">
+            <div class="kindle-topbar">
+                <button class="kindle-btn js-modal-close" aria-label="Close Story">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    Close
+                </button>
+            </div>
+            <div class="kindle-scroll-area" id="kindle-scroll-area">
+                <div class="kindle-content">
+                    <div class="kindle-header fade-in">
+                        <span id="modal-tag" class="kindle-tag"></span>
+                        <h2 id="modal-title"></h2>
+                    </div>
+                    <div id="modal-body" class="kindle-body fade-in">
+                        <!-- Story goes here dynamically via JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Raw Story Content -->
+    <template id="story-1">
+        <div data-title="Roots in the Ash" data-tag="Resilience">
+            <p><span class="dropcap">T</span>he scent of charred wood still lingered on the breeze when Elara returned
+                to the lot. A month ago, this had been 'The Hearth'—a community center she had poured her heart,
+                savings, and soul into for three years. It was a haven for kids who had nowhere else to go after school,
+                and for adults who needed a warm meal and a moment of dignity.</p>
+
+            <p>Then came the night of the fire.</p>
+
+            <p>It hadn't been an accident. The investigation had been swift, revealing a deliberate act fueled by
+                resentment and misplaced anger from a faction that didn't want the center in their neighborhood. The
+                deceit had been the hardest part to swallow; one of the arsonists was the older brother of a child Elara
+                had tutored every Tuesday.</p>
+
+            <h3>The Weight of the Ashes</h3>
+
+            <p>For weeks, Elara couldn't get out of bed. The betrayal tasted like ash in her mouth. She had trusted
+                blindly, given freely, and in return, her life's work was reduced to a blackened skeleton against the
+                city skyline.</p>
+
+            <p>"Why rebuild?" her sister had asked softly one evening, placing a cup of tea on the nightstand. "They
+                don't appreciate it. They don't want it."</p>
+
+            <p>Elara had looked at her, eyes red and hollow. "Because if I don't, they win. The hate wins."</p>
+
+            <p>But saying the words and feeling them were two different things. The anger inside her was a cold, heavy
+                stone. It was easy to let it pull her under, to decide that humanity was inherently flawed and not worth
+                the effort.</p>
+
+            <h3>The First Seed</h3>
+
+            <p>On a crisp Tuesday morning, exactly the time she would normally be setting up the tutoring tables, Elara
+                forced herself to visit the site. The yellow police tape had been taken down, leaving the ruin exposed.
+            </p>
+
+            <p>She brought a shovel.</p>
+
+            <p>She didn't have the funds to rebuild yet. The insurance money was tied up in red tape, and the GoFundMe
+                had stalled. But she couldn't just look at the black earth anymore.</p>
+
+            <p>She started digging near what used to be the front entrance. The soil was tough, packed with soot and
+                sorrow. Her hands, usually soft, quickly blistered, but she kept pushing the blade into the earth. It
+                was a physical release, a way to channel the raging storm inside her into something tangible.</p>
+
+            <p>"Miss Elara?"</p>
+
+            <p>She paused, breathless, wiping sweat from her forehead. Standing on the sidewalk was Leo, the
+                eight-year-old whose brother had lit the match. He was looking at his sneakers, holding a small,
+                crumpled paper bag.</p>
+
+            <p>Elara felt the cold stone of anger rise in her chest, but she forced it down. It wasn't Leo's fault. "Hi,
+                Leo. Should you be in school?"</p>
+
+            <p>"Teacher workday," he mumbled. He took a hesitant step forward, extending the bag. "I... I'm sorry about
+                the center. I brought these."</p>
+
+            <p>Elara dropped the shovel and took the bag. Inside were dozens of sunflower seeds. They were cheap, the
+                kind you buy at the corner store to chew on, but unroasted.</p>
+
+            <p>"My grandma says sunflowers pull the bad stuff out of the dirt," Leo whispered, finally looking up. His
+                eyes were wide and filled with an apology too heavy for an eight-year-old to carry.</p>
+
+            <p>The cold stone in Elara's chest cracked. A warm tear slid through the soot on her cheek. She knelt down
+                to his level.</p>
+
+            <p>"Do you want to help me plant them?" she asked, her voice cracking.</p>
+
+            <h3>Reclaiming the Light</h3>
+
+            <p>They spent the entire morning planting the seeds along the perimeter of the ashes. By noon, a few of the
+                neighbors had noticed. Mrs. Higgins from next door brought out a watering can. Mr. Davies, the grumpy
+                mechanic from across the street, surprisingly came over with a box of saplings—small oak trees.</p>
+
+            <p>"Can't have just flowers," he grunted, avoiding eye contact. "Need something with strong roots."</p>
+
+            <p>By sunset, there were fifteen people in the dirt, their hands stained with the ash of the old center,
+                pushing new life into the ground. They didn't talk about the fire, the hate, or the arsonists. They
+                talked about the rain coming on Thursday, the depth of the holes, and the promise of the coming spring.
+            </p>
+
+            <p>Standing back and looking at the patched earth, Elara realized that The Hearth had never really burned
+                down. The building was gone, yes, but the community—the actual fire that kept the cold out—was still
+                there, waiting for a spark.</p>
+
+            <p>The people who had tried to destroy them had only managed to clear the ground for a stronger foundation.
+                And as Elara looked at Leo, carefully patting the dirt over a tiny acorn, she knew the hate hadn't won.
+            </p>
+
+            <p>They were planting their resilience right through the ashes, straight toward the sun.</p>
+        </div>
+    </template>
+
+    <template id="story-2">
+        <div data-title="The Echo of Kindness" data-tag="Forgiveness">
+            <p>Coming soon...</p>
+        </div>
+    </template>
+
+    <template id="story-3">
+        <div data-title="Shattering the Illusion" data-tag="Truth">
+            <p>Coming soon...</p>
+        </div>
+    </template>
 
     <script src="js/script.js"></script>
 </body>
