@@ -152,8 +152,8 @@ h4 {
 /* Stories Grid */
 .stories-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
 }
 
 .story-card {
@@ -172,7 +172,7 @@ h4 {
 
 .card-image-wrapper {
     position: relative;
-    height: 240px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -208,7 +208,7 @@ h4 {
 }
 
 .card-content {
-    padding: 2rem;
+    padding: 1.5rem;
 }
 
 .tag {
@@ -222,14 +222,14 @@ h4 {
 }
 
 .card-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
 }
 
 .card-content p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
 }
 
 .read-more {
