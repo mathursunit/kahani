@@ -89,5 +89,24 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = '';
         }
     });
+
+    // Fullscreen Toggle
+    const fsBtn = document.querySelector('.js-toggle-fullscreen');
+    const modalContainer = document.querySelector('.kindle-modal-container');
+    const expandIcon = document.querySelector('.icon-expand');
+    const compressIcon = document.querySelector('.icon-compress');
+
+    if (fsBtn) {
+        fsBtn.addEventListener('click', () => {
+            modalContainer.classList.toggle('is-fullscreen');
+            if (modalContainer.classList.contains('is-fullscreen')) {
+                if (expandIcon) expandIcon.style.display = 'none';
+                if (compressIcon) compressIcon.style.display = 'block';
+            } else {
+                if (expandIcon) expandIcon.style.display = 'block';
+                if (compressIcon) compressIcon.style.display = 'none';
+            }
+        });
+    }
 });
 

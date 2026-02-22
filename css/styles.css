@@ -411,6 +411,14 @@ footer {
     }
 }
 
+.kindle-modal-container.is-fullscreen {
+    max-width: none !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
 .kindle-modal.is-open .kindle-modal-container {
     transform: translateY(0);
 }
