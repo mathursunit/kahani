@@ -56,6 +56,8 @@ let isPlaying = false;
 let currentUtterance = null;
 let paragraphQueue = [];
 let currentParagraphIndex = 0;
+let currentVoiceAccent = 'en-US';
+let currentVoiceGender = 'female';
 
 function createAmbientSound() {
     if (!ambientAudioCtx) {
@@ -146,8 +148,32 @@ function playNextParagraph() {
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
 
     const voices = synth.getVoices();
-    // Prefer a smooth voice if available
-    const preferredVoice = voices.find(v => v.lang.includes('en-GB') || v.lang.includes('en-IN')) || voices[0];
+
+    let matchedVoices = voices.filter(v => v.lang.includes(currentVoiceAccent));
+    if (matchedVoices.length === 0) {
+        // Fallback to broader English if specific accent not found
+        matchedVoices = voices.filter(v => v.lang.includes('en-GB') || v.lang.includes('en-US'));
+    }
+
+    let preferredVoice = null;
+
+    if (matchedVoices.length > 0) {
+        // Simple heuristic to match gender via common TTS voice names
+        const femaleNames = ['veena', 'samantha', 'victoria', 'karen', 'tessa', 'moira', 'serena', 'nicole', 'ava', 'allison', 'susan', 'zira', 'amy', 'hazel', 'fiona', 'neerja'];
+        const maleNames = ['rishi', 'alex', 'daniel', 'fred', 'oliver', 'tom', 'george', 'david', 'mark', 'ravi', 'brian', 'arthur', 'aaron', 'bruce'];
+
+        let genderMatch = null;
+        if (currentVoiceGender === 'female') {
+            genderMatch = matchedVoices.find(v => femaleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('female'));
+        } else if (currentVoiceGender === 'male') {
+            genderMatch = matchedVoices.find(v => maleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('male'));
+        }
+
+        preferredVoice = genderMatch || matchedVoices[0];
+    } else {
+        preferredVoice = voices[0];
+    }
+
     if (preferredVoice) utterance.voice = preferredVoice;
 
     utterance.rate = 0.9;
@@ -209,6 +235,10 @@ function openStory(templateId) {
     // Set header information
     document.getElementById('modal-title').innerText = rawContent.getAttribute('data-title') || '';
     document.getElementById('modal-tag').innerText = rawContent.getAttribute('data-tag') || '';
+
+    // Set voice configuration for the current story
+    currentVoiceAccent = rawContent.getAttribute('data-voice-accent') || 'en-US';
+    currentVoiceGender = rawContent.getAttribute('data-voice-gender') || 'female';
 
     // Set body content
     document.getElementById('modal-body').innerHTML = rawContent.innerHTML;
