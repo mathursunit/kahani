@@ -46,11 +46,11 @@ h4 {
 }
 
 .nav-content {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0.8rem 2rem;
-    display: flex;
-    justify-content: space-between;
+    padding: 0.5rem 2rem;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
 }
 
@@ -58,13 +58,18 @@ h4 {
     display: flex;
     align-items: center;
     text-decoration: none;
-    flex-shrink: 0;
+    justify-self: start;
 }
 
 .logo img {
-    height: 40px;
+    height: 60px;
     width: auto;
-    filter: drop-shadow(0 0 10px rgba(240, 165, 0, 0.2));
+    filter: drop-shadow(0 0 12px rgba(240, 165, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
 }
 
 .nav-left {
@@ -82,28 +87,46 @@ h4 {
 .nav-brand-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 .nav-title {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--text-main);
-    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #ffe0b2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-title-separator {
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    margin: 4px 0;
+    border-radius: 2px;
+    box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .nav-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: var(--text-muted);
     font-weight: 400;
-    line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
-@media (max-width: 768px) {
-
-    .nav-separator,
-    .nav-subtitle {
+@media (max-width: 900px) {
+    .nav-brand-text {
         display: none;
+    }
+
+    .nav-content {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -111,6 +134,7 @@ h4 {
     list-style: none;
     display: flex;
     gap: 2rem;
+    justify-self: end;
 }
 
 .nav-links a {
@@ -144,8 +168,8 @@ h4 {
 /* Page Header */
 /* Page Layout Reset */
 .main-content {
-    padding-top: 60px;
-    /* Adjusted for compact nav */
+    padding-top: 100px;
+    /* Increased to account for larger 60px logo + padding */
 }
 
 /* Remove legacy page header styles */
