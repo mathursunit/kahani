@@ -149,29 +149,36 @@ function playNextParagraph() {
 
     const voices = synth.getVoices();
 
-    let matchedVoices = voices.filter(v => v.lang.includes(currentVoiceAccent));
-    if (matchedVoices.length === 0) {
-        // Fallback to broader English if specific accent not found
-        matchedVoices = voices.filter(v => v.lang.includes('en-GB') || v.lang.includes('en-US'));
+    // 1. Try to find the requested accent voices
+    let accentVoices = voices.filter(v => v.lang.includes(currentVoiceAccent));
+    if (accentVoices.length === 0) {
+        accentVoices = voices.filter(v => v.lang.includes('en')); // Fallback to any English
     }
 
     let preferredVoice = null;
 
-    if (matchedVoices.length > 0) {
-        // Simple heuristic to match gender via common TTS voice names
-        const femaleNames = ['veena', 'samantha', 'victoria', 'karen', 'tessa', 'moira', 'serena', 'nicole', 'ava', 'allison', 'susan', 'zira', 'amy', 'hazel', 'fiona', 'neerja'];
-        const maleNames = ['rishi', 'alex', 'daniel', 'fred', 'oliver', 'tom', 'george', 'david', 'mark', 'ravi', 'brian', 'arthur', 'aaron', 'bruce'];
+    const femaleNames = ['lekha', 'veena', 'samantha', 'victoria', 'karen', 'tessa', 'moira', 'serena', 'nicole', 'ava', 'allison', 'susan', 'zira', 'amy', 'hazel', 'fiona', 'neerja', 'majka'];
+    const maleNames = ['rishi', 'alex', 'daniel', 'fred', 'oliver', 'tom', 'george', 'david', 'mark', 'ravi', 'brian', 'arthur', 'aaron', 'bruce'];
 
-        let genderMatch = null;
-        if (currentVoiceGender === 'female') {
-            genderMatch = matchedVoices.find(v => femaleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('female'));
-        } else if (currentVoiceGender === 'male') {
-            genderMatch = matchedVoices.find(v => maleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('male'));
+    // 2. Select by requested gender
+    if (currentVoiceGender === 'female') {
+        preferredVoice = accentVoices.find(v => femaleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('female') || (v.voiceURI && v.voiceURI.toLowerCase().includes('female')));
+
+        // If Indian female isn't installed, DO NOT pick Indian male. Pick ANY English female instead.
+        if (!preferredVoice) {
+            preferredVoice = voices.find(v => v.lang.includes('en') && (femaleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('female')));
         }
+    } else if (currentVoiceGender === 'male') {
+        preferredVoice = accentVoices.find(v => maleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('male') || (v.voiceURI && v.voiceURI.toLowerCase().includes('male')));
 
-        preferredVoice = genderMatch || matchedVoices[0];
-    } else {
-        preferredVoice = voices[0];
+        if (!preferredVoice) {
+            preferredVoice = voices.find(v => v.lang.includes('en') && (maleNames.some(name => v.name.toLowerCase().includes(name)) || v.name.toLowerCase().includes('male')));
+        }
+    }
+
+    // 3. Absolute fallback
+    if (!preferredVoice) {
+        preferredVoice = accentVoices[0] || voices[0];
     }
 
     if (preferredVoice) utterance.voice = preferredVoice;
