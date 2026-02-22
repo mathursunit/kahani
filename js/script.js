@@ -56,6 +56,7 @@ let isPlaying = false;
 let audioElements = [];
 let currentAudioPartIndex = 0;
 let currentAudioObj = null;
+let currentStoryId = null;
 
 function createAmbientSound() {
     if (!ambientAudioCtx) {
@@ -119,7 +120,6 @@ function stopAudioReading() {
     }
     stopAmbientSound();
     isPlaying = false;
-    currentAudioPartIndex = 0;
 
     const modalBody = document.getElementById('modal-body');
     if (modalBody) modalBody.classList.remove('reading-mode');
@@ -139,10 +139,13 @@ function stopAudioReading() {
 
 function playNextAudioPart() {
     if (!isPlaying || currentAudioPartIndex >= audioElements.length) {
+        currentAudioPartIndex = 0; // Reset for next time if finished
+        if (currentStoryId) localStorage.setItem('kahani_progress_' + currentStoryId, 0);
         stopAudioReading();
         return;
     }
 
+    if (currentStoryId) localStorage.setItem('kahani_progress_' + currentStoryId, currentAudioPartIndex);
     currentAudioObj = audioElements[currentAudioPartIndex];
 
     // Default dramatic pacing
@@ -192,7 +195,7 @@ function startAudioReading() {
     document.getElementById('modal-body').classList.add('reading-mode');
 
     createAmbientSound();
-    currentAudioPartIndex = 0;
+    // currentAudioPartIndex is already set by openStory or previous play state
     playNextAudioPart();
 }
 
@@ -231,7 +234,10 @@ function openStory(templateId) {
                 return a;
             });
 
-            stopAudioReading(); // reset state
+            currentStoryId = templateId;
+            currentAudioPartIndex = parseInt(localStorage.getItem('kahani_progress_' + currentStoryId)) || 0;
+
+            stopAudioReading(); // reset playback state but keep currentAudioPartIndex progress
             audioBtn.onclick = () => {
                 if (isPlaying) {
                     stopAudioReading();
