@@ -145,14 +145,24 @@ function playNextAudioPart() {
 
     currentAudioObj = audioElements[currentAudioPartIndex];
 
-    // Add custom dynamic delays for story specific drama pacing
-    let delay = 300;
-    if (currentAudioPartIndex === 2) delay = 1500;
-    if (currentAudioPartIndex === 3) delay = 800;
-    if (currentAudioPartIndex === 8) delay = 1200;
+    // Default dramatic pacing
+    let delay = 600;
+
+    // Special beats for "Shattering the Illusion" (story-3)
+    const modalTitle = document.getElementById('modal-title').innerText;
+    if (modalTitle === "Shattering the Illusion") {
+        if (currentAudioPartIndex === 2) delay = 1500; // After "Seen. No reply."
+        if (currentAudioPartIndex === 3) delay = 800;  // Before "The caption read..."
+        if (currentAudioPartIndex === 8) delay = 1200; // Before final reveal
+    }
+
+    // Special beats for "The Inheritance Trap" (story-2)
+    if (modalTitle === "The Inheritance Trap") {
+        if (currentAudioPartIndex === 4) delay = 1500; // Dramatic pause before ASI reveal
+    }
 
     setTimeout(() => {
-        if (!isPlaying) return; // User stopped it during delay
+        if (!isPlaying) return;
 
         currentAudioObj.play().catch(e => console.error(e));
         currentAudioObj.onended = () => {
