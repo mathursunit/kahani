@@ -564,6 +564,36 @@ footer {
     color: #000;
 }
 
+.audio-speed {
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    margin-right: 1.5rem;
+    transition: color 0.2s, border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+    text-align: center;
+}
+
+.audio-speed:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.audio-speed:focus {
+    outline: none;
+}
+
+.audio-speed option {
+    background: var(--surface-light);
+    color: var(--text-light);
+}
+
 .audio-btn.playing {
     animation: pulse 2s infinite;
     color: #c0392b;

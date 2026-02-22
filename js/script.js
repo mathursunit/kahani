@@ -58,6 +58,7 @@ let paragraphQueue = [];
 let currentParagraphIndex = 0;
 let currentVoiceAccent = 'en-US';
 let currentVoiceGender = 'female';
+let isRestarting = false;
 
 function createAmbientSound() {
     if (!ambientAudioCtx) {
@@ -105,6 +106,7 @@ function stopAmbientSound() {
 }
 
 function stopAudioReading() {
+    isRestarting = false;
     if (synth) synth.cancel();
     stopAmbientSound();
     isPlaying = false;
@@ -183,15 +185,28 @@ function playNextParagraph() {
 
     if (preferredVoice) utterance.voice = preferredVoice;
 
-    utterance.rate = 0.9;
+    const speedSelect = document.getElementById('audio-speed');
+    const userSpeed = speedSelect ? parseFloat(speedSelect.value) : 0.9;
+
+    utterance.rate = userSpeed;
     utterance.pitch = 0.9;
 
     utterance.onend = () => {
-        currentParagraphIndex++;
-        playNextParagraph();
+        if (!isRestarting) {
+            currentParagraphIndex++;
+            playNextParagraph();
+        } else {
+            isRestarting = false;
+            playNextParagraph();
+        }
     };
 
     utterance.onerror = (e) => {
+        if (isRestarting) {
+            isRestarting = false;
+            playNextParagraph();
+            return;
+        }
         console.error("Speech error", e);
         stopAudioReading();
     };
@@ -251,9 +266,26 @@ function openStory(templateId) {
 
     // Handle Audio button visibility and event attachment
     const audioBtn = document.getElementById('audio-btn');
+    const audioSpeedBtn = document.getElementById('audio-speed');
+
     if (audioBtn) {
         if (rawContent.getAttribute('data-audio') === 'true') {
             audioBtn.style.display = 'flex';
+            if (audioSpeedBtn) {
+                audioSpeedBtn.style.display = 'flex';
+                audioSpeedBtn.onchange = () => {
+                    if (isPlaying) {
+                        isRestarting = true;
+                        synth.cancel();
+                        setTimeout(() => {
+                            if (isRestarting) {
+                                isRestarting = false;
+                                playNextParagraph();
+                            }
+                        }, 100);
+                    }
+                };
+            }
             stopAudioReading(); // reset state
             audioBtn.onclick = () => {
                 if (isPlaying) {
@@ -264,6 +296,7 @@ function openStory(templateId) {
             };
         } else {
             audioBtn.style.display = 'none';
+            if (audioSpeedBtn) audioSpeedBtn.style.display = 'none';
             stopAudioReading();
         }
     }
