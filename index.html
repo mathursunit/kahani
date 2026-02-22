@@ -192,6 +192,15 @@
                     </svg>
                 </button>
                 <div style="flex-grow: 1;"></div>
+                <button id="audio-btn" class="kindle-btn audio-btn" aria-label="Play Immersive Audio"
+                    style="display: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                    </svg>
+                    Listen
+                </button>
                 <button class="kindle-btn js-modal-close" aria-label="Close Story">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -396,7 +405,7 @@
     </template>
 
     <template id="story-3">
-        <div data-title="Shattering the Illusion" data-tag="Truth">
+        <div data-title="Shattering the Illusion" data-tag="Truth" data-audio="true">
             <p><span class="dropcap">I</span>t was nearly eight in the evening, and I was still trapped in my office on
                 Nariman Point, Mumbai. The city glowed cold and distant behind the glass walls. I was exhausted. I had
                 just closed the biggest deal of the year—once again sustaining the extravagant lifestyle of my so-called

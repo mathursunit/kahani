@@ -48,6 +48,155 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// --- Audio Reading Logic ---
+let synth = window.speechSynthesis;
+let ambientAudioCtx = null;
+let ambientOscillators = [];
+let isPlaying = false;
+let currentUtterance = null;
+let paragraphQueue = [];
+let currentParagraphIndex = 0;
+
+function createAmbientSound() {
+    if (!ambientAudioCtx) {
+        ambientAudioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    if (ambientAudioCtx.state === 'suspended') {
+        ambientAudioCtx.resume();
+    }
+
+    // Create a low drone - suited for tension/drama
+    const masterGain = ambientAudioCtx.createGain();
+    masterGain.gain.value = 0.03; // Keep it quiet and ambient
+    masterGain.connect(ambientAudioCtx.destination);
+
+    const freqs = [55, 110, 165]; // Low A notes
+    freqs.forEach(freq => {
+        const osc = ambientAudioCtx.createOscillator();
+        osc.type = 'sine';
+        osc.frequency.value = freq;
+
+        const lfo = ambientAudioCtx.createOscillator();
+        lfo.type = 'sine';
+        lfo.frequency.value = 0.1; // slow modulation
+        const lfoGain = ambientAudioCtx.createGain();
+        lfoGain.gain.value = 10;
+        lfo.connect(lfoGain);
+        lfoGain.connect(osc.frequency);
+
+        osc.connect(masterGain);
+        osc.start();
+        lfo.start();
+
+        ambientOscillators.push({ osc, lfo });
+    });
+}
+
+function stopAmbientSound() {
+    ambientOscillators.forEach(nodes => {
+        nodes.osc.stop();
+        nodes.lfo.stop();
+        nodes.osc.disconnect();
+        nodes.lfo.disconnect();
+    });
+    ambientOscillators = [];
+}
+
+function stopAudioReading() {
+    if (synth) synth.cancel();
+    stopAmbientSound();
+    isPlaying = false;
+    currentUtterance = null;
+
+    const modalBody = document.getElementById('modal-body');
+    if (modalBody) modalBody.classList.remove('reading-mode');
+    document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
+
+    const audioBtn = document.getElementById('audio-btn');
+    if (audioBtn) {
+        audioBtn.classList.remove('playing');
+        audioBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Listen
+        `;
+    }
+}
+
+function playNextParagraph() {
+    if (!isPlaying || currentParagraphIndex >= paragraphQueue.length) {
+        stopAudioReading();
+        return;
+    }
+
+    document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
+
+    const currentEl = paragraphQueue[currentParagraphIndex];
+    currentEl.classList.add('reading-active');
+
+    // Scroll element smoothly into view
+    currentEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Clean text for speaking (handling the Dropcap 'I t' separation)
+    let textToSpeak = currentEl.innerText || currentEl.textContent;
+    textToSpeak = textToSpeak.replace(/^([A-Z])\s+([a-z])/, '$1$2');
+
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+
+    const voices = synth.getVoices();
+    // Prefer a smooth voice if available
+    const preferredVoice = voices.find(v => v.lang.includes('en-GB') || v.lang.includes('en-IN')) || voices[0];
+    if (preferredVoice) utterance.voice = preferredVoice;
+
+    utterance.rate = 0.9;
+    utterance.pitch = 0.9;
+
+    utterance.onend = () => {
+        currentParagraphIndex++;
+        playNextParagraph();
+    };
+
+    utterance.onerror = (e) => {
+        console.error("Speech error", e);
+        stopAudioReading();
+    };
+
+    currentUtterance = utterance;
+    synth.speak(utterance);
+}
+
+function startAudioReading() {
+    if (isPlaying) return;
+    isPlaying = true;
+
+    const audioBtn = document.getElementById('audio-btn');
+    if (audioBtn) {
+        audioBtn.classList.add('playing');
+        audioBtn.innerHTML = `
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <rect x="9" y="9" width="6" height="6"></rect>
+            </svg>
+            Stop
+        `;
+    }
+
+    document.getElementById('modal-body').classList.add('reading-mode');
+
+    // Collect paragraphs and headers
+    paragraphQueue = Array.from(document.getElementById('modal-body').querySelectorAll('p, h3'));
+    currentParagraphIndex = 0;
+
+    createAmbientSound();
+
+    // Slight delay before voice
+    setTimeout(() => {
+        playNextParagraph();
+    }, 800);
+}
+
 // Story Modal Logic
 function openStory(templateId) {
     const template = document.getElementById(templateId);
@@ -64,6 +213,25 @@ function openStory(templateId) {
     // Set body content
     document.getElementById('modal-body').innerHTML = rawContent.innerHTML;
 
+    // Handle Audio button visibility and event attachment
+    const audioBtn = document.getElementById('audio-btn');
+    if (audioBtn) {
+        if (rawContent.getAttribute('data-audio') === 'true') {
+            audioBtn.style.display = 'flex';
+            stopAudioReading(); // reset state
+            audioBtn.onclick = () => {
+                if (isPlaying) {
+                    stopAudioReading();
+                } else {
+                    startAudioReading();
+                }
+            };
+        } else {
+            audioBtn.style.display = 'none';
+            stopAudioReading();
+        }
+    }
+
     // Show modal and prevent background scroll
     document.getElementById('story-modal').classList.add('is-open');
     document.body.style.overflow = 'hidden';
@@ -79,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => {
             document.getElementById('story-modal').classList.remove('is-open');
             document.body.style.overflow = '';
+            if (typeof stopAudioReading === 'function') stopAudioReading();
         });
     });
 
@@ -87,6 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.key === 'Escape') {
             document.getElementById('story-modal').classList.remove('is-open');
             document.body.style.overflow = '';
+            if (typeof stopAudioReading === 'function') stopAudioReading();
         }
     });
 

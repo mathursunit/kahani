@@ -543,3 +543,60 @@ footer {
         padding: 3rem 1.5rem;
     }
 }
+
+/* --- Audio Features --- */
+.audio-btn {
+    margin-right: 1.5rem;
+    color: #e67e22;
+    background: transparent;
+    border: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.audio-btn:hover {
+    color: #000;
+}
+
+.audio-btn.playing {
+    animation: pulse 2s infinite;
+    color: #c0392b;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Karaoke Reading Mode */
+.kindle-body.reading-mode {
+    padding-bottom: 2rem;
+}
+
+.kindle-body.reading-mode>p,
+.kindle-body.reading-mode>h3 {
+    opacity: 0.3;
+    transition: opacity 0.5s ease, transform 0.5s ease, color 0.5s ease;
+}
+
+.kindle-body.reading-mode>*.reading-active {
+    opacity: 1;
+    transform: scale(1.02);
+    transform-origin: left center;
+    color: #000;
+}
