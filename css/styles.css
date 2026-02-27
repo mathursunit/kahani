@@ -760,3 +760,103 @@ footer {
     transform-origin: left center;
     color: #000;
 }
+
+/* ==========================================
+   Language Switcher Styles
+   ========================================== */
+
+/* Hide by default using important to combat other display rules */
+.lang-hi,
+.lang-hi-rom {
+    display: none !important;
+}
+
+/* Base states */
+.lang-en {
+    display: inline !important;
+}
+
+div.lang-en,
+p.lang-en,
+h3.lang-en {
+    display: block !important;
+}
+
+/* English Active */
+body.lang-en-active .lang-hi,
+body.lang-en-active .lang-hi-rom {
+    display: none !important;
+}
+
+body.lang-en-active .lang-en {
+    display: inline !important;
+}
+
+body.lang-en-active div.lang-en,
+body.lang-en-active p.lang-en,
+body.lang-en-active h3.lang-en {
+    display: block !important;
+}
+
+/* Hindi Devanagari Active */
+body.lang-hi-active .lang-en,
+body.lang-hi-active .lang-hi-rom {
+    display: none !important;
+}
+
+body.lang-hi-active .lang-hi {
+    display: inline !important;
+}
+
+body.lang-hi-active div.lang-hi,
+body.lang-hi-active p.lang-hi,
+body.lang-hi-active h3.lang-hi {
+    display: block !important;
+}
+
+/* Hindi Romanized Active */
+body.lang-hi-rom-active .lang-en,
+body.lang-hi-rom-active .lang-hi {
+    display: none !important;
+}
+
+body.lang-hi-rom-active .lang-hi-rom {
+    display: inline !important;
+}
+
+body.lang-hi-rom-active div.lang-hi-rom,
+body.lang-hi-rom-active p.lang-hi-rom,
+body.lang-hi-rom-active h3.lang-hi-rom {
+    display: block !important;
+}
+
+/* Language Select Dropdown Styling */
+.lang-select {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 0.4rem 0.8rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    outline: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.lang-select:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.lang-select option {
+    background: #ffffff;
+    color: #333333;
+    font-weight: 400;
+    padding: 10px;
+}

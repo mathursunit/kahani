@@ -34,6 +34,14 @@
             <ul class="nav-links">
                 <li><a href="#stories">Stories</a></li>
                 <li><a href="#about">About</a></li>
+                <li>
+                    <select id="lang-select" onchange="switchLanguage(this.value)" class="lang-select"
+                        title="Change Language">
+                        <option value="en">English</option>
+                        <option value="hi">हिंदी</option>
+                        <option value="hi-rom">A-अ (Hinglish)</option>
+                    </select>
+                </li>
             </ul>
         </div>
     </nav>
@@ -203,10 +211,17 @@
                         <div class="card-overlay"><span class="read-time">5 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Truth</span>
-                        <h3>The Hidden Ledger</h3>
-                        <p>Sarah discovers a massive fraud within her firm and uses it to rebuild her entire community.
-                        </p>
+                        <span class="tag"><span class="lang-en">Truth</span><span
+                                class="lang-hi hidden">सच्चाई</span><span
+                                class="lang-hi-rom hidden">Sachchai</span></span>
+                        <h3><span class="lang-en">The Hidden Ledger</span><span class="lang-hi hidden">छिपा हुआ
+                                बहीखाता</span><span class="lang-hi-rom hidden">Chhipa Hua Bahikhata</span></h3>
+                        <p><span class="lang-en">Sarah discovers a massive fraud within her firm and uses it to rebuild
+                                her entire community.</span><span class="lang-hi hidden">सारा को अपनी कंपनी में भारी
+                                धोखाधड़ी का पता चलता है और वह इसका उपयोग अपने पूरे समुदाय के पुनर्निर्माण के लिए करती
+                                है।</span><span class="lang-hi-rom hidden">Sarah ko apni company mein bhari dhokhadhadhi
+                                ka pata chalta hai aur wah iska upayog apne poore samuday ke punarnirman ke liye karti
+                                hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -217,10 +232,15 @@
                         <div class="card-overlay"><span class="read-time">5 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Healing</span>
-                        <h3>Unspoken Words</h3>
-                        <p>David, a man who lost his voice, finds it again through a vibrant mural on a factory wall.
-                        </p>
+                        <span class="tag"><span class="lang-en">Healing</span><span
+                                class="lang-hi hidden">उपचार</span><span class="lang-hi-rom hidden">Upchar</span></span>
+                        <h3><span class="lang-en">Unspoken Words</span><span class="lang-hi hidden">अनकहे
+                                शब्द</span><span class="lang-hi-rom hidden">Ankahe Shabd</span></h3>
+                        <p><span class="lang-en">David, a man who lost his voice, finds it again through a vibrant mural
+                                on a factory wall.</span><span class="lang-hi hidden">डेविड, जिसने अपनी आवाज़ खो दी थी,
+                                कारखाने की दीवार पर एक जीवंत भित्ति चित्र के माध्यम से इसे फिर से पा लेता
+                                है।</span><span class="lang-hi-rom hidden">David, jisne apni aawaz kho di thi, karkhane
+                                ki deewar par ek jeevant bhitti chitra ke madhyam se ise phir se pa leta hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -231,10 +251,16 @@
                         <div class="card-overlay"><span class="read-time">6 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Resilience</span>
-                        <h3>The Weaver's Song</h3>
-                        <p>Eliza rebuilds her village's craftsmanship after a flood by weaving the story of
-                            survival.</p>
+                        <span class="tag"><span class="lang-en">Resilience</span><span
+                                class="lang-hi hidden">लचीलापन</span><span
+                                class="lang-hi-rom hidden">Lachilapan</span></span>
+                        <h3><span class="lang-en">The Weaver's Song</span><span class="lang-hi hidden">बुनकर का
+                                गीत</span><span class="lang-hi-rom hidden">Bunkar Ka Geet</span></h3>
+                        <p><span class="lang-en">Eliza rebuilds her village's craftsmanship after a flood by weaving the
+                                story of survival.</span><span class="lang-hi hidden">एलिजा बाढ़ के बाद उत्तरजीविता की
+                                कहानी बुनकर अपने गांव के शिल्प कौशल का पुनर्निर्माण करती है।</span><span
+                                class="lang-hi-rom hidden">Eliza baadh ke baad uttarjeevita ki kahani bunkar apne gaon
+                                ke shilp kaushal ka punarnirman karti hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -245,9 +271,16 @@
                         <div class="card-overlay"><span class="read-time">5 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Rebirth</span>
-                        <h3>Echoes of the Canyon</h3>
-                        <p>A former athlete finds a new purpose leading at-risk youth through the mountains.</p>
+                        <span class="tag"><span class="lang-en">Rebirth</span><span
+                                class="lang-hi hidden">पुनर्जन्म</span><span
+                                class="lang-hi-rom hidden">Punarjanm</span></span>
+                        <h3><span class="lang-en">Echoes of the Canyon</span><span class="lang-hi hidden">घाटी की
+                                गूंज</span><span class="lang-hi-rom hidden">Ghati Ki Goonj</span></h3>
+                        <p><span class="lang-en">A former athlete finds a new purpose leading at-risk youth through the
+                                mountains.</span><span class="lang-hi hidden">एक पूर्व एथलीट पहाड़ों के माध्यम से जोखिम
+                                वाले युवाओं का नेतृत्व करने में एक नया उद्देश्य पाता है।</span><span
+                                class="lang-hi-rom hidden">Ek poorv athlete pahadon ke madhyam se jokhim wale yuvaon ka
+                                netritva karne mein ek naya uddeshya pata hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -258,10 +291,15 @@
                         <div class="card-overlay"><span class="read-time">8 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Peace</span>
-                        <h3>The Midnight Garden</h3>
-                        <p>In a war-torn city, an old man creates a hidden forest of color in his basement
-                            courtyard.</p>
+                        <span class="tag"><span class="lang-en">Peace</span><span
+                                class="lang-hi hidden">शांति</span><span class="lang-hi-rom hidden">Shanti</span></span>
+                        <h3><span class="lang-en">The Midnight Garden</span><span class="lang-hi hidden">आधी रात का
+                                बगीचा</span><span class="lang-hi-rom hidden">Aadhi Raat Ka Bagicha</span></h3>
+                        <p><span class="lang-en">In a war-torn city, an old man creates a hidden forest of color in his
+                                basement courtyard.</span><span class="lang-hi hidden">युद्धग्रस्त शहर में, एक बूढ़ा
+                                व्यक्ति अपने आंगन के तहखाने में रंगों का एक छिपा हुआ जंगल बनाता है।</span><span
+                                class="lang-hi-rom hidden">Yuddhgrast shahar mein, ek boodha vyakti apne aangan ke
+                                tahkhane mein rangon ka ek chhipa hua jangal banata hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -272,10 +310,15 @@
                         <div class="card-overlay"><span class="read-time">5 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Karma</span>
-                        <h3>The Glass Architect</h3>
-                        <p>Alicia hides a flaw in a skyscraper's code to reclaim credit from her exploitative boss.
-                        </p>
+                        <span class="tag"><span class="lang-en">Karma</span><span
+                                class="lang-hi hidden">कर्म</span><span class="lang-hi-rom hidden">Karma</span></span>
+                        <h3><span class="lang-en">The Glass Architect</span><span class="lang-hi hidden">ग्लास
+                                आर्किटेक्ट</span><span class="lang-hi-rom hidden">Glass Architect</span></h3>
+                        <p><span class="lang-en">Alicia hides a flaw in a skyscraper's code to reclaim credit from her
+                                exploitative boss.</span><span class="lang-hi hidden">एलिसिया अपने शोषक बॉस से श्रेय
+                                वापस लेने के लिए गगनचुंबी इमारत के कोड में एक खामी छिपाती है।</span><span
+                                class="lang-hi-rom hidden">Alicia apne shoshak boss se shrey wapas lene ke liye
+                                gaganchumbi imarat ke code mein ek khami chhipati hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -286,10 +329,16 @@
                         <div class="card-overlay"><span class="read-time">7 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Healing</span>
-                        <h3>Shattered Silk</h3>
-                        <p>Elena rebuilds her fashion house using scraps and gold thread after a surgical smear
-                            campaign.</p>
+                        <span class="tag"><span class="lang-en">Healing</span><span
+                                class="lang-hi hidden">उपचार</span><span class="lang-hi-rom hidden">Upchar</span></span>
+                        <h3><span class="lang-en">Shattered Silk</span><span class="lang-hi hidden">बिखरा हुआ
+                                रेशम</span><span class="lang-hi-rom hidden">Bikhra Hua Resham</span></h3>
+                        <p><span class="lang-en">Elena rebuilds her fashion house using scraps and gold thread after a
+                                surgical smear campaign.</span><span class="lang-hi hidden">एलेना एक सर्जिकल निंदा
+                                अभियान के बाद स्क्रैप और सोने के धागे का उपयोग करके अपने फैशन हाउस का पुनर्निर्माण करती
+                                है।</span><span class="lang-hi-rom hidden">Elena ek surgical ninda abhiyan ke baad scrap
+                                aur sone ke dhage ka upayog karke apne fashion house ka punarnirman karti hai.</span>
+                        </p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -300,10 +349,17 @@
                         <div class="card-overlay"><span class="read-time">6 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Truth</span>
-                        <h3>The Library of Hearts</h3>
-                        <p>Olivia uncovers ancient letters that end decades of town feuds with the power of the
-                            truth.</p>
+                        <span class="tag"><span class="lang-en">Truth</span><span
+                                class="lang-hi hidden">सच्चाई</span><span
+                                class="lang-hi-rom hidden">Sachchai</span></span>
+                        <h3><span class="lang-en">The Library of Hearts</span><span class="lang-hi hidden">दिलों का
+                                पुस्तकालय</span><span class="lang-hi-rom hidden">Dilon Ka Pustakalay</span></h3>
+                        <p><span class="lang-en">Olivia uncovers ancient letters that end decades of town feuds with the
+                                power of the truth.</span><span class="lang-hi hidden">ओलिविया ने प्राचीन पत्रों को
+                                उजागर किया जो सच्चाई की शक्ति के साथ दशकों के शहर के झगड़े को समाप्त करते
+                                हैं।</span><span class="lang-hi-rom hidden">Olivia ne prachin patron ko ujagar kiya jo
+                                sachchai ki shakti ke saath dashakon ke shahar ke jhagde ko samapt karte hain.</span>
+                        </p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -314,9 +370,16 @@
                         <div class="card-overlay"><span class="read-time">8 min read</span></div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Resilience</span>
-                        <h3>Songs from the Ruin</h3>
-                        <p>A cellist with burnt hands invents a new instrument from the wreckage of his home.</p>
+                        <span class="tag"><span class="lang-en">Resilience</span><span
+                                class="lang-hi hidden">लचीलापन</span><span
+                                class="lang-hi-rom hidden">Lachilapan</span></span>
+                        <h3><span class="lang-en">Songs from the Ruin</span><span class="lang-hi hidden">खंडहर से
+                                गीत</span><span class="lang-hi-rom hidden">Khandhar Se Geet</span></h3>
+                        <p><span class="lang-en">A cellist with burnt hands invents a new instrument from the wreckage
+                                of his home.</span><span class="lang-hi hidden">एक सेल्युसिस्ट जिसके हाथ जल गए हैं, अपने
+                                घर के मलबे से एक नए उपकरण का आविष्कार करता है।</span><span class="lang-hi-rom hidden">Ek
+                                cellist jiske haath jal gaye hain, apne ghar ke malbe se ek naye upkaran ka aavishkar
+                                karta hai.</span></p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
@@ -1590,327 +1653,1008 @@
     </template>
 
     <template id="story-7">
+
         <div data-title="The Hidden Ledger" data-tag="Truth">
-            <p><span class="dropcap">T</span>he dust in the archives of Thorne & Co. was ancient, much like the secrets
-                it tried to hide. Sarah, a senior accountant who had given fifteen years to the firm, was doing a
-                routine audit when she found the discrepancy. It wasn't a large amount at first—just a few thousand
-                dollars here and there, redirected from the employee pension fund.</p>
-            <p>But as she dug deeper, the "few thousand" turned into millions. Her partner and mentor, Arthur Thorne,
-                had been bled the company dry for years to fuel a gambling habit that spanned three continents.</p>
-            <h3>The Betrayal</h3>
-            <p>Sarah felt a cold dread settle in her stomach. Arthur wasn't just her boss; he was the man who had given
-                her a chance when she was a single mother fresh out of college. He had been at her daughter's
-                graduation. He had held her hand when her father passed away.</p>
-            <p>"Sarah, is something wrong?" Arthur's voice drifted from his mahogany-paneled office. He was smiling,
-                that same warm, grandfatherly smile that had always made her feel safe.</p>
-            <p>She closed the ledger. "Nothing, Arthur. Just some rounding errors."</p>
-            <h3>The Countermove</h3>
-            <p>She knew that if she went to the police, the company would fold. Hundreds of people would lose their
-                jobs, and the pension fund, already precarious, would be seized. Arthur would go to jail, but the people
-                he hurt wouldn't get their lives back.</p>
-            <p>Sarah spent the next week meticulously documenting every illegal transaction. She didn't call the
-                authorities. Instead, she called Arthur into the conference room and laid out the evidence.</p>
-            <p>His face drained of color. "Sarah, please. I can explain."</p>
-            <p>"I don't want an explanation, Arthur. I want the money back. All of it."</p>
-            <h3>The Settlement</h3>
-            <p>She presented him with a choice: he could face a lifetime in prison, or he could 'retire' immediately and
-                donate his entire personal fortune—the properties in the Hamptons, the art collection, the offshore
-                accounts—into a private trust she had already drafted. The trust would replenish the pension fund and
-                provide a permanent endowment for 'The Bridge,' the local homeless shelter Arthur had used as a tax
-                haven for years.</p>
-            <p>Arthur shook as he signed the papers. He left that night with a single suitcase and a reputation that
-                would slowly fade into obscurity.</p>
-            <p>Sarah took over as CEO. She didn't tell a soul about the ledger. Today, 'The Bridge' is one of the most
-                well-funded charities in the state, and the employees of Thorne & Co. have the most secure retirement in
-                the industry. The truth didn't just set Sarah free; it rebuilt a community.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">T</span>he dust in the archives of Thorne & Co. was ancient, much like the
+                    secrets it tried to hide. Sarah, a senior accountant who had given fifteen years to the firm, was
+                    doing a routine audit when she found the discrepancy. It wasn't a large amount at first—just a few
+                    thousand dollars here and there, redirected from the employee pension fund.</p>
+                <p>But as she dug deeper, the "few thousand" turned into millions. Her partner and mentor, Arthur
+                    Thorne, had been bled the company dry for years to fuel a gambling habit that spanned three
+                    continents.</p>
+                <h3>The Betrayal</h3>
+                <p>Sarah felt a cold dread settle in her stomach. Arthur wasn't just her boss; he was the man who had
+                    given her a chance when she was a single mother fresh out of college. He had been at her daughter's
+                    graduation. He had held her hand when her father passed away.</p>
+                <p>"Sarah, is something wrong?" Arthur's voice drifted from his mahogany-paneled office. He was smiling,
+                    that same warm, grandfatherly smile that had always made her feel safe.</p>
+                <p>She closed the ledger. "Nothing, Arthur. Just some rounding errors."</p>
+                <h3>The Countermove</h3>
+                <p>She knew that if she went to the police, the company would fold. Hundreds of people would lose their
+                    jobs, and the pension fund, already precarious, would be seized. Arthur would go to jail, but the
+                    people he hurt wouldn't get their lives back.</p>
+                <p>Sarah spent the next week meticulously documenting every illegal transaction. She didn't call the
+                    authorities. Instead, she called Arthur into the conference room and laid out the evidence.</p>
+                <p>His face drained of color. "Sarah, please. I can explain."</p>
+                <p>"I don't want an explanation, Arthur. I want the money back. All of it."</p>
+                <h3>The Settlement</h3>
+                <p>She presented him with a choice: he could face a lifetime in prison, or he could 'retire' immediately
+                    and donate his entire personal fortune—the properties in the Hamptons, the art collection, the
+                    offshore accounts—into a private trust she had already drafted. The trust would replenish the
+                    pension fund and provide a permanent endowment for 'The Bridge,' the local homeless shelter Arthur
+                    had used as a tax haven for years.</p>
+                <p>Arthur shook as he signed the papers. He left that night with a single suitcase and a reputation that
+                    would slowly fade into obscurity.</p>
+                <p>Sarah took over as CEO. She didn't tell a soul about the ledger. Today, 'The Bridge' is one of the
+                    most well-funded charities in the state, and the employees of Thorne & Co. have the most secure
+                    retirement in the industry. The truth didn't just set Sarah free; it rebuilt a community.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">थॉ</span>र्न एंड कंपनी के अभिलेखागार में धूल उतनी ही पुरानी थी, जितने कि वे
+                    रहस्य जिन्हें छुपाने की कोशिश की गई थी। सारा, एक वरिष्ठ एकाउंटेंट जिसने फर्म को पंद्रह साल दिए थे,
+                    एक नियमित ऑडिट कर रही थी जब उसे विसंगति मिली। शुरुआत में यह बहुत बड़ी रकम नहीं थी—कर्मचारी पेंशन फंड
+                    से यहाँ-वहाँ डायवर्ट किए गए कुछ हज़ार डॉलर।</p>
+                <p>लेकिन जैसे-जैसे उसने और गहराई से जाँच की, "कुछ हज़ार" लाखों में बदल गए। उसके बॉस और मेंटर, आर्थर
+                    थॉर्न ने तीन महाद्वीपों में फैले अपने जुए की लत को पूरा करने के लिए कंपनी को सालों तक निचोड़ा था।
+                </p>
+                <h3>धोखा</h3>
+                <p>सारा के पेट में एक ठंडा डर बैठ गया। आर्थर सिर्फ उसका बॉस नहीं था; वह वह व्यक्ति था जिसने उसे तब मौका
+                    दिया था जब वह कॉलेज से ताज़ा निकली एक सिंगल मदर थी। वह उसकी बेटी के ग्रेजुएशन में मौजूद था। जब उसके
+                    पिता का निधन हुआ तब उसने उसका हाथ थाम रखा था।</p>
+                <p>"सारा, क्या कुछ गलत है?" आर्थर की आवाज़ उसके महोगनी पैनल वाले कार्यालय से आई। वह मुस्कुरा रहा था, वही
+                    गर्मजोशी भरी, दादाजी जैसी मुस्कान जिसने हमेशा उसे सुरक्षित महसूस कराया था।</p>
+                <p>उसने बहीखाता बंद कर दिया। "कुछ नहीं, आर्थर। बस कुछ राउंडिंग एरर हैं।"</p>
+                <h3>जवाबी चाल</h3>
+                <p>वह जानती थी कि अगर वह पुलिस के पास गई, तो कंपनी बंद हो जाएगी। सैकड़ों लोगों की नौकरियां चली जाएंगी,
+                    और पेंशन फंड, जो पहले से ही अनिश्चित था, ज़ब्त कर लिया जाएगा। आर्थर जेल जाएगा, लेकिन जिन लोगों को
+                    उसने चोट पहुंचाई थी, उनकी ज़िंदगी वापस नहीं मिलेगी।</p>
+                <p>सारा ने अगला सप्ताह हर गैरकानूनी लेन-देन का दस्तावेजीकरण करने में बिताया। उसने अधिकारियों को फोन नहीं
+                    किया। इसके बजाय, उसने आर्थर को कॉन्फ्रेंस रूम में बुलाया और सारे सबूत सामने रख दिए।</p>
+                <p>उसके चेहरे का रंग उड़ गया। "सारा, कृपया। मैं समझा सकता हूँ।"</p>
+                <p>"मुझे कोई स्पष्टीकरण नहीं चाहिए, आर्थर। मुझे पैसे वापस चाहिए। सब कुछ।"</p>
+                <h3>समझौता</h3>
+                <p>उसने उसके सामने एक विकल्प रखा: वह उम्रकैद की सजा का सामना कर सकता है, या वह तुरंत 'संन्यास' ले सकता
+                    है और अपनी सारी व्यक्तिगत संपत्ति—हैम्पटन की संपत्तियां, कला संग्रह, ऑफशोर खाते—एक निजी ट्रस्ट में
+                    दान कर सकता है जिसका मसौदा उसने पहले ही तैयार कर लिया था। यह ट्रस्ट पेंशन फंड को फिर से भरेगा और 'द
+                    ब्रिज' के लिए एक स्थायी बंदोबस्ती प्रदान करेगा, जो एक स्थानीय बेघर आश्रय है जिसका उपयोग आर्थर सालों
+                    से कर से बचने के लिए करता रहा था।</p>
+                <p>आर्थर कांपने लगा जब उसने कागजात पर हस्ताक्षर किए। वह उसी रात एक सूटकेस और एक ऐसी प्रतिष्ठा के साथ चला
+                    गया जो धीरे-धीरे गुमनामी में खो जाएगी।</p>
+                <p>सारा ने सीईओ का पद संभाला। उसने बहीखाते के बारे में किसी को नहीं बताया। आज, 'द ब्रिज' राज्य के सबसे
+                    अच्छे वित्त पोषित चैरिटी में से एक है, और थॉर्न एंड कंपनी के कर्मचारियों के पास उद्योग में सबसे
+                    सुरक्षित सेवानिवृत्ति है। सच्चाई ने केवल सारा को ही मुक्त नहीं किया; इसने एक समुदाय का पुनर्निर्माण
+                    किया।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">T</span>horne & Co. ke abhilekhagar mein dhool utni hi purani thi, jitne ki ve
+                    rahasya jinhe chhupane ki koshish ki gayi thi. Sarah, ek varishtha accountant jisne firm ko pandrah
+                    saal diye the, ek niyamit audit kar rahi thi jab use visangati mili. Shuruat mein yah bahut badi
+                    rakam nahi thi—karmachari pension fund se yahan-wahan divert kiye gaye kuchh hazar dollar.</p>
+                <p>Lekin jaise-jaise usne aur gahrai se jaanch ki, "kuchh hazar" lakhon mein badal gaye. Uske boss aur
+                    mentor, Arthur Thorne ne teen mahadweepon mein phaile apne jue ki lat ko poora karne ke liye company
+                    ko saalon tak nichoda tha.</p>
+                <h3>Dhokha</h3>
+                <p>Sarah ke pet mein ek thanda dar baith gaya. Arthur sirf uska boss nahi tha; vah vah vyakti tha jisne
+                    use tab mauka diya tha jab vah college se taza nikli ek single mother thi. Vah uski beti ke
+                    graduation mein maujood tha. Jab uske pita ka nidhan hua tab usne uska haath thaam rakha tha.</p>
+                <p>"Sarah, kya kuchh galat hai?" Arthur ki aawaz uske mahogany panel wale karyalay se aayi. Vah muskura
+                    raha tha, vahi garmjoshi bhari, dadaji jaisi muskan jisne hamesha use surakshit mahsoos karaya tha.
+                </p>
+                <p>Usne bahikhata band kar diya. "Kuchh nahi, Arthur. Bas kuchh rounding error hain."</p>
+                <h3>Jawabi Chaal</h3>
+                <p>Vah jaanti thi ki agar vah police ke paas gayi, to company band ho jayegi. Saikadon logon ki
+                    naukriyan chali jayengi, aur pension fund, jo pahle se hi anishchit tha, zabt kar liya jayega.
+                    Arthur jail jayega, lekin jin logon ko usne chot pahunchayi thi, unki zindagi wapas nahi milegi.</p>
+                <p>Sarah ne agla saptah har gairkanooni len-den ka dastavejikaran karne mein bitaya. Usne adhikariyon ko
+                    phone nahi kiya. Iske bajay, usne Arthur ko conference room mein bulaya aur saare saboot samne rakh
+                    diye.</p>
+                <p>Uske chehre ka rang ud gaya. "Sarah, kripya. Main samjha sakta hoon."</p>
+                <p>"Mujhe koi spashtikaran nahi chahiye, Arthur. Mujhe paise wapas chahiye. Sab kuchh."</p>
+                <h3>Samjhauta</h3>
+                <p>Usne uske saamne ek vikalp rakha: vah umrakaid ki saza ka samna kar sakta hai, ya vah turant
+                    'sanyaas' le sakta hai aur apni saari vyaktigat sampatti—Hamptons ki sampattiyan, kala sangrah,
+                    offshore khaate—ek niji trust mein daan kar sakta hai jiska masouda usne pahle hi taiyar kar liya
+                    tha. Yah trust pension fund ko phir se bharega aur 'The Bridge' ke liye ek sthayi bandobasti pradan
+                    karega, jo ek sthaniya beghar aashray hai jiska upayog Arthur saalon se kar se bachne ke liye karta
+                    raha tha.</p>
+                <p>Arthur kaampne laga jab usne kagzaat par hastakshar kiye. Vah usi raat ek suitcase aur ek aisi
+                    pratishtha ke saath chala gaya jo dhire-dhire gumnami mein kho jayegi.</p>
+                <p>Sarah ne CEO ka pad sambhala. Usne bahikhate ke baare mein kisi ko nahi bataya. Aaj, 'The Bridge'
+                    rajya ke sabse achchhe vitt poshit charity mein se ek hai, aur Thorne & Co. ke karmachariyon ke paas
+                    udyog mein sabse surakshit sevanivritti hai. Sachchai ne keval Sarah ko hi mukt nahi kiya; isne ek
+                    samuday ka punarnirman kiya.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-8">
+
         <div data-title="Unspoken Words" data-tag="Healing">
-            <p><span class="dropcap">T</span>he silence in David's life was a physical thing. It had begun three years
-                ago, on a night he preferred not to remember. Since then, the words simply wouldn't come. He
-                communicated with a notepad, a phone, and a haunted look in his eyes that spoke of things far worse than
-                the loss of speech.</p>
-            <p>He lived in a small apartment overlooking the 'Grey Ward,' a neighborhood defined by its concrete and its
-                apathy. It was a place where people looked down, not up.</p>
-            <h3>The Wall</h3>
-            <p>Opposite his window was a massive, scarred brick wall belonging to a derelict factory. It was covered in
-                gang tags and urban decay. One morning, David bought several crates of spray paint and a heavy-duty
-                ladder. He didn't ask for permission. He just started.</p>
-            <p>The first few days, the neighbors were hostile. "Great, more graffiti," a woman yelled, throwing a
-                crumpled can at him. David didn't respond. He just kept painting.</p>
-            <h3>The Transformation</h3>
-            <p>Slowly, the gray brick began to disappear under a riot of color. It wasn't just shapes; it was an ocean.
-                A deep, sapphire sea filled with bioluminescent creatures that glowed even in the dim light of the
-                streetlamps. He painted things he couldn't say: the grace of a whale's tail, the silent dance of
-                jellyfish, the light filtering through the kelp forests.</p>
-            <p>By the second week, the neighborhood kids started coming by. David handed them brushes and pointed to the
-                lower sections. They worked in a shared, comfortable silence. The woman who had thrown the can brought
-                him a sandwich one afternoon.</p>
-            <p>"It's beautiful," she whispered. "I've never seen the ocean."</p>
-            <h3>The Voice Found</h3>
-            <p>The mural became a landmark. The city, instead of filing charges, sent a crew to install lights and
-                benches. The 'Grey Ward' was starting to be called the 'Azure District.'</p>
-            <p>On the final day, as David was signing his name at the bottom—a small, humble 'D'—a young girl asked him,
-                "Why the ocean, Mr. David?"</p>
-            <p>David looked at the mural, then at the girl. He felt a pressure in his chest, a dam finally breaking. He
-                took a breath, the air tasting of salt and spray paint.</p>
-            <p>"Because," he said, his voice raspy and thin but clear. "Even in the deepest part, there is always
-                light."</p>
-            <p>He hadn't just painted the wall; he had painted a door back into the world.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">T</span>he silence in David's life was a physical thing. It had begun three
+                    years ago, on a night he preferred not to remember. Since then, the words simply wouldn't come. He
+                    communicated with a notepad, a phone, and a haunted look in his eyes that spoke of things far worse
+                    than the loss of speech.</p>
+                <p>He lived in a small apartment overlooking the 'Grey Ward,' a neighborhood defined by its concrete and
+                    its apathy. It was a place where people looked down, not up.</p>
+                <h3>The Wall</h3>
+                <p>Opposite his window was a massive, scarred brick wall belonging to a derelict factory. It was covered
+                    in gang tags and urban decay. One morning, David bought several crates of spray paint and a
+                    heavy-duty ladder. He didn't ask for permission. He just started.</p>
+                <p>The first few days, the neighbors were hostile. "Great, more graffiti," a woman yelled, throwing a
+                    crumpled can at him. David didn't respond. He just kept painting.</p>
+                <h3>The Transformation</h3>
+                <p>Slowly, the gray brick began to disappear under a riot of color. It wasn't just shapes; it was an
+                    ocean. A deep, sapphire sea filled with bioluminescent creatures that glowed even in the dim light
+                    of the streetlamps. He painted things he couldn't say: the grace of a whale's tail, the silent dance
+                    of jellyfish, the light filtering through the kelp forests.</p>
+                <p>By the second week, the neighborhood kids started coming by. David handed them brushes and pointed to
+                    the lower sections. They worked in a shared, comfortable silence. The woman who had thrown the can
+                    brought him a sandwich one afternoon.</p>
+                <p>"It's beautiful," she whispered. "I've never seen the ocean."</p>
+                <h3>The Voice Found</h3>
+                <p>The mural became a landmark. The city, instead of filing charges, sent a crew to install lights and
+                    benches. The 'Grey Ward' was starting to be called the 'Azure District.'</p>
+                <p>On the final day, as David was signing his name at the bottom—a small, humble 'D'—a young girl asked
+                    him, "Why the ocean, Mr. David?"</p>
+                <p>David looked at the mural, then at the girl. He felt a pressure in his chest, a dam finally breaking.
+                    He took a breath, the air tasting of salt and spray paint.</p>
+                <p>"Because," he said, his voice raspy and thin but clear. "Even in the deepest part, there is always
+                    light."</p>
+                <p>He hadn't just painted the wall; he had painted a door back into the world.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">डे</span>विड के जीवन में मौन एक भौतिक वस्तु की तरह था। यह तीन साल पहले शुरू हुआ
+                    था, उस रात जिसे वह याद नहीं करना चाहता था। तब से, शब्द उसके मुंह से निकल ही नहीं रहे थे। वह एक
+                    नोटपैड, एक फोन और अपनी आँखों में एक डरावने सूनेपन के साथ संवाद करता था जो बोलने की क्षमता खोने से भी
+                    कहीं अधिक बुरी बातों की गवाही देता था।</p>
+                <p>वह 'ग्रे वार्ड' के सामने एक छोटे से अपार्टमेंट में रहता था, एक ऐसा इलाका जो उसके कंक्रीट और उदासी से
+                    परिभाषित होता था। यह एक ऐसी जगह थी जहां लोग ऊपर नहीं, नीचे देखते थे।</p>
+                <h3>दीवार</h3>
+                <p>उसकी खिड़की के सामने एक छोड़े हुए कारखाने की एक विशाल, खरोंच वाली ईंट की दीवार थी। यह गैंग के निशानों
+                    और शहरी क्षय से ढकी थी। एक सुबह, डेविड ने स्प्रे पेंट के कई क्रेट और एक हेवी-ड्यूटी सीढ़ी खरीदी।
+                    उसने किसी से इजाजत नहीं मांगी। उसने बस शुरू कर दिया।</p>
+                <p>शुरुआती कुछ दिनों में, पड़ोसी शत्रुतापूर्ण थे। "बहुत बढ़िया, और भित्तिचित्र (ग्रैफिटी)," एक महिला
+                    चिल्लाई और उसने एक मुड़ा हुआ डिब्बा उसकी ओर फेंक दिया। डेविड ने कोई जवाब नहीं दिया। उसने बस पेंट
+                    करना जारी रखा।</p>
+                <h3>बदलाव</h3>
+                <p>धीरे-धीरे, भूरी ईंटें रंगों के एक दंगल के नीचे गायब होने लगि। यह केवल आकार नहीं थे; यह एक महासागर था।
+                    बायोल्यूमिनसेंट जीवों से भरा एक गहरा, नीलमणि सागर जो स्ट्रीटलाइट्स की हल्की रोशनी में भी चमकता था।
+                    उसने उन चीजों को चित्रित किया जो वह कह नहीं सकता था: व्हेल की पूंछ की सुंदरता, जेलीफ़िश का मूक
+                    नृत्य, और पानी के नीचे के जंगलों से छनकर आती रोशनी।</p>
+                <p>दूसरे सप्ताह तक, पड़ोस के बच्चे आने लगे। डेविड ने उन्हें ब्रश सौंपे और निचले हिस्सों की ओर इशारा
+                    किया। उन्होंने एक साझा, आरामदायक शांति में काम किया। जिस महिला ने डिब्बा फेंका था, वह एक दोपहर उसके
+                    लिए सैंडविच लाई।</p>
+                <p>"यह सुंदर है," उसने फुसफुसाते हुए कहा। "मैंने पहले कभी महासागर नहीं देखा।"</p>
+                <h3>आवाज़ का लौटना</h3>
+                <p>भित्ति चित्र एक पहचान बन गया। शहर के अधिकारियों ने आरोप दर्ज़ करने के बजाय, रोशनी और बेंच लगाने के
+                    लिए एक टीम भेजी। 'ग्रे वार्ड' को अब 'अज़ूर डिस्ट्रिक्ट' कहा जाने लगा था।</p>
+                <p>अंतिम दिन, जब डेविड नीचे अपना नाम लिख रहा था—एक छोटा, विनम्र 'D'—तो एक छोटी लड़की ने उससे पूछा,
+                    "महासागर क्यों, मिस्टर डेविड?"</p>
+                <p>डेविड ने भित्ति चित्र को देखा, फिर लड़की को। उसने अपनी छाती में एक दबाव महसूस किया, मानो कोई बांध
+                    आखिरकार टूट रहा हो। उसने एक सांस ली, जिसमें नमक और स्प्रे पेंट का स्वाद था।</p>
+                <p>"क्योंकि," उसने कहा, उसकी आवाज़ खुरदरी और पतली थी लेकिन साफ़ थी। "सबसे गहरे हिस्से में भी, हमेशा
+                    रोशनी होती है।"</p>
+                <p>उसने सिर्फ दीवार पर पेंट नहीं किया था; उसने दुनिया में वापस लौटने के लिए एक दरवाजा पेंट किया था।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">D</span>avid ke jeevan mein maun ek bhautik vastu ki tarah tha. Yah teen saal
+                    pahle shuru hua tha, us raat jise vah yaad nahi karna chahta tha. Tab se, shabd uske munh se nikal
+                    hi nahi rahe the. Vah ek notepad, ek phone aur apni aankhon mein ek darawane soonepan ke saath
+                    samvad karta tha jo bolne ki kshmata khone se bhi kahin adhik buri baaton ki gawahi deta tha.</p>
+                <p>Vah 'Grey Ward' ke samne ek chhote se apartment mein rahta tha, ek aisa ilaka jo uske concrete aur
+                    udasi se paribhashit hota tha. Yah ek aisi jagah thi jahan log upar nahi, niche dekhte the.</p>
+                <h3>Deewar</h3>
+                <p>Uski khidki ke samne ek chhode hue karkhane ki ek vishal, kharonch wali eent ki deewar thi. Yah gang
+                    ke nishanon aur shahari kshay se dhaki thi. Ek subah, David ne spray paint ke kai crate aur ek
+                    heavy-duty seedhi kharidi. Usne kisi se ijazat nahi mangi. Usne bas shuru kar diya.</p>
+                <p>Shuruati kuchh dinon mein, padosi shatrutapoorna the. "Bahut badhiya, aur graffiti," ek mahila
+                    chillayi aur usne ek muda hua dibba uski aur phenk diya. David ne koi jawab nahi diya. Usne bas
+                    paint karna jari rakha.</p>
+                <h3>Badlav</h3>
+                <p>Dhire-dhire, bhoori eentein rangon ke ek dangal ke niche gayab hone lagi. Yah keval aakar nahi the;
+                    yah ek mahasagar tha. Bioluminescent jeevon se bhara ek gahra, nilmani sagar jo streetlights ki
+                    halki roshni mein bhi chamakta tha. Usne un chijon ko chitrit kiya jo vah kah nahi sakta tha: whale
+                    ki poonch ki sundarta, jellyfish ka mook nritya, aur pani ke niche ke janglon se chhankar aati
+                    roshni.</p>
+                <p>Doosre saptah tak, pados ke bachche aane lage. David ne unhe brush saunpe aur nichle hisson ki aur
+                    ishara kiya. Unhone ek sajha, aaramdayak shanti mein kaam kiya. Jis mahila ne dibba phenka tha, vah
+                    ek dopahar uske liye sandwich layi.</p>
+                <p>"Yah sundar hai," usne phusphusate hue kaha. "Maine pahle kabhi mahasagar nahi dekha."</p>
+                <h3>Aawaz Ka Lautna</h3>
+                <p>Bhitti chitra ek pahchan ban gaya. Shahar ke adhikariyon ne arop darz karne ke bajay, roshni aur
+                    bench lagane ke liye ek team bheji. 'Grey Ward' ko ab 'Azure District' kaha jane laga tha.</p>
+                <p>Antim din, jab David niche apna naam likh raha tha—ek chhota, vinamra 'D'—to ek chhoti ladki ne usse
+                    poochha, "Mahasagar kyon, Mr. David?"</p>
+                <p>David ne bhitti chitra ko dekha, phir ladki ko. Usne apni chhati mein ek dabav mahsoos kiya, mano koi
+                    baandh aakhirkar toot raha ho. Usne ek saans li, jismein namak aur spray paint ka swad tha.</p>
+                <p>"Kyonki," usne kaha, uski aawaz khurdari aur patli thi lekin saaf thi. "Sabse gahre hisse mein bhi,
+                    hamesha roshni hoti hai."</p>
+                <p>Usne sirf deewar par paint nahi kiya tha; usne duniya mein wapas lautne ke liye ek darwaza paint kiya
+                    tha.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-9">
+
         <div data-title="The Weaver's Song" data-tag="Resilience">
-            <p><span class="dropcap">E</span>liza's loom was older than the village itself. It had belonged to her
-                great-grandmother, a sturdy frame of rosewood and memories. When the River Elara overflowed its banks,
-                it took half the village and Eliza's livelihood with it. She found the loom three miles downstream, a
-                splintered wreckage of what it used to be.</p>
-            <p>For weeks, the village was a place of mud and mourning. The younger generation talked of moving to the
-                city, leaving behind the traditions that the water had so easily swept away.</p>
-            <h3>The First Thread</h3>
-            <p>Eliza didn't leave. She spent her days scavenging for the pieces of her loom. She found the shuttle
-                caught in a willow tree. She found the heddles buried in the silt. She cleaned them with a devotion that
-                bordered on the religious.</p>
-            <p>"Eliza, it's gone," the village elder said, watching her work. "The market in the city doesn't want
-                hand-woven silk anymore. They want cheap, fast, machine-made things."</p>
-            <p>"They want stories," Eliza replied, her hands steady as she planed a new beam for the frame. "And stories
-                take time."</p>
-            <h3>The Collective</h3>
-            <p>She invited the other weavers, mostly older women who had lost their workstations, to her small porch.
-                She didn't have a loom for everyone, but she had an idea. They would pool their remaining materials and
-                their knowledge. They wouldn't weave simple cloth; they would weave the story of the flood.</p>
-            <p>They used dyed wool from the remaining sheep, silk they had saved in high cupboards, and even strips of
-                colored fabric from the clothes the river had ruined. They worked together, one loom shared by ten
-                hands. The sounds of their work—the rhythm of the treadles and the clatter of the shuttle—became the new
-                heartbeat of the village.</p>
-            <h3>Rising from the Mud</h3>
-            <p>The 'Flood Tapestry' was ten feet long and filled with the names of those they had lost, the strength of
-                the trees that stood, and the blue of the water that had receded. A passing traveler, a curator from an
-                international gallery, saw it hanging on Eliza's line to dry.</p>
-            <p>Three months later, the village wasn't just surviving; it was thriving. The 'Elara Weaver's Collective'
-                had orders from three different continents. They had built a new community center with twenty looms, and
-                the young people were staying, learning the patterns of their ancestors.</p>
-            <p>Eliza's rosewood loom was never quite the same—it always had a slight creak—but she liked it that way. It
-                was a reminder that even when things break, the pattern can still be beautiful.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">E</span>liza's loom was older than the village itself. It had belonged to her
+                    great-grandmother, a sturdy frame of rosewood and memories. When the River Elara overflowed its
+                    banks, it took half the village and Eliza's livelihood with it. She found the loom three miles
+                    downstream, a splintered wreckage of what it used to be.</p>
+                <p>For weeks, the village was a place of mud and mourning. The younger generation talked of moving to
+                    the city, leaving behind the traditions that the water had so easily swept away.</p>
+                <h3>The First Thread</h3>
+                <p>Eliza didn't leave. She spent her days scavenging for the pieces of her loom. She found the shuttle
+                    caught in a willow tree. She found the heddles buried in the silt. She cleaned them with a devotion
+                    that bordered on the religious.</p>
+                <p>"Eliza, it's gone," the village elder said, watching her work. "The market in the city doesn't want
+                    hand-woven silk anymore. They want cheap, fast, machine-made things."</p>
+                <p>"They want stories," Eliza replied, her hands steady as she planed a new beam for the frame. "And
+                    stories take time."</p>
+                <h3>The Collective</h3>
+                <p>She invited the other weavers, mostly older women who had lost their workstations, to her small
+                    porch. She didn't have a loom for everyone, but she had an idea. They would pool their remaining
+                    materials and their knowledge. They wouldn't weave simple cloth; they would weave the story of the
+                    flood.</p>
+                <p>They used dyed wool from the remaining sheep, silk they had saved in high cupboards, and even strips
+                    of colored fabric from the clothes the river had ruined. They worked together, one loom shared by
+                    ten hands. The sounds of their work—the rhythm of the treadles and the clatter of the shuttle—became
+                    the new heartbeat of the village.</p>
+                <h3>Rising from the Mud</h3>
+                <p>The 'Flood Tapestry' was ten feet long and filled with the names of those they had lost, the strength
+                    of the trees that stood, and the blue of the water that had receded. A passing traveler, a curator
+                    from an international gallery, saw it hanging on Eliza's line to dry.</p>
+                <p>Three months later, the village wasn't just surviving; it was thriving. The 'Elara Weaver's
+                    Collective' had orders from three different continents. They had built a new community center with
+                    twenty looms, and the young people were staying, learning the patterns of their ancestors.</p>
+                <p>Eliza's rosewood loom was never quite the same—it always had a slight creak—but she liked it that
+                    way. It was a reminder that even when things break, the pattern can still be beautiful.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">ए</span>लिज़ा का लूम (करघा) गाँव से भी पुराना था। यह उसकी परदादी का था, रोज़वुड
+                    और यादों का एक मजबूत ढांचा। जब एलारा नदी में बाढ़ आई, तो आधा गाँव और एलिज़ा की आजीविका उसके साथ बह
+                    गई। उसे तीन मील नीचे नदी की धारा में अपना लूम मिला, जो अब केवल टूटी हुई लकड़ियों का एक ढेर था।</p>
+                <p>कई हफ्तों तक, गाँव मिट्टी और मातम की जगह बना रहा। नई पीढ़ी शहर जाने की बात कर रही थी, उन परंपराओं को
+                    पीछे छोड़ते हुए जिन्हें पानी ने इतनी आसानी से बहा दिया था।</p>
+                <h3>पहला धागा</h3>
+                <p>एलिज़ा ने गाँव नहीं छोड़ा। उसने अपने लूम के टुकड़ों को इकट्ठा करने में अपने दिन बिताए। उसे शटल (धुरी)
+                    एक पेड़ में फंसी हुई मिली। उसने सिल्ट (कीचड़) में दबे हुए हेडल को खोज निकाला। उसने उन्हें ऐसी भक्ति
+                    के साथ साफ किया जो धार्मिकता की सीमा पर थी।</p>
+                <p>"एलिज़ा, यह जा चुका है," गाँव के मुखिया ने उसके काम को देखते हुए कहा। "शहर के बाज़ार को अब हाथ से
+                    बुने हुए रेशम की ज़रूरत नहीं है। वे सस्ती, तेज़, मशीन से बनी चीज़ें चाहते हैं।"</p>
+                <p>"वे कहानियाँ चाहते हैं," एलिज़ा ने उत्तर दिया, जब वह फ्रेम के लिए एक नई लकड़ी को समतल कर रही थी, तो
+                    उसके हाथ स्थिर थे। "और कहानियों में समय लगता है।"</p>
+                <h3>सामूहिक प्रयास</h3>
+                <p>उसने अन्य बुनकरों को आमंत्रित किया, जो ज्यादातर बड़ी उम्र की महिलाएँ थीं जिनके वर्कस्टेशन नष्ट हो गए
+                    थे। उसके पास सबके लिए लूम नहीं था, लेकिन उसके पास एक विचार था। वे अपनी बची हुई सामग्री और ज्ञान को
+                    एक साथ मिलाएंगे। वे साधारण कपड़ा नहीं बुनेंगे; वे बाढ़ की कहानी बुनेंगे।</p>
+                <p>उन्होंने बची हुई भेड़ों की रंगी हुई ऊन, ऊँची अलमारियों में बचाए गए रेशम, और यहां तक कि नदी द्वारा
+                    बर्बाद किए गए कपड़ों से रंगीन कपड़े की पट्टियों का उपयोग किया। उन्होंने एक साथ काम किया, एक लूम को
+                    दस हाथों ने साझा किया। उनके काम की आवाज़ें—ट्रेडल की लय और शटल की खड़खड़ाहट—गाँव की नई धड़कन बन गई।
+                </p>
+                <p>मिट्टी से उठना</p>
+                <p>'फ्लड टेपेस्ट्री' (बाढ़ का कपड़ा) दस फीट लंबा था और उन लोगों के नामों से भरा था जिन्हें उन्होंने खो
+                    दिया था, उन पेड़ों की ताकत जो खड़े रहे, और उस पानी का नीला रंग जो उतर गया था। वहां से गुजर रहे एक
+                    अंतरराष्ट्रीय गैलरी के क्यूरेटर ने इसे एलिज़ा की लाइन पर सूखते देखा।</p>
+                <p>तीन महीने बाद, गाँव न केवल जीवित था; यह फल-फूल रहा था। 'एलारा वीवर्स कलेक्टिव' के पास तीन अलग-अलग
+                    महाद्वीपों से ऑर्डर थे। उन्होंने बीस करघों वाला एक नया सामुदायिक केंद्र बनाया था, और युवा लोग वापस
+                    आकर अपने पूर्वजों के कौशल सीख रहे थे।</p>
+                <p>एलिज़ा का रोज़वुड लूम कभी पहले जैसा नहीं रहा—इसमें हमेशा एक हल्की सी चरमराहट रहती थी—लेकिन उसे यह ऐसे
+                    ही पसंद था। यह एक अनुस्मारक था कि टूटने के बाद भी, पैटर्न अभी भी सुंदर हो सकता है।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">E</span>liza ka loom (kargha) gaon se bhi purana tha. Yah uski pardadi ka tha,
+                    rosewood aur yadon ka ek majboot dhancha. Jab Elara nadi mein baadh aayi, to aadha gaon aur Eliza ki
+                    aajivika uske saath bah gayi. Use teen meel niche nadi ki dhara mein apna loom mila, jo ab keval
+                    tooti hui lakdiyon ka ek dher tha.</p>
+                <p>Kai hafton tak, gaon mitti aur maatam ki jagah bana raha. Nayi peedhi shahar jane ki baat kar rahi
+                    thi, un paramparaon ko piche chhodte hue jinhe pani ne itni aasaani se baha diya tha.</p>
+                <h3>Pahla Dhaga</h3>
+                <p>Eliza ne gaon nahi chhoda. Usne apne loom ke tukdon ko ikattha karne mein apne din bitaye. Use
+                    shuttle ek ped mein phansi hui mili. Usne silt (kichad) mein dabe hue heddle ko khoj nikala. Usne
+                    unhe aisi bhakti ke saath saaf kiya jo dharmikta ki seema par thi.</p>
+                <p>"Eliza, yah ja chuka hai," gaon ke mukhiya ne uske kaam ko dekhte hue kaha. "Shahar ke bazaar ko ab
+                    haath se bune hue resham ki zaroorat nahi hai. Ve sasti, tez, machine se bani cheezen chahte hain."
+                </p>
+                <p>"Ve kahaniyan chahte hain," Eliza ne uttar diya, jab vah frame ke liye ek nayi lakdi ko samtal kar
+                    rahi thi, to uske haath sthir the. "Aur kahaniyon mein samay lagta hai."</p>
+                <h3>Samuhik Prayas</h3>
+                <p>Usne anya bunkaron ko aamantrit kiya, jo jyadatar badi umra ki mahilayen thin jinke workstation nasht
+                    ho gaye the. Uske paas sabke liye loom nahi tha, lekin uske paas ek vichar tha. Ve apni bachi hui
+                    samagri aur gyan ko ek saath milayenge. Ve sadharan kapda nahi bunenge; ve baadh ki kahani bunenge.
+                </p>
+                <p>Unhone bachi hui bhedon ki rangi hui oon, oonchi almariyon mein bachaye gaye resham, aur yahan tak ki
+                    nadi dwara barbaad kiye gaye kapdon se rangeen kapde ki pattiyon ka upayog kiya. Unhone ek saath
+                    kaam kiya, ek loom ko das hathon ne sajha kiya. Unke kaam ki aawazein—treadle ki lay aur shuttle ki
+                    khadakhadahat—gaon ki nayi dhadkan ban gayi.</p>
+                <h3>Mitti Se Uthna</h3>
+                <p>'Flood Tapestry' das feet lamba tha aur un logon ke naamon se bhara tha jinhe unhone kho diya tha, un
+                    pedon ki taakat jo khade rahe, aur us pani ka neela rang jo utar gaya tha. Wahan se gujar rahe ek
+                    antarrashtriya gallery ke curator ne ise Eliza ki line par sookhte dekha.</p>
+                <p>Teen mahine baad, gaon na keval jivit tha; yah phal-phool raha tha. 'Elara Weaver's Collective' ke
+                    paas teen alag-alag mahadweepon se order the. Unhone bees loom wala ek naya samudayik kendra banaya
+                    tha, aur yuva log wapas aakar apne poorvajon ke kaushal seekh rahe the.</p>
+                <p>Eliza ka rosewood loom kabhi pahle jaisa nahi raha—ismein hamesha ek halki si charmarahat rahti
+                    thi—lekin use yah aise hi pasand tha. Yah ek anusmarak tha ki tootne ke baad bhi, pattern abhi bhi
+                    sundar ho sakta hai.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-10">
+
         <div data-title="Echoes of the Canyon" data-tag="Rebirth">
-            <p><span class="dropcap">J</span>ackson's world used to be measured in seconds. A 400-meter dash in 44
-                seconds was the difference between a gold medal and being forgotten. Then came the freak accident during
-                training—a shattered knee and a severed dream. Overnight, the 'Fastest Man in the State' became a man
-                who struggled to walk to the grocery store.</p>
-            <p>The depression that followed was a different kind of race, one he was losing. He felt like a ghost in his
-                own life, a collection of trophies and headlines that no longer applied to him.</p>
-            <h3>The Calling</h3>
-            <p>His physical therapist, a former marine, suggested he volunteer at 'The Ridge,' a wilderness program for
-                at-risk youth. "You can't run, Jackson," he said. "But you can still lead."</p>
-            <p>Jackson arrived at the trailhead with a heavy brace and a heavier heart. The group of boys he was
-                assigned to were cynical, loud, and angry at a world that had dealt them a bad hand.</p>
-            <p>"What are you gonna teach us, old man?" one of them laughed. "How to limp?"</p>
-            <h3>The Ascent</h3>
-            <p>Their first hike was to the Echo Canyon. It was a grueling six-mile trek that Jackson's doctor had warned
-                him against. Every step was a battle with the fire in his knee. But he didn't complain. He kept his pace
-                steady, watching the boys as they struggled with the terrain and their own frustration.</p>
-            <p>Halfway up, the boy who had laughed, Leo, sat down and refused to move. "This is stupid. My shoes are
-                garbage. I'm through."</p>
-            <p>Jackson sat down beside him. He unstrapped his heavy carbon-fiber brace, revealing the surgical scars
-                that crisscrossed his knee like a map of a battlefield.</p>
-            <p>"I used to be the fastest," Jackson said quietly. "Now I'm the slowest. But I'm still moving. The
-                mountain doesn't care how fast you are, Leo. It only cares that you don't quit."</p>
-            <h3>The Echo</h3>
-            <p>By the time they reached the canyon rim, the sun was setting, turning the sandstone into liquid gold.
-                They stood in silence, looking out at the vastness. One by one, the boys began to yell into the
-                canyon—screams of anger, of longing, of hope. And the canyon yelled back, over and over, until the air
-                was thick with their voices.</p>
-            <p>Jackson didn't yell. He just stood there, his hand on Leo's shoulder. He realized he didn't need the
-                cheering crowds or the gold medals. He had found a new rhythm, one that wasn't measured in seconds, but
-                in the slow, steady transformation of a soul. He wasn't catching a dream anymore; he was building a
-                foundation.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">J</span>ackson's world used to be measured in seconds. A 400-meter dash in 44
+                    seconds was the difference between a gold medal and being forgotten. Then came the freak accident
+                    during training—a shattered knee and a severed dream. Overnight, the 'Fastest Man in the State'
+                    became a man who struggled to walk to the grocery store.</p>
+                <p>The depression that followed was a different kind of race, one he was losing. He felt like a ghost in
+                    his own life, a collection of trophies and headlines that no longer applied to him.</p>
+                <h3>The Calling</h3>
+                <p>His physical therapist, a former marine, suggested he volunteer at 'The Ridge,' a wilderness program
+                    for at-risk youth. "You can't run, Jackson," he said. "But you can still lead."</p>
+                <p>Jackson arrived at the trailhead with a heavy brace and a heavier heart. The group of boys he was
+                    assigned to were cynical, loud, and angry at a world that had dealt them a bad hand.</p>
+                <p>"What are you gonna teach us, old man?" one of them laughed. "How to limp?"</p>
+                <h3>The Ascent</h3>
+                <p>Their first hike was to the Echo Canyon. It was a grueling six-mile trek that Jackson's doctor had
+                    warned him against. Every step was a battle with the fire in his knee. But he didn't complain. He
+                    kept his pace steady, watching the boys as they struggled with the terrain and their own
+                    frustration.</p>
+                <p>Halfway up, the boy who had laughed, Leo, sat down and refused to move. "This is stupid. My shoes are
+                    garbage. I'm through."</p>
+                <p>Jackson sat down beside him. He unstrapped his heavy carbon-fiber brace, revealing the surgical scars
+                    that crisscrossed his knee like a map of a battlefield.</p>
+                <p>"I used to be the fastest," Jackson said quietly. "Now I'm the slowest. But I'm still moving. The
+                    mountain doesn't care how fast you are, Leo. It only cares that you don't quit."</p>
+                <h3>The Echo</h3>
+                <p>By the time they reached the canyon rim, the sun was setting, turning the sandstone into liquid gold.
+                    They stood in silence, looking out at the vastness. One by one, the boys began to yell into the
+                    canyon—screams of anger, of longing, of hope. And the canyon yelled back, over and over, until the
+                    air was thick with their voices.</p>
+                <p>Jackson didn't yell. He just stood there, his hand on Leo's shoulder. He realized he didn't need the
+                    cheering crowds or the gold medals. He had found a new rhythm, one that wasn't measured in seconds,
+                    but in the slow, steady transformation of a soul. He wasn't catching a dream anymore; he was
+                    building a foundation.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">जै</span>क्सन की दुनिया कभी सेकंडों में मापी जाती थी। 44 सेकंड में 400 मीटर की
+                    दौड़ एक स्वर्ण पदक और भुला दिए जाने के बीच का अंतर था। फिर प्रशिक्षण के दौरान वह भयानक दुर्घटना
+                    हुई—एक चकनाचूर घुटना और एक टूटा हुआ सपना। रातों-रात, 'राज्य का सबसे तेज़ व्यक्ति' एक ऐसा व्यक्ति बन
+                    गया जिसे किराने की दुकान तक चलने में भी संघर्ष करना पड़ता था।</p>
+                <p>इसके बाद हुआ डिप्रेशन एक अलग तरह की दौड़ थी, जिसे वह हार रहा था। वह अपने ही जीवन में एक भूत की तरह
+                    महसूस कर रहा था, ट्राफियों और सुर्खियों का एक संग्रह जो अब उस पर लागू नहीं होता था।</p>
+                <h3>आह्वान</h3>
+                <p>उनके फिजियोथेरेपिस्ट, जो एक पूर्व मरीन थे, ने उन्हें 'द रिज' में स्वयंसेवा करने का सुझाव दिया, जो
+                    जोखिम वाले युवाओं के लिए एक वन्यजीव कार्यक्रम था। "तुम दौड़ नहीं सकते, जैक्सन," उसने कहा। "लेकिन तुम
+                    अभी भी नेतृत्व कर सकते हो।"</p>
+                <p>जैक्सन एक भारी ब्रेस और उससे भी भारी दिल के साथ ट्रेलहेड पर पहुँचा। उसे जिन लड़कों का समूह सौंपा गया
+                    था वे निंदक, शोर मचाने वाले और ऐसी दुनिया से नाराज़ थे जिसने उन्हें एक बुरा हाथ दिया था।</p>
+                <p>"तुम हमें क्या सिखाने वाले हो, बूढ़े आदमी?" उनमें से एक हंसा। "लंगड़ाना कैसे है?"</p>
+                <h3>चढ़ाई</h3>
+                <p>उनकी पहली पदयात्रा इको घाटी की थी। यह छह मील की एक भीषण ट्रेक थी जिसके खिलाफ जैक्सन के डॉक्टर ने उसे
+                    चेतावनी दी थी। हर कदम उसके घुटने में आग के साथ एक लड़ाई थी। लेकिन उसने शिकायत नहीं की। उसने अपनी गति
+                    स्थिर रखी, लड़कों को देखते हुए जब वे इलाके और अपनी हताशा से संघर्ष कर रहे थे.</p>
+                <p>रास्ते के बीच में, जो लड़का हंसा था, लियो, बैठ गया और चलने से इनकार कर दिया। "ये बेवकूफी है। मेरे
+                    जूते कचरा हैं। मैं खत्म हो चुका हूँ।"</p>
+                <p>जैक्सन उसके बगल में बैठ गया। उसने अपना भारी कार्बन-फाइबर ब्रेस खोल दिया, जिससे घुटने पर सर्जिकल निशान
+                    दिखाई देने लगे जो युद्धक्षेत्र के नक्शे की तरह फैले हुए थे।</p>
+                <p>"मैं कभी सबसे तेज़ था," जैक्सन ने चुपचाप कहा। "अब मैं सबसे धीमा हूँ। लेकिन मैं अभी भी आगे बढ़ रहा
+                    हूँ। पहाड़ को परवाह नहीं है कि तुम कितने तेज़ हो, लियो। उसे केवल इस बात की परवाह है कि तुम हार नहीं
+                    मानते।"</p>
+                <h3>गूंज</h3>
+                <p>जब वे घाटी के किनारे पहुंचे, सूरज डूब रहा था, बलुआ पत्थर को तरल सोने में बदल रहा था। वे चुपचाप खड़े
+                    थे, विशालता को देख रहे थे। एक-एक करके, लड़के घाटी में चिल्लाने लगे—क्रोध की, लालसा की, आशा की चीखें।
+                    और घाटी भी वापस चिल्लाई, बार-बार, जब तक कि हवा उनकी आवाज़ों से भारी नहीं हो गई।</p>
+                <p>जैक्सन नहीं चिल्लाया। वह बस वहीं खड़ा रहा, उसका हाथ लियो के कंधे पर था। उसे एहसास हुआ कि उसे जयकार
+                    करने वाली भीड़ या स्वर्ण पदकों की आवश्यकता नहीं है। उसे एक नई लय मिल गई थी, जो सेकंडों में नहीं मापी
+                    जाती थी, बल्कि एक आत्मा के धीमे, स्थिर परिवर्तन में। वह अब कोई सपना नहीं पकड़ रहा था; वह एक नींव बना
+                    रहा था।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">J</span>ackson ki duniya kabhi secondon mein mapi jaati thi. 44 second mein 400
+                    meter ki daud ek swarn padak aur bhula diye jaane ke beech ka antar tha. Phir prashikshan ke dauran
+                    vah bhayanak durghatana hui—ek chaknachoor ghutna aur ek toota hua sapna. Raaton-raat, 'Rajya ka
+                    sabse tez vyakti' ek aisa vyakti ban gaya jise kirane ki dukaan tak chalne mein bhi sangharsh karna
+                    padta tha.</p>
+                <p>Iske baad hua depression ek alag tarah ki daud thi, jise vah haar raha tha. Vah apne hi jeevan mein
+                    ek bhoot ki tarah mahsoos kar raha tha, trophiyon aur surkhiyon ka ek sangrah jo ab us par laagu
+                    nahi hota tha.</p>
+                <h3>Aahvaan</h3>
+                <p>Unke physiotherapist, jo ek poorv marine the, ne unhe 'The Ridge' mein swayamseva karne ka suzhaav
+                    diya, jo jokhim wale yuvaon ke liye ek vanyajeev karyakram tha. "Tum daud nahi sakte, Jackson," usne
+                    kaha. "Lekin tum abhi bhi netritva kar sakte ho."</p>
+                <p>Jackson ek bhari brace aur usse bhi bhari dil ke saath trailhead par pahuncha. Use jin ladkon ka
+                    samooh saunpa gaya tha ve nindak, shor machane wale aur aisi duniya se naraz the jisne unhe ek bura
+                    haath diya tha.</p>
+                <p>"Tum hamein kya sikhane wale ho, boodhe aadmi?" unmen se ek hansa. "Langadana kaise hai?"</p>
+                <h3>Chadhai</h3>
+                <p>Unki pahli padyatra Echo ghati ki thi. Yah chhah meel ki ek bheeshan trek thi jiske khilaf Jackson ke
+                    doctor ne use chetawani di thi. Har kadam uske ghutne mein aag ke saath ek ladai thi. Lekin usne
+                    shikayat nahi ki. Usne apni gati sthir rakhi, ladkon ko dekhte hue jab ve ilaake aur apni hatasha se
+                    sangharsh kar rahe the.</p>
+                <p>Raaste ke beech mein, jo ladka hansa tha, Leo, baith gaya aur chalne se inkaar kar diya. "Ye
+                    bewaqoofi hai. Mere joote kachra hain. Main khatam ho chuka hoon."</p>
+                <p>Jackson uske bagal mein baith gaya. Usne apna bhari carbon-fiber brace khol diya, jisse ghutne par
+                    surgical nishaan dikhayi dene lage jo yuddhkshetra ke nakshe ki tarah phaile hue the.</p>
+                <p>"Main kabhi sabse tez tha," Jackson ne chupchap kaha. "Ab main sabse dheema hoon. Lekin main abhi bhi
+                    aage badh raha hoon. Pahad ko parvah nahi hai ki tum kitne tez ho, Leo. Use keval is baat ki parvah
+                    hai ki tum haar nahi maante."</p>
+                <h3>Goonj</h3>
+                <p>Jab ve ghati ke kinare pahunche, sooraj doob raha tha, balua patthar ko taral sone mein badal raha
+                    tha. Ve chupchap khade the, vishalta ko dekh rahe the. Ek-ek karke, ladke ghati mein chillane
+                    lage—krodh ki, lalasa ki, aasha ki cheekhein. Aur ghati bhi wapas chillayi, baar-baar, jab tak ki
+                    hawa unki aawazon se bhari nahi ho gayi.</p>
+                <p>Jackson nahi chillaya. Vah bas wahin khada raha, uska haath Leo ke kandhe par tha. Use ehsaas hua ki
+                    use jaykaar karne wali bheed ya swarn padakon ki aavashyakta nahi hai. Use ek nayi lay mil gayi thi,
+                    jo secondon mein nahi maapi jaati thi, balki ek aatma ke dheeme, sthir parivartan mein. Vah ab koi
+                    sapna nahi pakad raha tha; vah ek neev bana raha tha.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-11">
+
         <div data-title="The Midnight Garden" data-tag="Peace">
-            <p><span class="dropcap">T</span>he city of Oakhaven was a skeleton of its former self. Years of conflict
-                had stripped it of its trees, its light, and its joy. Amidst the rubble of the West District, Thomas, a
-                man who had seen eighty winters, lived in the basement of what used to be a library.</p>
-            <p>While the world outside was a clash of sirens and shadows, Thomas had a secret. He had a garden.</p>
-            <h3>The Sanctuary</h3>
-            <p>It was located in a hidden courtyard that had once been the library's reading garden. High walls
-                protected it from the wind and the prying eyes of the street. Thomas spent his nights, when the shelling
-                was most frequent, hauling water from a nearby well and tending to his plants under the pale light of
-                the moon.</p>
-            <p>He grew simple things: lavender to calm the nerves, mint to freshen the stale air, and roses that defied
-                the soot with their vibrant red. He had managed to save several packets of seeds before the library was
-                hit, and he treated them like gold.</p>
-            <h3>The Visitor</h3>
-            <p>One night, a young girl, no older than seven, followed him into the courtyard. She was a 'shadow child,'
-                one of the many whose families had disappeared. She stared at the flowers as if they were alien life
-                forms.</p>
-            <p>Thomas didn't shoo her away. He handed her a watering can. "Plants like to hear you talk," he whispered.
-                "They grow better when they know they're loved."</p>
-            <p>The girl, Clara, started coming every night. She talked to the sunflowers about her dreams. She told the
-                jasmine about the house her mother used to have. The garden became a library of unspoken stories.</p>
-            <h3>The Fragrance of Hope</h3>
-            <p>Slowly, more children began to find their way to the 'Midnight Garden.' They brought seeds they found in
-                the cracks of the sidewalk. They brought colorful bits of glass to decorate the paths. Under Thomas's
-                gentle guidance, the garden expanded, creeping over the rubble and claiming the ruins for itself.</p>
-            <p>When the peace treaty was finally signed two years later, the diplomats entered the West District to find
-                not a wasteland, but a forest of color. The scent of roses was stronger than the smell of smoke. The
-                'Midnight Garden' wasn't just a place of quiet; it was the seed from which the new city grew. Thomas
-                passed away that spring, but his garden—and the children who tended it—remained, a living testament to
-                the fact that even in the darkest night, beauty is a form of resistance.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">T</span>he city of Oakhaven was a skeleton of its former self. Years of
+                    conflict had stripped it of its trees, its light, and its joy. Amidst the rubble of the West
+                    District, Thomas, a man who had seen eighty winters, lived in the basement of what used to be a
+                    library.</p>
+                <p>While the world outside was a clash of sirens and shadows, Thomas had a secret. He had a garden.</p>
+                <h3>The Sanctuary</h3>
+                <p>It was located in a hidden courtyard that had once been the library's reading garden. High walls
+                    protected it from the wind and the prying eyes of the street. Thomas spent his nights, when the
+                    shelling was most frequent, hauling water from a nearby well and tending to his plants under the
+                    pale light of the moon.</p>
+                <p>He grew simple things: lavender to calm the nerves, mint to freshen the stale air, and roses that
+                    defied the soot with their vibrant red. He had managed to save several packets of seeds before the
+                    library was hit, and he treated them like gold.</p>
+                <h3>The Visitor</h3>
+                <p>One night, a young girl, no older than seven, followed him into the courtyard. She was a 'shadow
+                    child,' one of the many whose families had disappeared. She stared at the flowers as if they were
+                    alien life forms.</p>
+                <p>Thomas didn't shoo her away. He handed her a watering can. "Plants like to hear you talk," he
+                    whispered. "They grow better when they know they're loved."</p>
+                <p>The girl, Clara, started coming every night. She talked to the sunflowers about her dreams. She told
+                    the jasmine about the house her mother used to have. The garden became a library of unspoken
+                    stories.</p>
+                <h3>The Fragrance of Hope</h3>
+                <p>Slowly, more children began to find their way to the 'Midnight Garden.' They brought seeds they found
+                    in the cracks of the sidewalk. They brought colorful bits of glass to decorate the paths. Under
+                    Thomas's gentle guidance, the garden expanded, creeping over the rubble and claiming the ruins for
+                    itself.</p>
+                <p>When the peace treaty was finally signed two years later, the diplomats entered the West District to
+                    find not a wasteland, but a forest of color. The scent of roses was stronger than the smell of
+                    smoke. The 'Midnight Garden' wasn't just a place of quiet; it was the seed from which the new city
+                    grew. Thomas passed away that spring, but his garden—and the children who tended it—remained, a
+                    living testament to the fact that even in the darkest night, beauty is a form of resistance.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">ओ</span>कहेवन शहर अपने पूर्व स्वरूप का केवल एक कंकाल बन गया था। वर्षों के
+                    संघर्ष ने इसे अपने पेड़ों, इसकी रोशनी और इसकी खुशी से वंचित कर दिया था। वेस्ट डिस्ट्रिक्ट के मलबे के
+                    बीच, थॉमस, एक व्यक्ति जिसने अस्सी सर्दियां देखी थीं, उस इमारत के तहखाने में रहता था जो कभी पुस्तकालय
+                    हुआ करता था।</p>
+                <p>जबकि बाहर की दुनिया सायरन और परछाइयों का टकराव थी, थॉमस का एक रहस्य था। उसके पास एक बगीचा था।</p>
+                <h3>शरण स्थली</h3>
+                <p>यह एक छिपे हुए प्रांगण में स्थित था जो कभी पुस्तकालय का पढ़ने का बगीचा था। ऊंची दीवारों ने इसे हवा और
+                    सड़क की ताक-झांक करने वाली नज़रों से बचाया। थॉमस अपनी रातें, जब गोलाबारी सबसे अधिक होती थी, पास के
+                    एक कुएं से पानी खींचने और चाँद की पीली रोशनी में अपने पौधों की देखभाल करने में बिताता था।</p>
+                <p>उसने साधारण चीजें उगाईं: नसों को शांत करने के लिए लैवेंडर, बासी हवा को ताज़ा करने के लिए पुदीना, और
+                    गुलाब जो अपने जीवंत लाल रंग के साथ कालिख को चुनौती देते थे। पुस्तकालय के गिरने से पहले वह बीजों के
+                    कई पैकेट बचाने में कामयाब रहा था, और उसने उन्हें सोने की तरह माना।</p>
+                <h3>आगंतुक</h3>
+                <p>एक रात, एक छोटी लड़की, जो सात साल से अधिक नहीं थी, आँगन में उसका पीछा करती हुई आई। वह एक 'शैडो
+                    चाइल्ड' थी, उन कई बच्चों में से एक जिनके परिवार गायब हो गए थे। उसने फूलों को इस तरह देखा जैसे वे कोई
+                    एलियन हों।</p>
+                <p>थॉमस ने उसे भगाया नहीं। उसने उसे एक पानी देने वाला जग सौंप दिया। "पौधों को तुम्हारी बातें सुनना पसंद
+                    है," उसने फुसफुसाते हुए कहा। "जब उन्हें पता चलता है कि उन्हें प्यार किया जाता है तो वे बेहतर बढ़ते
+                    हैं।"</p>
+                <p>लड़की, क्लारा, हर रात आने लगी। वह अपने सपनों के बारे में सूरजमुखी से बात करती थी। उसने चमेली को उस घर
+                    के बारे में बताया जो उसकी माँ का हुआ करता था। बगीचा अनकही कहानियों का पुस्तकालय बन गया।</p>
+                <h3>आशा की सुगंध</h3>
+                <p>धीरे-धीरे, अधिक बच्चों ने 'द मिडनाइट गार्डन' का रास्ता खोजना शुरू कर दिया। वे वो बीज लाए जो उन्हें
+                    फुटपाथ की दरारों में मिले थे। वे रास्तों को सजाने के लिए रंगीन कांच के टुकड़े लाए। थॉमस के कोमल
+                    मार्गदर्शन के तहत, बगीचे का विस्तार हुआ, जो मलबे पर रेंग रहा था और अपने लिए खंडहरों पर दावा कर रहा
+                    था।</p>
+                <p>जब दो साल बाद शांति संधि पर हस्ताक्षर किए गए, तो राजनयिकों ने वेस्ट डिस्ट्रिक्ट में प्रवेश किया और एक
+                    बंजर भूमि नहीं, बल्कि रंगों का जंगल पाया। गुलाब की खुशबू धुएं की गंध से अधिक तेज़ थी। 'द मिडनाइट
+                    गार्डन' केवल शांति का स्थान नहीं था; यह वह बीज था जिससे नया शहर विकसित हुआ। उसी वसंत में थॉमस का
+                    निधन हो गया, लेकिन उनका बगीचा—और जो बच्चे इसकी देखभाल करते थे—बचे रहे, इस बात का जीवंत प्रमाण कि
+                    सबसे अंधेरी रात में भी, सुंदरता प्रतिरोध का एक रूप है।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">O</span>akhaven shahar apne poorv swaroop ka keval ek kankaal ban gaya tha.
+                    Varshon ke sangharsh ne ise apne pedon, iski roshni aur iski khushi se vanchit kar diya tha. West
+                    District ke malbe ke beech, Thomas, ek vyakti jisne assi sardiyan dekhi thin, us imarat ke tahkhane
+                    mein rahta tha jo kabhi pustakalay hua karta tha.</p>
+                <p>Jabki bahar ki duniya siren aur parchhaiyon ka takrav thi, Thomas ka ek rahasya tha. Uske paas ek
+                    bagicha tha.</p>
+                <h3>Sharan Sthali</h3>
+                <p>Yah ek chhipe hue prangan mein sthit tha jo kabhi pustakalay ka padhne ka bagicha tha. Oonchi
+                    deewaron ne ise hawa aur sadak ki taak-jhaank karne wali nazron se bachaya. Thomas apni raatein, jab
+                    golabaari sabse adhik hoti thi, paas ke ek kuen se paani kheinchna aur chaand ki peeli roshni mein
+                    apne paudhon ki dekhabhaal karne mein bitata tha.</p>
+                <p>Usne sadharan cheezen ugain: nason ko shant karne ke liye lavender, baasi hawa ko taja karne ke liye
+                    pudina, aur gulab jo apne jeevant laal rang ke saath kalikh ko chunauti dete the. Pustakalay ke
+                    girne se pahle vah beejon ke kai packet bachane mein kaamyab raha tha, aur usne unhe sone ki tarah
+                    mana.</p>
+                <h3>Aagantuk</h3>
+                <p>Ek raat, ek chhoti ladki, jo saat saal se adhik nahi thi, aangan mein uska peechha karti hui aayi.
+                    Vah ek 'shadow child' thi, un kai bachchon mein se ek jinke parivar gayab ho gaye the. Usne phoolon
+                    ko is tarah dekha jaise ve koi alien hon.</p>
+                <p>Thomas ne use bhagaya nahi. Usne use ek paani dene wala jug saunp diya. "Paudhon ko tumhari baatein
+                    sunna pasand hai," usne phusphusate hue kaha. "Jab unhe pata chalta hai ki unhe pyaar kiya jata hai
+                    to ve behtar badhte hain."</p>
+                <p>Ladki, Clara, har raat aane lagi. Vah apne sapanon ke baare mein surajmukhi se baat karti thi. Usne
+                    chameli ko us ghar ke baare mein bataya jo uski maa ka hua karta tha. Bagicha ankahi kahaniyon ka
+                    pustakalay ban gaya.</p>
+                <h3>Aasha ki Sugandh</h3>
+                <p>Dhire-dhire, adhik bachchon ne 'The Midnight Garden' ka rasta khojna shuru kar diya. Ve vo beej laaye
+                    jo unhe footpath ki dararon mein mile the. Ve raston ko sajane ke liye rangeen kanch ke tukde laaye.
+                    Thomas ke komal margdarshan ke tahat, bagiche ka vistar hua, jo malbe par reng raha tha aur apne
+                    liye khandharon par dava kar raha tha.</p>
+                <p>Jab do saal baad shanti sandhi par hastakshar kiye gaye, to rajanayikon ne West District mein pravesh
+                    kiya aur ek banjar bhoomi nahi, balki rangon ka jangal paya. Gulab ki khushboo dhuen ki gandh se
+                    adhik tez thi. 'The Midnight Garden' keval shanti ka sthan nahi tha; yah vah beej tha jisse naya
+                    shahar viksit hua. Usi vasant mein Thomas ka nidhan ho gaya, lekin unka bagicha—aur jo bachche iski
+                    dekhabhaal karte the—bache rahe, is baat ka jeevant pramaan ki sabse andheri raat mein bhi, sundarta
+                    pratirodh ka ek roop hai.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-12">
+
         <div data-title="The Glass Architect" data-tag="Karma">
-            <p><span class="dropcap">A</span>licia was a "ghost" in the prestigious firm of Sterling & Associates. She
-                was the one who pulled the all-nighters, the one who solved the structural impossibilities, and the one
-                whose name never appeared on the final renderings. Her boss, Marcus Sterling, was a man of style over
-                substance, a master of taking credit for his juniors' brilliance.</p>
-            <p>Their biggest project yet was 'The Prism,' a ninety-story glass spire intended to be the jewel of the
-                city's skyline. Alicia's designs for the support system were revolutionary, allowing for a structure
-                that looked almost entirely transparent.</p>
-            <h3>The Theft</h3>
-            <p>A week before the groundbreaking, Alicia walked into Marcus's office to find him presenting her designs
-                to a group of international investors as his own "visionary breakthrough." He didn't even look up when
-                she entered. He just smiled and kept talking about his "legacy."</p>
-            <p>When she confronted him later, he laughed. "Alicia, you're an associate. This is the way of the world. Be
-                thankful you have a job."</p>
-            <p>Alicia didn't argue. She didn't quit. Instead, she stayed up three more nights, 'refining' the final
-                blueprints for the building's complex facade-cleaning system—an automated network of glass-walking
-                robots.</p>
-            <h3>The Flaw</h3>
-            <p>The building was completed eighteen months later. It was a masterpiece. Marcus Sterling became the
-                'Architect of the Year.' But as the first winter storm hit, a strange phenomenon occurred. A subtle,
-                high-pitched hum began to emanate from the glass panels, a frequency that made the residents of the
-                luxury penthouses feel physically ill.</p>
-            <p>Marcus was frantic. He brought in consultants, but no one could find the source of the vibration. The
-                'visionary' architect was stumped by his own 'vision.'</p>
-            <h3>The Solution</h3>
-            <p>Alicia, who had since started her own firm, received a call from Marcus. He was desperate, facing
-                lawsuits and public disgrace.</p>
-            <p>"I know you did something, Alicia," he hissed.</p>
-            <p>"I did my job, Marcus. I designed a system that was perfect. But perhaps a few lines of code in the
-                maintenance protocol were... sensitive to the wind."</p>
-            <p>She agreed to fix the "flaw" on one condition: Marcus Sterling would publicly announce his retirement and
-                transfer his share of the firm to the junior associates who had actually built his career. He would
-                leave with his money, but his reputation—the 'legacy' he so prized—would belong to those he had
-                exploited.</p>
-            <p>He signed. Alicia sent a single line of code to the building's server, and 'The Prism' went silent.
-                Today, the firm is known as 'Associates United,' and Alicia's name is the first one clients see when
-                they walk through the door. Marcus is still in the city, but whenever he looks up at 'The Prism,' he
-                doesn't see a legacy. He sees the glass wall he can never climb back over.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">A</span>licia was a "ghost" in the prestigious firm of Sterling & Associates.
+                    She was the one who pulled the all-nighters, the one who solved the structural impossibilities, and
+                    the one whose name never appeared on the final renderings. Her boss, Marcus Sterling, was a man of
+                    style over substance, a master of taking credit for his juniors' brilliance.</p>
+                <p>Their biggest project yet was 'The Prism,' a ninety-story glass spire intended to be the jewel of the
+                    city's skyline. Alicia's designs for the support system were revolutionary, allowing for a structure
+                    that looked almost entirely transparent.</p>
+                <h3>The Theft</h3>
+                <p>A week before the groundbreaking, Alicia walked into Marcus's office to find him presenting her
+                    designs to a group of international investors as his own "visionary breakthrough." He didn't even
+                    look up when she entered. He just smiled and kept talking about his "legacy."</p>
+                <p>When she confronted him later, he laughed. "Alicia, you're an associate. This is the way of the
+                    world. Be thankful you have a job."</p>
+                <p>Alicia didn't argue. She didn't quit. Instead, she stayed up three more nights, 'refining' the final
+                    blueprints for the building's complex facade-cleaning system—an automated network of glass-walking
+                    robots.</p>
+                <h3>The Flaw</h3>
+                <p>The building was completed eighteen months later. It was a masterpiece. Marcus Sterling became the
+                    'Architect of the Year.' But as the first winter storm hit, a strange phenomenon occurred. A subtle,
+                    high-pitched hum began to emanate from the glass panels, a frequency that made the residents of the
+                    luxury penthouses feel physically ill.</p>
+                <p>Marcus was frantic. He brought in consultants, but no one could find the source of the vibration. The
+                    'visionary' architect was stumped by his own 'vision.'</p>
+                <h3>The Solution</h3>
+                <p>Alicia, who had since started her own firm, received a call from Marcus. He was desperate, facing
+                    lawsuits and public disgrace.</p>
+                <p>"I know you did something, Alicia," he hissed.</p>
+                <p>"I did my job, Marcus. I designed a system that was perfect. But perhaps a few lines of code in the
+                    maintenance protocol were... sensitive to the wind."</p>
+                <p>She agreed to fix the "flaw" on one condition: Marcus Sterling would publicly announce his retirement
+                    and transfer his share of the firm to the junior associates who had actually built his career. He
+                    would leave with his money, but his reputation—the 'legacy' he so prized—would belong to those he
+                    had exploited.</p>
+                <p>He signed. Alicia sent a single line of code to the building's server, and 'The Prism' went silent.
+                    Today, the firm is known as 'Associates United,' and Alicia's name is the first one clients see when
+                    they walk through the door. Marcus is still in the city, but whenever he looks up at 'The Prism,' he
+                    doesn't see a legacy. He sees the glass wall he can never climb back over.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">ए</span>लिसिया स्टर्लिंग एंड एसोसिएट्स की प्रतिष्ठित फर्म में एक "भूत" थी। वह
+                    वही थी जो रात-रात भर जागती थी, जो संरचनात्मक असंभवताओं को हल करती थी, और जिसका नाम अंतिम रेंडरिंग पर
+                    कभी नहीं आता था। उसका बॉस, मार्कस स्टर्लिंग, काम से ज्यादा दिखावे का आदमी था, और अपने जूनियर्स की
+                    प्रतिभा का श्रेय लेने में माहिर था।</p>
+                <p>उनका अब तक का सबसे बड़ा प्रोजेक्ट 'द प्रिज्म' था, शहर के क्षितिज का गहना बनने के उद्देश्य से एक नब्बे
+                    मंजिला कांच का मीनार। सपोर्ट सिस्टम के लिए एलिसिया के डिजाइन क्रांतिकारी थे, जिससे एक ऐसी संरचना
+                    तैयार हुई जो लगभग पूरी तरह से पारदर्शी दिखती थी।</p>
+                <h3>चोरी</h3>
+                <p>शिलान्यास से एक हफ्ते पहले, एलिसिया मार्कस के ऑफिस में गई और उसने देखा कि वह उसके डिजाइनों को
+                    अंतरराष्ट्रीय निवेशकों के एक समूह के सामने अपनी "दूरदर्शी सफलता" के रूप में पेश कर रहा था। जब वह
+                    अंदर आई तो उसने देखा भी नहीं। वह बस मुस्कुराता रहा और अपनी "विरासत" के बारे में बात करता रहा।</p>
+                <p>जब उसने बाद में उसका सामना किया, तो वह हँसा। "एलिसिया, तुम एक एसोसिएट हो। दुनिया ऐसी ही चलती है।
+                    शुक्र मनाओ कि तुम्हारे पास नौकरी है।"</p>
+                <p>एलिसिया ने बहस नहीं की। उसने नौकरी नहीं छोड़ी। इसके बजाय, वह तीन और रातों तक जागती रही, इमारत की जटिल
+                    मुखौटा-सफाई प्रणाली—कांच पर चलने वाले रोबोटों का एक स्वचालित नेटवर्क—के लिए अंतिम ब्लूप्रिंट को
+                    'परिष्कृत' करती रही।</p>
+                <h3>खामी</h3>
+                <p>अठारह महीने बाद इमारत पूरी हुई। यह एक उत्कृष्ट कृति थी। मार्कस स्टर्लिंग 'आर्किटेक्ट ऑफ द ईयर' बने।
+                    लेकिन जैसे ही सर्दियों का पहला तूफान आया, एक अजीब घटना घटी। कांच के पैनल से एक सूक्ष्म, उच्च-पिच
+                    वाली भिनभिनाहट निकलने लगी, एक ऐसी आवृत्ति जिसने लग्जरी पेंटहाउस के निवासियों को शारीरिक रूप से बीमार
+                    महसूस कराया।</p>
+                <p>मार्कस घबरा गया। वह सलाहकारों को लाया, लेकिन कोई भी कंपन का स्रोत नहीं ढूंढ सका। 'दूरदर्शी' वास्तुकार
+                    अपनी ही 'दृष्टि' से चकित था।</p>
+                <h3>समाधान</h3>
+                <p>एलिसिया, जिसने तब से अपनी खुद की फर्म शुरू कर दी थी, को मार्कस का फोन आया। वह निराश था, मुकदमों और
+                    सार्वजनिक अपमान का सामना कर रहा था।</p>
+                <p>"मुझे पता है कि तुमने कुछ किया है, एलिसिया," वह फुफकारा।</p>
+                <p>"मैंने अपना काम किया, मार्कस। मैंने एक ऐसा सिस्टम डिजाइन किया जो परिपूर्ण था। लेकिन शायद रखरखाव
+                    प्रोटोकॉल में कोड की कुछ पंक्तियां... हवा के प्रति संवेदनशील थीं।"</p>
+                <p>उसने एक शर्त पर "खामी" को ठीक करने पर सहमति व्यक्त की: मार्कस स्टर्लिंग सार्वजनिक रूप से अपनी
+                    सेवानिवृत्ति की घोषणा करेंगे और फर्म का अपना हिस्सा उन जूनियर सहयोगियों को हस्तांतरित करेंगे
+                    जिन्होंने वास्तव में उसका करियर बनाया था। वह अपने पैसे लेकर चला जाएगा, लेकिन उसकी प्रतिष्ठा—वह
+                    'विरासत' जिसे वह इतना महत्व देता था—उन लोगों की होगी जिनका उसने शोषण किया था।</p>
+                <p>उसने हस्ताक्षर किए। एलिसिया ने इमारत के सर्वर पर कोड की एक पंक्ति भेजी, और 'द प्रिज्म' शांत हो गया।
+                    आज, फ़र्म को 'एसोसिएट्स यूनाइटेड' के नाम से जाना जाता है, और जब ग्राहक दरवाज़े से गुज़रते हैं तो
+                    सबसे पहला नाम एलिसिया का ही देखते हैं। मार्कस अभी भी शहर में है, लेकिन जब भी वह 'द प्रिज़्म' की ओर
+                    देखता है, तो उसे कोई विरासत नहीं दिखाई देती। उसे उस कांच की दीवार को देखता है जिसके पार वह अब कभी
+                    नहीं चढ़ सकता।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">A</span>licia Sterling & Associates ki pratishthit firm mein ek "bhoot" thi.
+                    Vah vahi thi jo raat-raat bhar jagti thi, jo sanrachnatmak asambhavataon ko hal karti thi, aur jiska
+                    naam antim rendering par kabhi nahi aata tha. Uska boss, Marcus Sterling, kaam se jyada dikhave ka
+                    aadmi tha, aur apne juniors ki pratibha ka shrey lene mein mahir tha.</p>
+                <p>Unka ab tak ka sabse bada project 'The Prism' tha, shahar ke kshitij ka gahna banne ke uddeshya se ek
+                    nabbe manjila kanch ka meenar. Support system ke liye Alicia ke design krantikari the, jisse ek aisi
+                    sanrachna taiyar hui jo lagbhag poori tarah se pardarshi dikhti thi.</p>
+                <h3>Chori</h3>
+                <p>Shilanyas se ek hafte pahle, Alicia Marcus ke office mein gayi aur usne dekha ki vah uske designon ko
+                    antarrashtriya niveshakon ke ek samooh ke samne apni "doordarshi safalta" ke roop mein pesh kar raha
+                    tha. Jab vah andar aayi to usne dekha bhi nahi. Vah bas muskurata raha aur apni "virasat" ke baare
+                    mein baat karta raha.</p>
+                <p>Jab usne baad mein uska samna kiya, to vah hansa. "Alicia, tum ek associate ho. Duniya aisi hi chalti
+                    hai. Shukr manao ki tumhare paas naukri hai."</p>
+                <p>Alicia ne bahas nahi ki. Usne naukri nahi chhodi. Iske bajay, vah teen aur raaton tak jagti rahi,
+                    imarat ki jatil mukhauta-safai pranali—kanch par chalne wale roboton ka ek swachalit network—ke liye
+                    antim blueprint ko 'parishkrit' karti rahi.</p>
+                <h3>Khami</h3>
+                <p>Atharah mahine baad imarat poori hui. Yah ek utkrisht kriti thi. Marcus Sterling 'Architect of the
+                    Year' bane. Lekin jaise hi sardiyon ka pahla toofan aaya, ek ajeeb ghatna ghati. Kanch ke panel se
+                    ek sukshm, uchch-pitch wali bhinbhinahat nikalne lagi, ek aisi aavritti jisne luxury penthouse ke
+                    nivasiyon ko sharirik roop se beemar mahsoos karaya.</p>
+                <p>Marcus ghabra gaya. Vah salahkaron ko laya, lekin koi bhi kampan ka srot nahi dhoondh saka.
+                    'Doordarshi' vastukar apni hi 'drishti' se chakit tha.</p>
+                <h3>Samadhan</h3>
+                <p>Alicia, jisne tab se apni khud ki firm shuru kar di thi, ko Marcus ka phone aaya. Vah nirash tha,
+                    mukadmon aur sarvajanik apman ka samna kar raha tha.</p>
+                <p>"Mujhe pata hai ki tumhne kuchh kiya hai, Alicia," vah phuphkara.</p>
+                <p>"Maine apna kaam kiya, Marcus. Maine ek aisa system design kiya jo paripoorna tha. Lekin shayad
+                    rakhrakhav protocol mein code ki kuchh panktiyan... hawa ke prati samvedansheel thin."</p>
+                <p>Usne ek shart par "khami" ko theek karne par sahamati vyakt ki: Marcus Sterling sarvajanik roop se
+                    apni sevanivritti ki ghoshna karenge aur firm ka apna hissa un junior sahyogiyon ko hastantarit
+                    karenge jinhone vastav mein uska career banaya tha. Vah apne paise lekar chala jayega, lekin uski
+                    pratishtha—vah 'virasat' jise vah itna mahatva deta tha—un logon ki hogi jinka usne shoshan kiya
+                    tha.</p>
+                <p>Usne hastakshar kiye. Alicia ne imarat ke server par code ki ek pankti bheji, aur 'The Prism' shant
+                    ho gaya. Aaj, firm ko 'Associates United' ke naam se jana jata hai, aur jab grahak darvaze se
+                    guzarte hain to sabse pahla naam Alicia ka hi dekhte hain. Marcus abhi bhi shahar mein hai, lekin
+                    jab bhi vah 'The Prism' ki or dekhta hai, to use koi virasat nahi dikhayi deti. Use us kanch ki
+                    deewar ko dekhta hai jiske paar vah ab kabhi nahi chadh sakta.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-13">
+
         <div data-title="Shattered Silk" data-tag="Healing">
-            <p><span class="dropcap">E</span>lena's fashion house was built on the idea of perfection. Her designs were
-                sleek, expensive, and exclusive. She was the 'Queen of Silk,' her name synonymous with the highest
-                levels of luxury. But the higher you climb, the harder people want to see you fall.</p>
-            <p>The smear campaign was surgical. A series of fake documents "leaked" to the press alleged that her silk
-                was sourced from sweatshops and that her "exclusive" patterns were stolen from indigenous weavers.
-                Within forty-eight hours, her biggest retailers dropped her. Her showroom was vandalized. The fashion
-                world, once her playground, became a firing squad.</p>
-            <h3>The Descent</h3>
-            <p>The deceit had been orchestrated by her lead designer and former best friend, Julian. He had planned to
-                launch his own line using the vacuum he created by destroying hers. Elena spent a month in her darkened
-                apartment, listening to the sound of her career being dismantled piece by piece.</p>
-            <p>Her mother, an immigrant who had survived much worse, came to visit. She didn't bring sympathy; she
-                brought a bag of scraps—torn pieces of silk, linen, and wool from the factory floor where she used to
-                work.</p>
-            <p>"They think you are broken, Elena," she said, spilling the scraps onto the floor. "But a woman who knows
-                how to sew is never truly broken."</p>
-            <h3>The Mending</h3>
-            <p>Elena began to work. She didn't use the pristine rolls of expensive silk. She used the scraps. She took
-                the torn, the frayed, and the discarded and began to join them using a technique she had seen her
-                grandmother use—Kintsugi for fabric, joining the pieces with visible, decorative stitches of gold
-                thread.</p>
-            <p>She didn't try to hide the seams. She made them the focus. Each coat, each dress, was a map of survival.
-                She called the collection 'The Mended Soul.'</p>
-            <h3>The Return</h3>
-            <p>She debuted the collection not on a catwalk in Paris, but in a community center in the neighborhood she
-                grew up in. The models were the very women who had worked in the factories. The critics came out of
-                curiosity, expecting a disaster.</p>
-            <p>They found a revolution. The clothing was beautiful not because it was perfect, but because it was
-                honest. It celebrated the scars and the strength it took to keep moving forward. The public, tired of
-                the unattainable perfection of the fashion industry, embraced her. Elena didn't just rebuild her
-                business; she redefined her purpose. Julian's line, built on a lie, failed within a season. Elena's
-                house, built on the truth of her own resilience, became a sanctuary for the 'imperfectly beautiful.'</p>
+            <div class="lang-en">
+                <p><span class="dropcap">E</span>lena's fashion house was built on the idea of perfection. Her designs
+                    were sleek, expensive, and exclusive. She was the 'Queen of Silk,' her name synonymous with the
+                    highest levels of luxury. But the higher you climb, the harder people want to see you fall.</p>
+                <p>The smear campaign was surgical. A series of fake documents "leaked" to the press alleged that her
+                    silk was sourced from sweatshops and that her "exclusive" patterns were stolen from indigenous
+                    weavers. Within forty-eight hours, her biggest retailers dropped her. Her showroom was vandalized.
+                    The fashion world, once her playground, became a firing squad.</p>
+                <h3>The Descent</h3>
+                <p>The deceit had been orchestrated by her lead designer and former best friend, Julian. He had planned
+                    to launch his own line using the vacuum he created by destroying hers. Elena spent a month in her
+                    darkened apartment, listening to the sound of her career being dismantled piece by piece.</p>
+                <p>Her mother, an immigrant who had survived much worse, came to visit. She didn't bring sympathy; she
+                    brought a bag of scraps—torn pieces of silk, linen, and wool from the factory floor where she used
+                    to work.</p>
+                <p>"They think you are broken, Elena," she said, spilling the scraps onto the floor. "But a woman who
+                    knows how to sew is never truly broken."</p>
+                <h3>The Mending</h3>
+                <p>Elena began to work. She didn't use the pristine rolls of expensive silk. She used the scraps. She
+                    took the torn, the frayed, and the discarded and began to join them using a technique she had seen
+                    her grandmother use—Kintsugi for fabric, joining the pieces with visible, decorative stitches of
+                    gold thread.</p>
+                <p>She didn't try to hide the seams. She made them the focus. Each coat, each dress, was a map of
+                    survival. She called the collection 'The Mended Soul.'</p>
+                <h3>The Return</h3>
+                <p>She debuted the collection not on a catwalk in Paris, but in a community center in the neighborhood
+                    she grew up in. The models were the very women who had worked in the factories. The critics came out
+                    of curiosity, expecting a disaster.</p>
+                <p>They found a revolution. The clothing was beautiful not because it was perfect, but because it was
+                    honest. It celebrated the scars and the strength it took to keep moving forward. The public, tired
+                    of the unattainable perfection of the fashion industry, embraced her. Elena didn't just rebuild her
+                    business; she redefined her purpose. Julian's line, built on a lie, failed within a season. Elena's
+                    house, built on the truth of her own resilience, became a sanctuary for the 'imperfectly beautiful.'
+                </p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">ए</span>लेना का फैशन हाउस पूर्णता के विचार पर बनाया गया था। उसके डिज़ाइन स्लीक,
+                    महंगे और विशिष्ट थे। वह 'रेशम की रानी' थी, उसका नाम विलासिता के उच्चतम स्तर का पर्याय था। लेकिन आप
+                    जितना ऊंचा चढ़ते हैं, लोग आपको उतनी ही जोर से गिरते हुए देखना चाहते हैं।</p>
+                <p>बदनामी का अभियान सर्जिकल था। प्रेस में "लीक" किए गए फर्जी दस्तावेजों की एक श्रृंखला में आरोप लगाया
+                    गया कि उसका रेशम स्वेटशॉप से ​​प्राप्त किया गया था और उसके "विशिष्ट" पैटर्न स्वदेशी बुनकरों से चुराए
+                    गए थे। अड़तालीस घंटों के भीतर, उसके सबसे बड़े खुदरा विक्रेताओं ने उसे छोड़ दिया। उसके शोरूम में
+                    तोड़फोड़ की गई। फैशन की दुनिया, जो कभी उसका खेल का मैदान थी, एक फायरिंग स्क्वाड बन गई।</p>
+                <h3>पतन</h3>
+                <p>इस धोखे की साजिश उसके मुख्य डिजाइनर और पूर्व सबसे अच्छे दोस्त जूलियन ने रची थी। उसने एलेना का करियर
+                    नष्ट करके पैदा हुए शून्य का उपयोग करके अपनी खुद की लाइन लॉन्च करने की योजना बनाई थी। एलेना ने एक
+                    महीना अपने अंधेरे अपार्टमेंट में बिताया, अपने करियर को टुकड़े-टुकड़े होते हुए सुनने में।</p>
+                <p>उसकी माँ, एक अप्रवासी जो इससे भी बदतर स्थिति से बच गई थी, मिलने आई। वह सहानुभूति नहीं लाई; वह कतरनों
+                    का एक बैग लाई—फैक्ट्री के फर्श से रेशम, लिनन और ऊन के फटे हुए टुकड़े जहाँ वह काम करती थी।</p>
+                <p>"उन्हें लगता है कि तुम टूट गई हो, एलेना," उसने फर्श पर कतरनों को बिखेरते हुए कहा। "लेकिन एक महिला जो
+                    सिलाई करना जानती है, वह कभी पूरी तरह से नहीं टूटती।"</p>
+                <h3>मरम्मत</h3>
+                <p>एलेना ने काम करना शुरू किया। उसने महंगे रेशम के प्राचीन रोल का उपयोग नहीं किया। उसने कतरनों का उपयोग
+                    किया। उसने फटे हुए, घिसे हुए और फेंके गए टुकड़ों को लिया और उन्हें उस तकनीक का उपयोग करके जोड़ना
+                    शुरू किया जो उसने अपनी दादी को करते देखा था—कपड़े के लिए किन्त्सुगी, सोने के धागे के दृश्य, सजावटी
+                    टांके के साथ टुकड़ों को जोड़ना।</p>
+                <p>उसने सीम (सिलाई) को छिपाने की कोशिश नहीं की। उसने उन्हें मुख्य आकर्षण बना दिया। प्रत्येक कोट,
+                    प्रत्येक पोशाक, जीवित रहने का एक नक्शा था। उसने संग्रह को 'द मेंडेड सोल' कहा।</p>
+                <h3>वापसी</h3>
+                <p>उसने संग्रह की शुरुआत पेरिस के कैटवॉक पर नहीं, बल्कि उस मोहल्ले के एक सामुदायिक केंद्र में की जहाँ वह
+                    पली-बढ़ी थी। मॉडल वे महिलाएँ ही थीं जिन्होंने कारखानों में काम किया था। आलोचक एक आपदा की उम्मीद करते
+                    हुए जिज्ञासा से बाहर आए।</p>
+                <p>उन्हें एक क्रांति मिली। कपड़े इसलिए सुंदर नहीं थे क्योंकि वे परिपूर्ण थे, बल्कि इसलिए क्योंकि वे
+                    ईमानदार थे। उन्होंने निशानों और आगे बढ़ने के लिए आवश्यक ताकत का जश्न मनाया। जनता, फैशन उद्योग की
+                    अप्राप्य पूर्णता से थक चुकी थी, उसने उसे अपनाया। एलेना ने न केवल अपने व्यवसाय का पुनर्निर्माण किया;
+                    उसने अपने उद्देश्य को फिर से परिभाषित किया। झूठ पर बनी जूलियन की लाइन एक सीज़न के भीतर विफल हो गई।
+                    एलेना का घर, अपने स्वयं के लचीलेपन की सच्चाई पर बना, 'अपूर्ण रूप से सुंदर' के लिए एक अभयारण्य बन
+                    गया।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">E</span>lena ka fashion house poornta ke vichar par banaya gaya tha. Uske
+                    design sleek, mahange aur vishisht the. Vah 'Resham ki Rani' thi, uska naam vilasita ke uchchatam
+                    star ka paryay tha. Lekin aap jitna ooncha chadhte hain, log aapko utni hi jor se girte hue dekhna
+                    chahte hain.</p>
+                <p>Badnami ka abhiyan surgical tha. Press mein "leak" kiye gaye farzi dastavejon ki ek shrinkhala mein
+                    aarop lagaya gaya ki uska resham sweatshop se prapt kiya gaya tha aur uske "vishisht" pattern
+                    swadeshi bunkaron se churaye gaye the. Adtalis ghanton ke bheetar, uske sabse bade khudra vikretaon
+                    ne use chhod diya. Uske showroom mein todphod ki gayi. Fashion ki duniya, jo kabhi uska khel ka
+                    maidan thi, ek firing squad ban gayi.</p>
+                <h3>Patan</h3>
+                <p>Is dhokhe ki sajish uske mukhya designer aur poorv sabse achchhe dost Julian ne rachi thi. Usne Elena
+                    ka career nasht karke paida hue shunya ka upayog karke apni khud ki line launch karne ki yojana
+                    banayi thi. Elena ne ek mahina apne andhere apartment mein bitaya, apne career ko tukde-tukde hote
+                    hue sunne mein.</p>
+                <p>Uski maa, ek aapravasi jo isse bhi badtar sthiti se bach gayi thi, milne aayi. Vah sahanubhooti nahi
+                    layi; vah katranon ka ek bag layi—factory ke farsh se resham, linen aur oon ke phate hue tukde jahan
+                    vah kaam karti thi.</p>
+                <p>"Unhe lagta hai ki tum toot gayi ho, Elena," usne farsh par katranon ko bikherte hue kaha. "Lekin ek
+                    mahila jo silai karna janti hai, vah kabhi poori tarah se nahi tootti."</p>
+                <h3>Marammat</h3>
+                <p>Elena ne kaam karna shuru kiya. Usne mahange resham ke prachin roll ka upayog nahi kiya. Usne
+                    katranon ka upayog kiya. Usne phate hue, ghise hue aur phenke gaye tukdon ko liya aur unhe us
+                    takneek ka upayog karke jodna shuru kiya jo usne apni dadi ko karte dekha tha—kapde ke liye
+                    Kintsugi, sone ke dhage ke drishy, sajavati taanke ke saath tukdon ko jodna.</p>
+                <p>Usne seam (silai) ko chhipane ki koshish nahi ki. Usne unhe mukhya aakarshan bana diya. Pratyek coat,
+                    pratyek poshak, jeevit rahne ka ek naksha tha. Usne sangrah ko 'The Mended Soul' kaha.</p>
+                <h3>Wapasi</h3>
+                <p>Usne sangrah ki shuruat Paris ke catwalk par nahi, balki us mohalle ke ek samudayik kendra mein ki
+                    jahan vah pali-badhi thi. Model ve mahilayen hi thin jinhone karkhanon mein kaam kiya tha. Aalochak
+                    ek aapda ki ummid karte hue jigyasa se bahar aaye.</p>
+                <p>Unhe ek kranti mili. Kapde isliye sundar nahi the kyonki ve paripoorna the, balki isliye kyonki ve
+                    imandar the. Unhone nishanon aur aage badhne ke liye aavashyak taakat ka jashn manaya. Janata,
+                    fashion udyog ki aprapya poornta se thak chuki thi, usne use apnaya. Elena ne na keval apne vyavasay
+                    ka punarnirman kiya; usne apne uddeshya ko phir se paribhashit kiya. Jhooth par bani Julian ki line
+                    ek season ke bheetar viphal ho gayi. Elena ka ghar, apne swayam ke lachilepan ki sachchai par bana,
+                    'apoorna roop se sundar' ke liye ek abhyaranya ban gaya.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-14">
+
         <div data-title="The Library of Hearts" data-tag="Truth">
-            <p><span class="dropcap">O</span>livia was the librarian of Blackwood for forty years. It was a town of
-                quiet streets and long-held secrets. People came to her for books on gardening or history, never
-                realizing that she was the curator of their own hidden pasts.</p>
-            <p>While renovating the old basement to make room for a computer lab, Olivia found a false back in a shelf
-                of outdated law books. Behind it were hundreds of letters, bundled by year, dating back to the 1950s.
-                They were letters that had never been delivered—sent to 'The Dead Letter Office' but redirected to the
-                library by the postmaster of the time, Olivia's father.</p>
-            <h3>The Secret</h3>
-            <p>As she read them, Olivia realized the enormity of her father's choice. These weren't just bills or junk
-                mail. They were confessions. Apologies. Declarations of love that could have changed the trajectory of
-                the town's most prominent families.</p>
-            <p>There was a letter from the town's most bitter rivals, apologizing for a land dispute that had lasted
-                seventy years. There was a letter from a young man who had run away, explaining that he hadn't abandoned
-                his family, but had been sent away by a powerful man who wanted his land.</p>
-            <h3>The Choice</h3>
-            <p>Olivia felt the weight of her father's secret. He had thought he was protecting the peace of the town,
-                but he had actually frozen its growth. The hate and deceit that defined Blackwood were built on these
-                missing words.</p>
-            <p>She didn't burn them. She didn't dump them on the town square. She began to deliver them. One by one,
-                under the cover of night, she left the yellowed envelopes in mailboxes or tucked them under doors. She
-                didn't stay to see the reaction; she just let the truth do its work.</p>
-            <h3>The Results</h3>
-            <p>The change was subtle at first. A lawsuit was suddenly dropped. An old man finally returned to his family
-                home. A feud that had defined the town council for decades simply evaporated over a cup of coffee. The
-                'Library of Hearts,' as the collection came to be known, had been a poison in the basement, but when
-                released, it became a medicine.</p>
-            <p>Olivia never admitted to being the one who delivered them. But when she walks through the town today, she
-                sees it in the eyes of the people—a new lightness, a shared understanding. The town of Blackwood finally
-                stopped looking at its shadow and started looking at its heart.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">O</span>livia was the librarian of Blackwood for forty years. It was a town of
+                    quiet streets and long-held secrets. People came to her for books on gardening or history, never
+                    realizing that she was the curator of their own hidden pasts.</p>
+                <p>While renovating the old basement to make room for a computer lab, Olivia found a false back in a
+                    shelf of outdated law books. Behind it were hundreds of letters, bundled by year, dating back to the
+                    1950s. They were letters that had never been delivered—sent to 'The Dead Letter Office' but
+                    redirected to the library by the postmaster of the time, Olivia's father.</p>
+                <h3>The Secret</h3>
+                <p>As she read them, Olivia realized the enormity of her father's choice. These weren't just bills or
+                    junk mail. They were confessions. Apologies. Declarations of love that could have changed the
+                    trajectory of the town's most prominent families.</p>
+                <p>There was a letter from the town's most bitter rivals, apologizing for a land dispute that had lasted
+                    seventy years. There was a letter from a young man who had run away, explaining that he hadn't
+                    abandoned his family, but had been sent away by a powerful man who wanted his land.</p>
+                <h3>The Choice</h3>
+                <p>Olivia felt the weight of her father's secret. He had thought he was protecting the peace of the
+                    town, but he had actually frozen its growth. The hate and deceit that defined Blackwood were built
+                    on these missing words.</p>
+                <p>She didn't burn them. She didn't dump them on the town square. She began to deliver them. One by one,
+                    under the cover of night, she left the yellowed envelopes in mailboxes or tucked them under doors.
+                    She didn't stay to see the reaction; she just let the truth do its work.</p>
+                <h3>The Results</h3>
+                <p>The change was subtle at first. A lawsuit was suddenly dropped. An old man finally returned to his
+                    family home. A feud that had defined the town council for decades simply evaporated over a cup of
+                    coffee. The 'Library of Hearts,' as the collection came to be known, had been a poison in the
+                    basement, but when released, it became a medicine.</p>
+                <p>Olivia never admitted to being the one who delivered them. But when she walks through the town today,
+                    she sees it in the eyes of the people—a new lightness, a shared understanding. The town of Blackwood
+                    finally stopped looking at its shadow and started looking at its heart.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">ओ</span>लिविया चालीस वर्षों तक ब्लैकवुड की लाइब्रेरियन थीं। यह शांत सड़कों और
+                    लंबे समय से चले आ रहे रहस्यों वाला शहर था। लोग बागवानी या इतिहास की किताबों के लिए उसके पास आते थे,
+                    यह कभी नहीं महसूस करते थे कि वह उनके खुद के छिपे हुए अतीत की क्यूरेटर थी।</p>
+                <p>कंप्यूटर लैब के लिए जगह बनाने के लिए पुराने बेसमेंट का नवीनीकरण करते समय, ओलिविया को पुरानी कानून की
+                    किताबों की शेल्फ के पीछे एक झूठा हिस्सा मिला। इसके पीछे 1950 के दशक के सैकड़ों पत्र थे, जिन्हें वर्ष
+                    के अनुसार बाँधा गया था। ये वे पत्र थे जिन्हें कभी वितरित नहीं किया गया था—'द डेड लेटर ऑफिस' को भेजे
+                    गए थे, लेकिन उस समय के पोस्टमास्टर, ओलिविया के पिता द्वारा पुस्तकालय में पुनर्निर्देशित कर दिए गए
+                    थे।</p>
+                <h3>रहस्य</h3>
+                <p>जब उसने उन्हें पढ़ा, तो ओलिविया को अपने पिता की पसंद की विशालता का एहसास हुआ। ये सिर्फ बिल या जंक मेल
+                    नहीं थे। वे कबूलनामे थे। माफ़ीनामे। प्यार की घोषणाएँ जो शहर के सबसे प्रमुख परिवारों के प्रक्षेपवक्र
+                    को बदल सकती थीं।</p>
+                <p>शहर के सबसे कट्टर प्रतिद्वंद्वियों का एक पत्र था, जिसमें सत्तर साल तक चले भूमि विवाद के लिए माफ़ी
+                    मांगी गई थी। एक युवक का पत्र था जो भाग गया था, यह समझाते हुए कि उसने अपने परिवार को नहीं छोड़ा था,
+                    बल्कि एक शक्तिशाली व्यक्ति द्वारा दूर भेज दिया गया था जो उसकी ज़मीन चाहता था।</p>
+                <h3>विकल्प</h3>
+                <p>ओलिविया ने अपने पिता के रहस्य का बोझ महसूस किया। उसने सोचा था कि वह शहर की शांति की रक्षा कर रहा है,
+                    लेकिन वास्तव में उसने इसके विकास को रोक दिया था। नफरत और धोखा जिसने ब्लैकवुड को परिभाषित किया था, इन
+                    लापता शब्दों पर बनाए गए थे।</p>
+                <p>उसने उन्हें जलाया नहीं। उसने उन्हें टाउन स्क्वायर पर नहीं फेंका। उसने उन्हें वितरित करना शुरू कर
+                    दिया। एक-एक करके, रात के अंधेरे में, वह पीले पड़ चुके लिफाफों को मेलबॉक्स में छोड़ देती या उन्हें
+                    दरवाजों के नीचे खिसका देती। वह प्रतिक्रिया देखने के लिए नहीं रुकी; उसने बस सच्चाई को अपना काम करने
+                    दिया।</p>
+                <h3>परिणाम</h3>
+                <p>बदलाव शुरू में सूक्ष्म था। एक मुक़दमा अचानक वापस ले लिया गया। एक बूढ़ा आदमी अंततः अपने परिवार के घर
+                    लौट आया। एक ऐसा झगड़ा जिसने दशकों तक टाउन काउंसिल को परिभाषित किया था, बस एक कप कॉफी पर समाप्त हो
+                    गया। 'द लाइब्रेरी ऑफ हार्ट्स,' जैसा कि संग्रह को जाना जाने लगा, बेसमेंट में एक जहर रहा था, लेकिन जब
+                    उसे रिहा किया गया, तो वह एक दवा बन गया।</p>
+                <p>ओलिविया ने कभी यह स्वीकार नहीं किया कि उसने ही उन्हें वितरित किया था। लेकिन जब वह आज शहर से होकर चलती
+                    है, तो वह लोगों की आंखों में देखती है—एक नया हल्कापन, एक साझा समझ। ब्लैकवुड शहर ने आखिरकार अपनी छाया
+                    को देखना बंद कर दिया और अपने दिल को देखना शुरू कर दिया।</p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">O</span>livia chalis varshon tak Blackwood ki librarian thin. Yah shant sadkon
+                    aur lambe samay se chale aa rahe rahasyon wala shahar tha. Log bagwani ya itihas ki kitabon ke liye
+                    uske paas aate the, yah kabhi nahi mahsoos karte the ki vah unke khud ke chhipe hue ateet ki curator
+                    thi.</p>
+                <p>Computer lab ke liye jagah banane ke liye purane basement ka navinikaran karte samay, Olivia ko
+                    purani kanoon ki kitabon ki shelf ke pichhe ek jhutha hissa mila. Iske pichhe 1950 ke dashak ke
+                    saikadon patr the, jinhe varsh ke anusar bandha gaya tha. Ye ve patr the jinhe kabhi vitarit nahi
+                    kiya gaya tha—'The Dead Letter Office' ko bheje gaye the, lekin us samay ke postmaster, Olivia ke
+                    pita dwara pustakalay mein punarnirdeshit kar diye gaye the.</p>
+                <h3>Rahasya</h3>
+                <p>Jab usne unhe padha, to Olivia ko apne pita ki pasand ki vishalta ka ehsaas hua. Ye sirf bill ya junk
+                    mail nahi the. Ve kaboolname the. Maafiname. Pyaar ki ghoshnayen jo shahar ke sabse pramukh
+                    parivaron ke prakshepvakra ko badal sakti thin.</p>
+                <p>Shahar ke sabse kattar pratidwandwiyon ka ek patr tha, jismein sattar saal tak chale bhoomi vivad ke
+                    liye maafi mangi gayi thi. Ek yuvak ka patr tha jo bhaag gaya tha, yah samjhate hue ki usne apne
+                    parivar ko nahi chhoda tha, balki ek shaktishali vyakti dwara door bhej diya gaya tha jo uski zameen
+                    chahta tha.</p>
+                <h3>Vikalp</h3>
+                <p>Olivia ne apne pita ke rahasya ka bojh mahsoos kiya. Usne socha tha ki vah shahar ki shanti ki raksha
+                    kar raha hai, lekin vastav mein usne iske vikas ko rok diya tha. Nafrat aur dhokha jisne Blackwood
+                    ko paribhashit kiya tha, in lapata shabdon par banaye gaye the.</p>
+                <p>Usne unhe jalaya nahi. Usne unhe town square par nahi phenka. Usne unhe vitarit karna shuru kar diya.
+                    Ek-ek karke, raat ke andhere mein, vah peele pad chuke lifafon ko mailbox mein chhod deti ya unhe
+                    darwazon ke niche khiska deti. Vah pratikriya dekhne ke liye nahi ruki; usne bas sachchai ko apna
+                    kaam karne diya.</p>
+                <h3>Parinam</h3>
+                <p>Badlav shuru mein suksham tha. Ek muqadma achanak wapas le liya gaya. Ek boodha aadmi antatah apne
+                    parivar ke ghar laut aaya. Ek aisa jhagda jisne dashakon tak town council ko paribhashit kiya tha,
+                    bas ek cup coffee par samapt ho gaya. 'The Library of Hearts,' jaisa ki sangrah ko jana jane laga,
+                    basement mein ek zahar raha tha, lekin jab use riha kiya gaya, to vah ek dava ban gaya.</p>
+                <p>Olivia ne kabhi yah swikaar nahi kiya ki usne hi unhe vitarit kiya tha. Lekin jab vah aaj shahar se
+                    hokar chalti hai, to vah logon ki aankhon mein dekhti hai—ek naya halkapan, ek sajha samajh.
+                    Blackwood shahar ne aakhirkhar apni chhaya ko dekhna band kar diya aur apne dil ko dekhna shuru kar
+                    diya.</p>
+            </div>
         </div>
     </template>
 
     <template id="story-15">
+
         <div data-title="Songs from the Ruin" data-tag="Resilience">
-            <p><span class="dropcap">M</span>ilo's life was a symphony. A world-renowned cellist, his hands were insured
-                for millions, and his instrument was a 300-year-old masterpiece. Then came the 'Great Fire' that took
-                his home, his music room, and his beloved cello. When he tried to save it, his hands were badly burned,
-                the nerves damaged beyond the reach of any surgeon.</p>
-            <p>He was a musician who could no longer play. A man whose very identity had been cremated in the family
-                room. He spent a year in a haze of painkillers and bitterness, his hands curled like burnt parchment.
-            </p>
-            <h3>The Discovery</h3>
-            <p>One afternoon, wandering through the scorched remains of his property, Milo found a pile of scrap
-                metal—pipes from the HVAC system, pieces of a brass bed frame, several steel cables from a collapsed
-                winch. He'd always been fascinated by the physics of sound.</p>
-            <p>He started to build. He couldn't hold a bow with the precision required for a cello, but he could use his
-                fingers to pluck and strike. He created a new kind of instrument, a 'Scrap-Harp' made from the ruins of
-                his former life. It was ugly, industrial, and looked nothing like a musical instrument.</p>
-            <h3>The Melody</h3>
-            <p>But the sound was haunting. It didn't sound like a cello; it sounded like the wind through the ruins, a
-                deep, metallic resonance that felt like it was coming from the earth itself. Milo found he could play it
-                with his damaged hands, finding new patterns and rhythms that he had never explored in his classical
-                training.</p>
-            <p>He began to play in the streets of the recovering city. People would stop, drawn by the strange, ethereal
-                music. He wasn't playing Bach or Beethoven; he was playing the sound of the 'Great Fire.' He was playing
-                the sound of the city's own survival.</p>
-            <h3>The New Symphony</h3>
-            <p>His 'Scrap Symphony' became the anthem of the rebuilding effort. He was invited to play at the opening of
-                the new concert hall. He didn't wear a tuxedo or bring a Stradivarius. He walked onto the stage with his
-                metal harp and his scarred hands. The audience didn't hear a man who had lost everything; they heard a
-                man who had found a new world emerging from the ashes. Milo realized that the fire hadn't taken his
-                music; it had just taken the cage he had kept it in.</p>
+            <div class="lang-en">
+                <p><span class="dropcap">M</span>ilo's life was a symphony. A world-renowned cellist, his hands were
+                    insured for millions, and his instrument was a 300-year-old masterpiece. Then came the 'Great Fire'
+                    that took his home, his music room, and his beloved cello. When he tried to save it, his hands were
+                    badly burned, the nerves damaged beyond the reach of any surgeon.</p>
+                <p>He was a musician who could no longer play. A man whose very identity had been cremated in the family
+                    room. He spent a year in a haze of painkillers and bitterness, his hands curled like burnt
+                    parchment.</p>
+                <h3>The Discovery</h3>
+                <p>One afternoon, wandering through the scorched remains of his property, Milo found a pile of scrap
+                    metal—pipes from the HVAC system, pieces of a brass bed frame, several steel cables from a collapsed
+                    winch. He'd always been fascinated by the physics of sound.</p>
+                <p>He started to build. He couldn't hold a bow with the precision required for a cello, but he could use
+                    his fingers to pluck and strike. He created a new kind of instrument, a 'Scrap-Harp' made from the
+                    ruins of his former life. It was ugly, industrial, and looked nothing like a musical instrument.</p>
+                <h3>The Melody</h3>
+                <p>But the sound was haunting. It didn't sound like a cello; it sounded like the wind through the ruins,
+                    a deep, metallic resonance that felt like it was coming from the earth itself. Milo found he could
+                    play it with his damaged hands, finding new patterns and rhythms that he had never explored in his
+                    classical training.</p>
+                <p>He began to play in the streets of the recovering city. People would stop, drawn by the strange,
+                    ethereal music. He wasn't playing Bach or Beethoven; he was playing the sound of the 'Great Fire.'
+                    He was playing the sound of the city's own survival.</p>
+                <h3>The New Symphony</h3>
+                <p>His 'Scrap Symphony' became the anthem of the rebuilding effort. He was invited to play at the
+                    opening of the new concert hall. He didn't wear a tuxedo or bring a Stradivarius. He walked onto the
+                    stage with his metal harp and his scarred hands. The audience didn't hear a man who had lost
+                    everything; they heard a man who had found a new world emerging from the ashes. Milo realized that
+                    the fire hadn't taken his music; it had just taken the cage he had kept it in.</p>
+            </div>
+            <div class="lang-hi hidden">
+                <p><span class="dropcap">मा</span>इलो का जीवन एक सिम्फनी (सिम्फ़नी) था। एक विश्व-प्रसिद्ध सेल्युसिस्ट,
+                    उसके हाथों का बीमा लाखों में था, और उसका उपकरण 300 साल पुरानी उत्कृष्ट कृति थी। फिर 'महान आग' आई
+                    जिसने उसका घर, उसका संगीत कक्ष और उसका प्यारा सेलो छीन लिया। जब उसने इसे बचाने की कोशिश की, तो उसके
+                    हाथ बुरी तरह जल गए, नसें किसी भी सर्जन की पहुँच से परे क्षतिग्रस्त हो गईं।</p>
+                <p>वह एक संगीतकार था जो अब बजा नहीं सकता था। एक ऐसा आदमी जिसकी पहचान ही पारिवारिक कमरे में भस्म हो गई
+                    थी। उसने एक साल दर्द निवारक दवाओं और कड़वाहट की धुंध में बिताया, उसके हाथ जले हुए चर्मपत्र की तरह
+                    मुड़े हुए थे।</p>
+                <h3>खोज</h3>
+                <p>एक दोपहर, अपनी संपत्ति के जले हुए अवशेषों में भटकते हुए, माइलो को स्क्रैप धातु का एक ढेर मिला—HVAC
+                    प्रणाली के पाइप, पीतल के बिस्तर के फ्रेम के टुकड़े, एक गिरी हुई विंच से कई स्टील केबल। वह ध्वनि की
+                    भौतिकी से हमेशा रोमांचित था।</p>
+                <p>उसने निर्माण करना शुरू किया। वह एक सेलो के लिए आवश्यक सटीकता के साथ एक धनुष को नहीं पकड़ सकता था,
+                    लेकिन वह अपनी उंगलियों का उपयोग तारों को खींचने और प्रहार करने के लिए कर सकता था। उसने एक नए प्रकार
+                    का उपकरण बनाया, एक 'स्क्रैप-हार्प' जो उसके पूर्व जीवन के खंडहरों से बना था। यह बदसूरत, औद्योगिक था
+                    और किसी भी तरह से एक संगीत वाद्ययंत्र जैसा नहीं लगता था।</p>
+                <h3>धुन</h3>
+                <p>लेकिन ध्वनि भयानक रूप से सुंदर थी। यह सेलो की तरह नहीं लगती थी; यह खंडहरों के बीच से बहती हवा की तरह
+                    लगती थी, एक गहरा, धात्विक अनुनाद जो ऐसा महसूस होता था मानो यह पृथ्वी से ही आ रहा हो। माइलो ने पाया
+                    कि वह इसे अपने क्षतिग्रस्त हाथों से बजा सकता है, नए पैटर्न और लय ढूंढ सकता है जिन्हें उसने अपने
+                    शास्त्रीय प्रशिक्षण में कभी नहीं खोजा था।</p>
+                <p>उसने उबर रहे शहर की सड़कों पर बजाना शुरू किया। लोग अजीब, ईथर संगीत से आकर्षित होकर रुक जाते। वह बाख
+                    या बीथोवेन नहीं बजा रहा था; वह 'महान आग' की ध्वनि बजा रहा था। वह शहर के स्वयं के जीवित रहने की ध्वनि
+                    बजा रहा था।</p>
+                <h3>नई सिम्फनी</h3>
+                <p>उसकी 'स्क्रैप सिम्फनी' पुनर्निर्माण प्रयास का गान बन गई। उन्हें नए कॉन्सर्ट हॉल के उद्घाटन में बजाने
+                    के लिए आमंत्रित किया गया था। उसने टक्सीडो नहीं पहना था और न ही एक स्ट्राडिवारियस लाया था। वह अपने
+                    धातु के वीणा और अपने निशानों वाले हाथों के साथ मंच पर चला गया। दर्शकों ने उस आदमी को नहीं सुना जिसने
+                    सब कुछ खो दिया था; उन्होंने एक ऐसे आदमी को सुना जिसने राख से उभरती एक नई दुनिया पाई थी। माइलो को
+                    एहसास हुआ कि आग ने उसका संगीत नहीं लिया था; इसने बस उस पिंजरे को ले लिया था जिसमें उसने इसे रखा था।
+                </p>
+            </div>
+            <div class="lang-hi-rom hidden">
+                <p><span class="dropcap">M</span>ilo ka jeevan ek symphony tha. Ek vishwa-prasiddh cellist, uske hathon
+                    ka beema lakhon mein tha, aur uska upkaran 300 saal purani utkrisht kriti thi. Phir 'Mahaan Aag'
+                    aayi jisne uska ghar, uska sangeet kaksh aur uska pyara cello chheen liya. Jab usne ise bachane ki
+                    koshish ki, to uske haath buri tarah jal gaye, nasein kisi bhi surgeon ki pahunch se pare
+                    kshatigrast ho gayin.</p>
+                <p>Vah ek sangeetkar tha jo ab baja nahi sakta tha. Ek aisa aadmi jiski pahchan hi parivarik kamre mein
+                    bhasm ho gayi thi. Usne ek saal dard nivarak davaon aur kadwahat ki dhundh mein bitaya, uske haath
+                    jale hue charmapatra ki tarah mude hue the.</p>
+                <h3>Khoj</h3>
+                <p>Ek dopahar, apni sampatti ke jale hue avsheshon mein bhatakte hue, Milo ko scrap dhatu ka ek dher
+                    mila—HVAC pranali ke pipe, peetal ke bistar ke frame ke tukde, ek giri hui winch se kai steel cable.
+                    Vah dhwani ki bhautiki se hamesha romanchit tha.</p>
+                <p>Usne nirman karna shuru kiya. Vah ek cello ke liye aavashyak satikata ke saath ek dhanush ko nahi
+                    pakad sakta tha, lekin vah apni ungliyon ka upayog taaron ko kheenchne aur prahaar karne ke liye kar
+                    sakta tha. Usne ek naye prakar ka upkaran banaya, ek 'Scrap-Harp' jo uske poorv jeevan ke khandharon
+                    se bana tha. Yah badsurat, audyogik tha aur kisi bhi tarah se ek sangeet vadyayantra jaisa nahi
+                    lagta tha.</p>
+                <h3>Dhun</h3>
+                <p>Lekin dhwani bhayanak roop se sundar thi. Yah cello ki tarah nahi lagti thi; yah khandharon ke beech
+                    se bahti hawa ki tarah lagti thi, ek gahra, dhatvik anunaad jo aisa mahsoos hota tha mano yah
+                    prithvi se hi aa raha ho. Milo ne paya ki vah ise apne kshatigrast hathon se baja sakta hai, naye
+                    pattern aur lay dhoondh sakta hai jinhe usne apne shastriya prashikshan mein kabhi nahi khoja tha.
+                </p>
+                <p>Usne ubar rahe shahar ki sadkon par bajana shuru kiya. Log ajeeb, ethereal sangeet se aakarshit hokar
+                    ruk jaate. Vah Bach ya Beethoven nahi baja raha tha; vah 'Mahaan Aag' ki dhwani baja raha tha. Vah
+                    shahar ke swayam ke jeevit rahne ki dhwani baja raha tha.</p>
+                <h3>Nayi Symphony</h3>
+                <p>Uski 'Scrap Symphony' punarnirman prayas ka gaan ban gayi. Unhe naye concert hall ke udghatan mein
+                    bajane ke liye aamantrit kiya gaya tha. Usne tuxedo nahi pahna tha aur na hi ek Stradivarius laya
+                    tha. Vah apne dhatu ke veena aur apne nishanon wale hathon ke saath manch par chala gaya. Darshakon
+                    ne us aadmi ko nahi suna jisne sab kuchh kho diya tha; unhone ek aise aadmi ko suna jisne raakh se
+                    ubharti ek nayi duniya payi thi. Milo ko ehsaas hua ki aag ne uska sangeet nahi liya tha; isne bas
+                    us pinjre ko le liya tha jismein usne ise rakha tha.</p>
+            </div>
         </div>
     </template>
 

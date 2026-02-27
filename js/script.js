@@ -246,14 +246,20 @@ function openStory(templateId) {
             content = rawContent.innerHTML;
             dramaLinks = rawContent.getAttribute('data-audio-drama');
         }
-    } else {
-        // Fallback: If no template, find the card that called this and use its info
-        const card = document.querySelector(`[onclick="openStory('${templateId}')"]`);
-        if (card) {
-            title = card.querySelector('h3').innerText;
-            tag = card.querySelector('.tag').innerText;
+    }
+
+    const card = document.querySelector(`[onclick="openStory('${templateId}')"]`);
+    if (card) {
+        let titleEl = card.querySelector('h3');
+        let tagEl = card.querySelector('.tag');
+        if (titleEl) title = titleEl.innerHTML;
+        if (tagEl) tag = tagEl.innerHTML;
+
+        if (!template) {
             const summary = card.querySelector('p').innerText;
-            content = `<p><span class="dropcap">${title.charAt(0)}</span>${title.substring(1)}</p>
+            // Get plain text for dropcap logic
+            const plainTitle = titleEl ? titleEl.innerText : title;
+            content = `<p><span class="dropcap">${plainTitle.charAt(0)}</span>${plainTitle.substring(1)}</p>
                        <p>${summary}</p>
                        <div class="coming-soon-notice">
                            <h3>Full Story Coming Soon</h3>
@@ -264,9 +270,9 @@ function openStory(templateId) {
 
     if (!title && !content) return;
 
-    // Set header information
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-tag').innerText = tag;
+    // Set header information using innerHTML to support language spans
+    document.getElementById('modal-title').innerHTML = title;
+    document.getElementById('modal-tag').innerHTML = tag;
 
     // Set body content
     document.getElementById('modal-body').innerHTML = content;
@@ -352,5 +358,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Initialize language
+    const savedLang = localStorage.getItem('kahani_lang') || 'en';
+    const langSelect = document.getElementById('lang-select');
+    if (langSelect) langSelect.value = savedLang;
+    switchLanguage(savedLang);
 });
 
+// Language Switcher Function
+function switchLanguage(lang) {
+    document.body.classList.remove('lang-en-active', 'lang-hi-active', 'lang-hi-rom-active');
+    document.body.classList.add(`lang-${lang}-active`);
+    localStorage.setItem('kahani_lang', lang);
+}
