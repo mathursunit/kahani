@@ -232,18 +232,44 @@ function startAudioReading() {
 // Story Modal Logic
 function openStory(templateId) {
     const template = document.getElementById(templateId);
-    if (!template) return;
+    let title = '';
+    let tag = '';
+    let content = '';
+    let dramaLinks = null;
 
-    // Extract content from template content
-    const rawContent = template.content ? template.content.querySelector('div') : template.querySelector('div');
-    if (!rawContent) return;
+    if (template) {
+        // Extract content from template content
+        const rawContent = template.content ? template.content.querySelector('div') : template.querySelector('div');
+        if (rawContent) {
+            title = rawContent.getAttribute('data-title') || '';
+            tag = rawContent.getAttribute('data-tag') || '';
+            content = rawContent.innerHTML;
+            dramaLinks = rawContent.getAttribute('data-audio-drama');
+        }
+    } else {
+        // Fallback: If no template, find the card that called this and use its info
+        const card = document.querySelector(`[onclick="openStory('${templateId}')"]`);
+        if (card) {
+            title = card.querySelector('h3').innerText;
+            tag = card.querySelector('.tag').innerText;
+            const summary = card.querySelector('p').innerText;
+            content = `<p><span class="dropcap">${title.charAt(0)}</span>${title.substring(1)}</p>
+                       <p>${summary}</p>
+                       <div class="coming-soon-notice">
+                           <h3>Full Story Coming Soon</h3>
+                           <p>We are currently crafting the full narrative for this themed collection. Stay tuned!</p>
+                       </div>`;
+        }
+    }
+
+    if (!title && !content) return;
 
     // Set header information
-    document.getElementById('modal-title').innerText = rawContent.getAttribute('data-title') || '';
-    document.getElementById('modal-tag').innerText = rawContent.getAttribute('data-tag') || '';
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-tag').innerText = tag;
 
     // Set body content
-    document.getElementById('modal-body').innerHTML = rawContent.innerHTML;
+    document.getElementById('modal-body').innerHTML = content;
 
     // Handle Audio Drama Logic
     const audioBtn = document.getElementById('audio-btn');
@@ -253,7 +279,6 @@ function openStory(templateId) {
     if (audioSpeedBtn) audioSpeedBtn.style.display = 'none';
 
     if (audioBtn) {
-        const dramaLinks = rawContent.getAttribute('data-audio-drama');
         if (dramaLinks) {
             audioBtn.style.display = 'flex';
 
