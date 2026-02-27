@@ -38,314 +38,768 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
     <main id="stories" class="main-content">
 
         <section class="section">
+            <div class="theme-filter-container">
+                <button class="filter-pill active" data-filter="all">All Stories</button>
+                <button class="filter-pill" data-filter="artisans">Artisans</button>
+                <button class="filter-pill" data-filter="railway">Railway</button>
+                <button class="filter-pill" data-filter="spices">Spices</button>
+                <button class="filter-pill" data-filter="malgudi">Malgudi 2.0</button>
+                <button class="filter-pill" data-filter="jugaad">Jugaad</button>
+                <button class="filter-pill" data-filter="digital">Digital Dhaba</button>
+                <button class="filter-pill" data-filter="monsoon">Monsoon</button>
+                <button class="filter-pill" data-filter="history">History</button>
+                <button class="filter-pill" data-filter="wisdom">Street Wisdom</button>
+                <button class="filter-pill" data-filter="noir">Noir</button>
+            </div>
+
             <div class="stories-grid">
-                <article class="story-card fade-in-up" onclick="openStory('story-1')">
+                <!-- The Last Artisans -->
+                <article class="story-card fade-in-up" data-theme="artisans" onclick="openStory('art-1')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail1.png" alt="Hands planting a sapling" loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">5 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Resilience</span>
-                        <h3>Roots in the Ash</h3>
-                        <p>After a devastating betrayal, Elara learns to rebuild her life from the ground up, planting
-                            seeds of hope in the very place her dreams burned down.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-1" onclick="openStory('story-2')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail2_1771778632014.png" alt="Antique architectural blueprint"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">8 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Karma</span>
-                        <h3>The Inheritance Trap</h3>
-                        <p>When Maya's uncle manipulated her grandmother’s will to steal her family home, he thought he
-                            had won. He didn't realize what he actually inherited.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-2" onclick="openStory('story-3')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail3_1771778646947.png" alt="Imposing high-security villa gate"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">6 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Truth</span>
-                        <h3>Shattering the Illusion</h3>
-                        <p>Trapped in a web of deceit crafted by those closest to him, Marcus embarks on a journey of
-                            self-discovery to find the ultimate truth.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up" onclick="openStory('story-4')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail4_1771778669579.png" alt="Woman walking on beach"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">7 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Healing</span>
-                        <h3>Footprints in the Sand</h3>
-                        <p>Walking away from an emotionally bankrupt marriage was the hardest step she took, but it was
-                            the only direction towards finding herself.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-1" onclick="openStory('story-5')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail5_1771778686373.png" alt="Bakery interior morning light"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">5 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Rebirth</span>
-                        <h3>The Bread of Promise</h3>
-                        <p>After a lifelong partner empties his bank accounts overnight, an aging baker has to learn how
-                            to knead new life from nothing but flour and determination.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-2" onclick="openStory('story-6')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail6_1771778700359.png" alt="Lantern floating into starlit sky"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="audio-indicator" title="Audio available">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                                </svg>
-                            </span>
-                            <span class="read-time">6 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Peace</span>
-                        <h3>The Floating Lantern</h3>
-                        <p>Caught in a highly orchestrated smear campaign by her envious colleagues, an ambitious
-                            executive discovers the profound power of walking away in silence.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up" onclick="openStory('story-7')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail7.png" alt="Vintage ledger and magnifying glass"
-                            loading="lazy">
-                        <div class="card-overlay">
-                            <span class="read-time">6 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Truth</span>
-                        <h3>The Hidden Ledger</h3>
-                        <p>A discovery of embezzlement leads to an unexpected act of restorative justice for a local
-                            charity.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-1" onclick="openStory('story-8')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail8.png" alt="Vibrant street mural" loading="lazy">
+                        <img src="assets/images/thumbnail1.png" alt="Indigo dyed fabric" loading="lazy">
                         <div class="card-overlay">
                             <span class="read-time">5 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Healing</span>
-                        <h3>Unspoken Words</h3>
-                        <p>After losing his voice to trauma, an artist finds it again through the colors of a public
-                            mural.</p>
+                        <span class="tag">Heritage</span>
+                        <h3>The Indigo Finger</h3>
+                        <p>A master dyer in Rajasthan refuses to switch to synthetic colors, finding a way to "feel" the
+                            exact moment the fabric turns blue.</p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up delay-2" onclick="openStory('story-9')">
+                <article class="story-card fade-in-up" data-theme="artisans" onclick="openStory('art-2')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail9.png" alt="Hands on a weaving loom" loading="lazy">
+                        <img src="assets/images/thumbnail9.png" alt="Puppet master" loading="lazy">
+                        <div class="card-overlay">
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Legacy</span>
+                        <h3>The Puppet’s Silence</h3>
+                        <p>In the narrow lanes of Jaipur, a string-puppeteer finds his ancient wooden dolls "talking"
+                            back to him.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Platform No. 1 -->
+                <article class="story-card fade-in-up" data-theme="railway" onclick="openStory('rail-1')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail3_1771778646947.png" alt="Indian Railway Station"
+                            loading="lazy">
                         <div class="card-overlay">
                             <span class="read-time">7 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Resilience</span>
-                        <h3>The Weaver's Song</h3>
-                        <p>A flood destroyed her loom, but not her spirit. A village rallies to save their disappearing
-                            craft.</p>
+                        <span class="tag">Travel</span>
+                        <h3>The Midnight Passenger</h3>
+                        <p>A mysterious man on the Himgiri Express shares a box of sweets that causes everyone to dream
+                            of their oldest friend.</p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up" onclick="openStory('story-10')">
+                <!-- Spices & Secrets -->
+                <article class="story-card fade-in-up" data-theme="spices" onclick="openStory('spice-1')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail10.png" alt="Majestic canyon at sunset" loading="lazy">
+                        <img src="assets/images/thumbnail5_1771778686373.png" alt="Spices in jars" loading="lazy">
+                        <div class="card-overlay">
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Flavor</span>
+                        <h3>The Salt of Memory</h3>
+                        <p>A chef loses his sense of taste but regains it only when he replicates his mother’s
+                            "forgiveness pickle".</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Malgudi 2.0 -->
+                <article class="story-card fade-in-up" data-theme="malgudi" onclick="openStory('mal-1')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail7.png" alt="Small town house" loading="lazy">
+                        <div class="card-overlay">
+                            <span class="read-time">6 min read</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Wit</span>
+                        <h3>The WiFi Swami</h3>
+                        <p>A retired postman sets up a "spiritual hotspot" in his courtyard, charging only in blessings
+                            and home-cooked snacks.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Jugaad Stories -->
+                <article class="story-card fade-in-up" data-theme="jugaad" onclick="openStory('jug-1')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail12.png" alt="Makeshift boat" loading="lazy">
+                        <div class="card-overlay">
+                            <span class="read-time">5 min read</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Invention</span>
+                        <h3>The Plastic Boatman</h3>
+                        <p>A floods-prone village builds a fleet of rescue boats out of discarded water bottles, led by
+                            a boy who failed physics.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- Digital Dhaba -->
+                <article class="story-card fade-in-up" data-theme="digital" onclick="openStory('dig-1')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail8.png" alt="Grandmother with VR" loading="lazy">
                         <div class="card-overlay">
                             <span class="read-time">8 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Rebirth</span>
-                        <h3>Echoes of the Canyon</h3>
-                        <p>A career-ending injury leads a former athlete to find a new path guiding youth through the
-                            wild.</p>
+                        <span class="tag">Modernity</span>
+                        <h3>The Metaverse Mangalsutra</h3>
+                        <p>A grandmother insists on her wedding anniversary ceremony being held in a VR replica of her
+                            ancestral village.</p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up delay-1" onclick="openStory('story-11')">
+                <!-- Monsoon Moods -->
+                <article class="story-card fade-in-up" data-theme="monsoon" onclick="openStory('mon-1')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail11.png" alt="Moonlit garden sanctuary" loading="lazy">
+                        <img src="assets/images/thumbnail4_1771778669579.png" alt="Rainy street" loading="lazy">
+                        <div class="card-overlay">
+                            <span class="read-time">4 min read</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Nature</span>
+                        <h3>Paper Boats in a Storm</h3>
+                        <p>Two rival businessmen find themselves stuck in a flooded porch, rekindling their friendship
+                            over paper boats.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- History / Grandparent's Attic -->
+                <article class="story-card fade-in-up" data-theme="history" onclick="openStory('hist-1')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail2_1771778632014.png" alt="Old brass key" loading="lazy">
                         <div class="card-overlay">
                             <span class="read-time">6 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Peace</span>
-                        <h3>The Midnight Garden</h3>
-                        <p>In the heart of a war-torn city, a secret garden offers a sanctuary for those searching for
-                            hope.</p>
+                        <span class="tag">Mystery</span>
+                        <h3>The Brass Key</h3>
+                        <p>A key found in an old trunk doesn't open a door, but a hidden compartment with a 100-year-old
+                            apology.</p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up delay-2" onclick="openStory('story-12')">
+                <!-- Street Wisdom -->
+                <article class="story-card fade-in-up" data-theme="wisdom" onclick="openStory('wis-1')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail12.png" alt="Skyscraper and blueprints" loading="lazy">
-                        <div class="card-overlay">
-                            <span class="read-time">7 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Karma</span>
-                        <h3>The Glass Architect</h3>
-                        <p>When her designs were stolen, a junior architect left behind a secret "flaw" that only she
-                            could mend.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up" onclick="openStory('story-13')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail13.png" alt="Silk fabric with gold mending" loading="lazy">
+                        <img src="assets/images/thumbnail6_1771778700359.png" alt="Man filling potholes" loading="lazy">
                         <div class="card-overlay">
                             <span class="read-time">5 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Healing</span>
-                        <h3>Shattered Silk</h3>
-                        <p>A designer mends her reputation and her life by creating beauty from the remnants of
-                            betrayal.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-1" onclick="openStory('story-14')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail14.png" alt="Library shelf with hidden drawer" loading="lazy">
-                        <div class="card-overlay">
-                            <span class="read-time">6 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Truth</span>
-                        <h3>The Library of Hearts</h3>
-                        <p>Discovery of hidden letters reveals a town's long-buried secret and brings long-awaited
-                            closure.</p>
-                        <button class="read-more">Read Story <span class="arrow">→</span></button>
-                    </div>
-                </article>
-
-                <article class="story-card fade-in-up delay-2" onclick="openStory('story-15')">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail15.png" alt="Violin made of scrap metal" loading="lazy">
-                        <div class="card-overlay">
-                            <span class="read-time">5 min read</span>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <span class="tag">Resilience</span>
-                        <h3>Songs from the Ruin</h3>
-                        <p>When fire took his instruments, a musician found his melody again in the objects left behind.
+                        <span class="tag">Philosophy</span>
+                        <h3>The Philosopher of Potholes</h3>
+                        <p>A man who fills potholes for free explains that he is "smoothing the wrinkles of the earth."
                         </p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
 
-                <article class="story-card fade-in-up" onclick="openStory('story-16')">
+                <!-- Desi Noir -->
+                <article class="story-card fade-in-up" data-theme="noir" onclick="openStory('noir-1')">
                     <div class="card-image-wrapper">
-                        <img src="assets/images/thumbnail16.png" alt="Intricate golden clock" loading="lazy">
+                        <img src="assets/images/thumbnail16.png" alt="Dark alley" loading="lazy">
                         <div class="card-overlay">
-                            <span class="read-time">8 min read</span>
+                            <span class="read-time">7 min read</span>
                         </div>
                     </div>
                     <div class="card-content">
-                        <span class="tag">Karma</span>
-                        <h3>The Clockmaker's Gift</h3>
-                        <p>A cheated clockmaker's final masterpiece holds a secret that only reveals itself to the
-                            kind-hearted.</p>
+                        <span class="tag">Mystery</span>
+                        <h3>The Shadow in the Galli</h3>
+                        <p>A private investigator follows a man who has no shadow, only to realize he is the shadow of a
+                            dead man.</p>
                         <button class="read-more">Read Story <span class="arrow">→</span></button>
                     </div>
                 </article>
+
+                <!-- More Artisans -->
+                <article class="story-card fade-in-up" data-theme="artisans" onclick="openStory('art-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail13.png" alt="Mirror weaver" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Craft</span>
+                        <h3>The Mirror Weaver</h3>
+                        <p>A woman in Kutch weaves a shawl that acts as a mirror to the wearer's soul.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="artisans" onclick="openStory('art-4')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail10.png" alt="Bell metal smith" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Heritage</span>
+                        <h3>The Last Bell-Metal Smith</h3>
+                        <p>In a remote Kerala village, the last maker of traditional bells discovers a lost frequency.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Railway -->
+                <article class="story-card fade-in-up" data-theme="railway" onclick="openStory('rail-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail14.png" alt="Tea seller" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Connection</span>
+                        <h3>Platform 1B</h3>
+                        <p>A tea-seller notices a woman who has sat on the same bench for twenty years, waiting.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="railway" onclick="openStory('rail-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail11.png" alt="Railway compartment" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">8 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Humanity</span>
+                        <h3>The Compartment Confession</h3>
+                        <p>Two strangers exchange secrets on an overnight journey, only to realize their destinies are
+                            linked.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Spices -->
+                <article class="story-card fade-in-up" data-theme="spices" onclick="openStory('spice-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail15.png" alt="Biryani pot" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Secret</span>
+                        <h3>Cardamom & Curses</h3>
+                        <p>A family restaurant in Hyderabad is famous for a biryani that makes eaters tell only the
+                            truth.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="spices" onclick="openStory('spice-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail12.png" alt="Street food" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Memory</span>
+                        <h3>The Burnt Garlic Redemption</h3>
+                        <p>A street vendor in Kolkata becomes a sensation by selling snacks that trigger happy childhood
+                            memories.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Malgudi -->
+                <article class="story-card fade-in-up" data-theme="malgudi" onclick="openStory('mal-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail1.png" alt="Village cow" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Humor</span>
+                        <h3>The Cow and the EV</h3>
+                        <p>A hilarious clash when the town’s first Electric Vehicle is blocked by a stubborn temple cow.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="malgudi" onclick="openStory('mal-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail2_1771778632014.png" alt="Mobile phone in village"
+                            loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Progress</span>
+                        <h3>The Selfie Sarpanch</h3>
+                        <p>A tech-savvy village head uses Instagram Live to solve the town's electricity problems.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Jugaad -->
+                <article class="story-card fade-in-up" data-theme="jugaad" onclick="openStory('jug-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail3_1771778646947.png" alt="Solar umbrella" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Spirit</span>
+                        <h3>The Solar Umbrella</h3>
+                        <p>A street cobbler invents a solar-powered fan for his umbrella using broken calculator parts.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="jugaad" onclick="openStory('jug-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail4_1771778669579.png" alt="Bicycle invention" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Grit</span>
+                        <h3>Cycles and Centrifuges</h3>
+                        <p>A rural doctor uses a bicycle wheel to create a makeshift centrifuge, saving a life during a
+                            power-cut.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Digital -->
+                <article class="story-card fade-in-up" data-theme="digital" onclick="openStory('dig-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail5_1771778686373.png" alt="Algorithm visualization"
+                            loading="lazy">
+                        <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Innovation</span>
+                        <h3>Algorithm of the Heart</h3>
+                        <p>A local matchmaker’s custom AI suggests a match that she never expected.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="digital" onclick="openStory('dig-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail6_1771778700359.png" alt="QR code at temple" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Digital</span>
+                        <h3>The QR Code Priest</h3>
+                        <p>A pundit discovers that his highest digital donor is actually a cat from San Francisco.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Monsoon -->
+                <article class="story-card fade-in-up" data-theme="monsoon" onclick="openStory('mon-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail7.png" alt="Perfume bottle" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Scent</span>
+                        <h3>The Scent of First Rain</h3>
+                        <p>A perfume-maker attempts to capture the Petrichor of the year he first met his wife.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="monsoon" onclick="openStory('mon-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail8.png" alt="Monsoon lanterns" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Love</span>
+                        <h3>Love in Water-Logging</h3>
+                        <p>Two neighbors communicate via lanterns floated between balconies during a city-wide blackout.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More History -->
+                <article class="story-card fade-in-up" data-theme="history" onclick="openStory('hist-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail9.png" alt="Fountain pen" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Legacy</span>
+                        <h3>The Fountain Pen’s Last Ink</h3>
+                        <p>A pen that has been dry for 50 years suddenly writes one final sentence during a full moon.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="history" onclick="openStory('hist-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail10.png" alt="Silk saree" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Secret</span>
+                        <h3>The Silk Saree of Secrets</h3>
+                        <p>A generations-old saree reveals a hidden map woven into its border in invisible thread.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Wisdom -->
+                <article class="story-card fade-in-up" data-theme="wisdom" onclick="openStory('wis-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail11.png" alt="Balloon seller" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Philosophy</span>
+                        <h3>The Balloon Seller’s Weight</h3>
+                        <p>A street vendor teaches a stressed executive that we only fly when we let go of what weighs
+                            us down.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="wisdom" onclick="openStory('wis-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail12.png" alt="Cobbler stall" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Soul</span>
+                        <h3>The Cobbler’s Soul</h3>
+                        <p>A cobbler refuses to fix an expensive pair of shoes because the owner is walking a dark path.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <!-- More Noir -->
+                <article class="story-card fade-in-up" data-theme="noir" onclick="openStory('noir-2')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail13.png" alt="Ink bottle" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">8 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Mystery</span>
+                        <h3>The Red Ink Murders</h3>
+                        <p>A poet discovers that every verse written in red ink makes a miracle—and a tragedy—happen.
+                        </p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                </article>
+
+                <article class="story-card fade-in-up" data-theme="noir" onclick="openStory('noir-3')">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/thumbnail14.png" alt="Pan shop mirror" loading="lazy">
+                        <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="tag">Suspense</span>
+                        <h3>The Mirror in the Pan Shop</h3>
+                        <p>A small mirror in a street stall reflects the city not as it is, but as it will be in 24
+                            hours.</p>
+                        <button class="read-more">Read Story <span class="arrow">→</span></button>
+                    </div>
+                    <!-- Final Artisans -->
+                    <article class="story-card fade-in-up" data-theme="artisans" onclick="openStory('art-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail1.png" alt="Zardozi art" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Family</span>
+                            <h3>A Thread of Gold</h3>
+                            <p>An aging Zardozi artist in Lucknow spends months on a veil for a bride who is his lost
+                                granddaughter.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Railway -->
+                    <article class="story-card fade-in-up" data-theme="railway" onclick="openStory('rail-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail2_1771778632014.png" alt="Steam engine" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">History</span>
+                            <h3>Whistle in the Dark</h3>
+                            <p>A young TTE discovers a hidden compartment in an old steam engine containing letters from
+                                1947.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="railway" onclick="openStory('rail-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail3_1771778646947.png" alt="Train window sketch"
+                                loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Art</span>
+                            <h3>The Window View</h3>
+                            <p>An artist attempts to sketch every person who looks out of a train window, finding their
+                                own reflection.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Spices -->
+                    <article class="story-card fade-in-up" data-theme="spices" onclick="openStory('spice-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail4_1771778669579.png" alt="Wazwan preparation"
+                                loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Peace</span>
+                            <h3>Saffron across the Border</h3>
+                            <p>A woman sends her grandmother's recipe to a stranger across the border, ending a
+                                generations-long feud.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="spices" onclick="openStory('spice-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail5_1771778686373.png" alt="Turmeric field" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Truth</span>
+                            <h3>The Turmeric Trial</h3>
+                            <p>A girl proves her innocence in a village dispute by cooking a dish so pure it glows under
+                                the moon.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Malgudi -->
+                    <article class="story-card fade-in-up" data-theme="malgudi" onclick="openStory('mal-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail6_1771778700359.png" alt="Poet statue" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Irony</span>
+                            <h3>Missing: One Statuesque Ego</h3>
+                            <p>The town’s most arrogant poet finds his statue replaced by a scarecrow, and no one
+                                notices.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="malgudi" onclick="openStory('mal-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail7.png" alt="Night cricket" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Sport</span>
+                            <h3>The Secret Cricket League</h3>
+                            <p>An underground night-cricket tournament reveals that the town's grumpiest man was once a
+                                legend.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Jugaad -->
+                    <article class="story-card fade-in-up" data-theme="jugaad" onclick="openStory('jug-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail8.png" alt="Clay cooling" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Ingenuity</span>
+                            <h3>Fridge-less Cold Storage</h3>
+                            <p>Farmers use clay cooling and computer fans to save their tomato crop from a heatwave.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="jugaad" onclick="openStory('jug-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail9.png" alt="Wooden machine" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Kindness</span>
+                            <h3>The ATM of Kindness</h3>
+                            <p>A man creates a "wooden ATM" that dispenses seeds instead of money, funded by loose
+                                change.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Digital -->
+                    <article class="story-card fade-in-up" data-theme="digital" onclick="openStory('dig-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail10.png" alt="Emoji chat" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">4 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Communication</span>
+                            <h3>Emoji Eldership</h3>
+                            <p>An illiterate elder learns to communicate solely through Emojis, becoming a village
+                                diplomat.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="digital" onclick="openStory('dig-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail11.png" alt="Drone food delivery" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Efficiency</span>
+                            <h3>The Drone Delivery Samosa</h3>
+                            <p>A snack-shop owner uses a modified toy drone to deliver hot samosas to people stuck in
+                                traffic.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Monsoon -->
+                    <article class="story-card fade-in-up" data-theme="monsoon" onclick="openStory('mon-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail12.png" alt="Rain maker" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Magic</span>
+                            <h3>The Rain-Maker’s Daughter</h3>
+                            <p>A girl who supposedly brings rain visits a drought-hit village, discovering her true
+                                presence heals.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="monsoon" onclick="openStory('mon-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail13.png" alt="Magical umbrella" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Emotion</span>
+                            <h3>The Umbrella Umbrella</h3>
+                            <p>A magical umbrella that only opens when the person underneath is genuinely happy.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final History -->
+                    <article class="story-card fade-in-up" data-theme="history" onclick="openStory('hist-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail14.png" alt="Old valve radio" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">8 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Sound</span>
+                            <h3>The Radio from the Past</h3>
+                            <p>An old radio that plays the ambient sounds of the room from fifty years ago instead of
+                                news.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="history" onclick="openStory('hist-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail15.png" alt="Wooden chest" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Wonder</span>
+                            <h3>The Wooden Chest of Clouds</h3>
+                            <p>A child finds a chest that smells like different seasons whenever it's opened.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Wisdom -->
+                    <article class="story-card fade-in-up" data-theme="wisdom" onclick="openStory('wis-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail16.png" alt="Traffic jam" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Stillness</span>
+                            <h3>Lessons from a Traffic Jam</h3>
+                            <p>A group of commuters learns that stillness is the highest speed during a city-wide delay.
+                            </p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="wisdom" onclick="openStory('wis-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail1.png" alt="Silent tea stall" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">5 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Silence</span>
+                            <h3>The Tea Staller’s Silence</h3>
+                            <p>A man who hasn't spoken in 40 years communicates solely through the perfect cup of tea.
+                            </p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <!-- Final Noir -->
+                    <article class="story-card fade-in-up" data-theme="noir" onclick="openStory('noir-4')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail2_1771778632014.png" alt="Taxi at night" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">7 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Ghost</span>
+                            <h3>The Ghost of the Underpass</h3>
+                            <p>A taxi driver picks up a passenger who pays in coins from a kingdom abolished centuries
+                                ago.</p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="story-card fade-in-up" data-theme="noir" onclick="openStory('noir-5')">
+                        <div class="card-image-wrapper">
+                            <img src="assets/images/thumbnail3_1771778646947.png" alt="Third door" loading="lazy">
+                            <div class="card-overlay"><span class="read-time">6 min read</span></div>
+                        </div>
+                        <div class="card-content">
+                            <span class="tag">Truth</span>
+                            <h3>The Secret of the Third Door</h3>
+                            <p>In an old Haveli, there is a third door that only appears to those who are telling a lie.
+                            </p>
+                            <button class="read-more">Read Story <span class="arrow">→</span></button>
+                        </div>
+                    </article>
             </div>
         </section>
 

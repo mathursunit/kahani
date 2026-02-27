@@ -46,6 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.style.boxShadow = 'none';
         }
     });
+
+    // Theme Filtering Logic
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const stories = document.querySelectorAll('.story-card');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            stories.forEach(card => {
+                const cardTheme = card.getAttribute('data-theme');
+                if (filter === 'all' || cardTheme === filter) {
+                    card.classList.remove('hidden');
+                    // Trigger reflow for animation if needed
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    card.classList.add('hidden');
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                }
+            });
+        });
+    });
 });
 
 // --- Audio Reading Logic ---
